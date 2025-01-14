@@ -15,7 +15,7 @@ export default function RootLayout({
     return (
         <>
             <Banner banner={BUSINESSBANNER} />
-            <div className="col-span-12 relative -mt-16">
+            <div className=" relative -mt-16">
                 {children}
             </div>
         </>

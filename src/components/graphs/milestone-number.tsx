@@ -12,7 +12,7 @@ import {
 } from "chart.js";
 import dayjs from "dayjs";
 import { useState, useEffect } from "react";
-import { ChartContainer } from "../common/chart";
+import { ChartContainer } from "~/components/common/chart";
 
 ChartJS.register(
   CategoryScale,
@@ -105,7 +105,7 @@ export const MilestoneNumberGraph = () => {
   };
 
   return (
-    <ChartContainer className="h-[16rem] lg:w-[30rem] xl:w-[40rem] 2xl:w-[45rem]">
+    <ChartContainer className="hidden md:block h-[16rem] lg:w-[30rem] xl:w-[40rem] 2xl:w-[45rem]">
       <Bar data={data} options={options} />
     </ChartContainer>
   );

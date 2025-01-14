@@ -2,6 +2,7 @@
 import React from 'react';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
+import { ChartContainer } from '~/components/common/chart';
 
 
 ChartJS.register(
@@ -50,9 +51,9 @@ const ExportChart = ({ label, data }: ExportChartProps) => {
     };
 
     return (
-        <div className="w-3/5 mx-auto my-5 h-64">
+        <ChartContainer>
             <Bar data={chartData} options={options} />
-        </div>
+        </ChartContainer>
     );
 };
 

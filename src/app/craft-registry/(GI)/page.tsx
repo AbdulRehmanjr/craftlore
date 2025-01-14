@@ -20,8 +20,8 @@ const counter = [
 
 export default function CraftProfilingPage() {
   return (
-    <section className="relative col-span-12 -mt-16">
-      <Container className="flex gap-10">
+    <section className="relative -mt-16">
+      <Container className="flex flex-wrap justify-center gap-10">
         <div className="grid h-[183px] w-72 place-content-center border-4 border-white bg-secondary p-10 text-center text-white">
           <h1 className="whitespace-pre-line font-montserrat text-xl font-bold">
             CARBON FOOTPRINT CRAFT REGISTRY

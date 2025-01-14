@@ -1,6 +1,7 @@
 'use client'
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
+import { ChartContainer } from '~/components/common/chart';
 
 ChartJS.register(
   CategoryScale,
@@ -127,9 +128,9 @@ export const HandiCraftGraph = () => {
   };
 
   return (
-    <div className="h-[500px]">
+    <ChartContainer>
       <Bar options={options} data={data} />
-    </div>
+    </ChartContainer>
   );
 };
 
