@@ -128,7 +128,7 @@ export const Banner = ({ banner }: ComponentProps) => {
             >
               <motion.p
                 variants={titleVariants}
-                className="whitespace-normal font-montserrat text-[2rem] font-extrabold leading-[5rem] lg:leading-[7rem] lg:text-[3rem] xl:text-[5rem] 2xl:text-[6rem]"
+                className="whitespace-normal font-montserrat text-[2rem] font-extrabold leading-[3rem] md:leading-[5rem] lg:leading-[7rem] lg:text-[3rem] xl:text-[5rem] 2xl:text-[6rem]"
               >
                 {firstLine} <span className="block">{secondLine}</span>
               </motion.p>
