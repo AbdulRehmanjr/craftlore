@@ -63,21 +63,19 @@ export default function BlockChainPage() {
             </p>
           </div>
         </Container>
-        <div className="mx-6 mt-6 grid gap-32 lg:container">
-          <div className="lg:container">
-            <BlockchainHome />
-          </div>
-        </div>
+        <Container className="mt-6 grid gap-32">
+          <BlockchainHome />
+        </Container>
         <div className="bg-[#e5edf7]">
-          <div className="mx-6 lg:container">
+          <Container>
             <BlockFeatures />
-          </div>
+          </Container>
         </div>
-        <div className="mx-6 lg:container">
+        <Container>
           <BlockApiGuide />
-        </div>
+        </Container>
         <div className="bg-[#e5edf7]">
-          <div className="mx-6 space-y-[6rem] pt-[5rem] lg:container">
+          <Container className="space-y-[6rem] pt-[5rem]">
             <h2 className="text-center font-montserrat text-xl text-secondary">
               Ensure Authenticity, Empower Artisans
             </h2>
@@ -87,7 +85,7 @@ export default function BlockChainPage() {
             </h2>
             <Counter counterValues={counter} />
             <BottomBanner />
-          </div>
+          </Container>
         </div>
       </section>
     </>
