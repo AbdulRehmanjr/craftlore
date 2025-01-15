@@ -2,6 +2,7 @@
 
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, } from 'chart.js';
+import { ChartContainer } from '~/components/common/chart';
 
 // Register required components with Chart.js
 ChartJS.register(
@@ -64,8 +65,8 @@ export const HandiCraftExportGraph = () => {
     };
 
     return (
-        <div className='h-[400px]'>
+        <ChartContainer>
             <Line data={data} options={options} />
-        </div>
+        </ChartContainer>
     )
 }

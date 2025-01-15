@@ -1,6 +1,10 @@
 'use client'
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Lock, Clock, Unlock } from 'lucide-react';
+import dayjs from 'dayjs';
+import duration from 'dayjs/plugin/duration';
+
+dayjs.extend(duration);
 
 interface TimeLeft {
   days: number;
@@ -17,31 +21,45 @@ export const CraftloreComing = () => {
     seconds: 0,
   });
 
-  const targetDateRef = useRef(new Date().getTime() + 14 * 24 * 60 * 60 * 1000);
-
   useEffect(() => {
-    function updateTimer() {
-      const now = new Date().getTime();
-      const distance = targetDateRef.current - now;
+    // Get the target date from localStorage or set it if not exists
+    const getTargetDate = () => {
+      const stored = localStorage.getItem('craftloreDeadline');
+      if (stored) {
+        return dayjs(stored);
+      } else {
+        // Set deadline to 13 days from now
+        const deadline = dayjs().add(13, 'day');
+        localStorage.setItem('craftloreDeadline', deadline.toISOString());
+        return deadline;
+      }
+    };
 
-      if (distance <= 0) {
+    const targetDate = getTargetDate();
+
+    function updateTimer() {
+      const now = dayjs();
+      const diff = targetDate.diff(now);
+
+      if (diff <= 0) {
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
         return;
       }
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      setTimeLeft({ days, hours, minutes, seconds });
+      const duration = dayjs.duration(diff);
+      setTimeLeft({
+        days: Math.floor(duration.asDays()),
+        hours: duration.hours(),
+        minutes: duration.minutes(),
+        seconds: duration.seconds(),
+      });
     }
 
     const timerId = setInterval(updateTimer, 1000);
-    updateTimer(); 
+    updateTimer();
 
     return () => clearInterval(timerId);
-  }, []); 
+  }, []);
 
   const TimeBlock = ({ value, label }: { value: number; label: string }) => (
     <div className="flex flex-col items-center bg-white rounded-lg shadow-lg p-4 w-24">
@@ -84,7 +102,7 @@ export const CraftloreComing = () => {
             <Unlock className="h-5 w-5 text-indigo-600" />
           </div>
           <p className="text-gray-700 mb-4">
-            All links will be fully functional after 14 days, bringing you closer to authentic Kashmiri craftsmanship
+            All links will be fully functional after {timeLeft.days} days, bringing you closer to authentic Kashmiri craftsmanship
           </p>
           <p className="text-indigo-600 font-medium">Stay tuned!</p>
         </div>

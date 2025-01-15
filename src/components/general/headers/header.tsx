@@ -28,35 +28,25 @@ import {
 import { cn } from "~/lib/utils";
 import { MenuItems } from "~/constants/variable";
 
-/* -------------------------------
-   1) Add a prop interface
-------------------------------- */
+
 interface HeaderProps {
-  /** If true, all links in the header become disabled (no navigation). */
   disabled?: boolean;
 }
 
-/** For convenience in submenus, define a type for each menu item. */
 interface SubMenuItem {
   title: string;
   href: string;
   submenu?: SubMenuItem[];
 }
 
-/* ------------------------------------------
-   2) Helper function to handle link props
------------------------------------------- */
 function getLinkProps(
   href: string,
   disabled?: boolean,
   baseClass?: string,
 ) {
   return {
-    // Override href to "#" when disabled so it won't navigate
     href: disabled ? "#" : href,
-    // Prevent default navigation if disabled
     onClick: disabled ? (e: React.MouseEvent) => e.preventDefault() : undefined,
-    // Add classes to visually indicate “disabled” 
     className: cn(
       baseClass,
       disabled && "cursor-not-allowed pointer-events-none text-gray-400"
@@ -64,9 +54,6 @@ function getLinkProps(
   };
 }
 
-/* ------------------------------------------
-   3) Your main Header component
------------------------------------------- */
 export const Header: FC<HeaderProps> = ({ disabled = false }) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -81,7 +68,6 @@ export const Header: FC<HeaderProps> = ({ disabled = false }) => {
     };
   }, []);
 
-  // Desktop submenu (fly-out)
   const SubMenu = ({ items }: { items: SubMenuItem[] }) => (
     <ul className="invisible absolute left-1/2 top-full -translate-x-1/2 border-t-2 border-secondary bg-white opacity-0 transition-all duration-300 group-hover:visible group-hover:opacity-100 lg:min-w-[150px] xl:min-w-[200px]">
       {items.map((item, index) => (
@@ -125,7 +111,6 @@ export const Header: FC<HeaderProps> = ({ disabled = false }) => {
         isScrolled && "bg-primary text-white"
       )}
     >
-      {/* ---------- Top Banner ---------- */}
       <div className="ml-auto hidden justify-between gap-6 rounded-bl-lg bg-primary p-6 py-2 text-white lg:flex">
         <div className="flex flex-col items-center gap-1 font-opensans md:flex-row xl:gap-3 2xl:gap-12">
           <p className="text-xs font-bold 2xl:text-2xl">
@@ -148,15 +133,12 @@ export const Header: FC<HeaderProps> = ({ disabled = false }) => {
             )}
             asChild
           >
-            {/* We can disable the Link inside the Button if we want. */}
             <Link
               {...getLinkProps("#", disabled)}
             >
               Register / Login
             </Link>
           </Button>
-
-          {/* Social Icons */}
           <div className="flex gap-6">
             <Link
               {...getLinkProps("#", disabled, "flex items-center gap-2 hover:text-secondary text-sm xl:text-base")}
@@ -182,9 +164,7 @@ export const Header: FC<HeaderProps> = ({ disabled = false }) => {
         </div>
       </div>
 
-      {/* ---------- Main Nav Bar ---------- */}
       <div className="flex w-full justify-between p-4">
-        {/* Logo */}
         <div
           className={cn(
             "relative ml-6 h-[100px] w-[100px] md:ml-0",
@@ -199,8 +179,6 @@ export const Header: FC<HeaderProps> = ({ disabled = false }) => {
             priority
           />
         </div>
-
-        {/* -------- Desktop Nav -------- */}
         <div className="flex items-center px-6 py-4 lg:mx-auto">
           <nav className="hidden lg:flex">
             <ul className="flex gap-6 font-bold">
@@ -227,14 +205,11 @@ export const Header: FC<HeaderProps> = ({ disabled = false }) => {
                       </span>
                     )}
                   </Link>
-                  {/* Render desktop SubMenu if present */}
                   {item.submenu && <SubMenu items={item.submenu} />}
                 </li>
               ))}
             </ul>
           </nav>
-
-          {/* -------- Mobile Menu (Sheet) -------- */}
           <Sheet>
             <SheetTrigger
               className={cn(
@@ -275,8 +250,6 @@ export const Header: FC<HeaderProps> = ({ disabled = false }) => {
                             )}
                           </Link>
                         </CollapsibleTrigger>
-
-                        {/* Mobile Submenu */}
                         {item.submenu && (
                           <CollapsibleContent className="flex-start flex">
                             <ul className="pl-4">

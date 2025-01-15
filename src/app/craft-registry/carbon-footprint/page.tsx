@@ -6,6 +6,7 @@ import { BottomBanner } from "~/components/general/bottom-banner";
 import { type Metadata } from "next";
 import { Banner } from "~/components/general/landing/banner";
 import { CARBONBANNER } from "~/constants/banner";
+import { Container } from "~/components/common/container";
 
 export const metadata: Metadata = {
   title: "CRAFTLORE | Carbon footprint",
@@ -22,8 +23,8 @@ export default function CarbonPrintPage() {
   return (
     <>
       <Banner banner={CARBONBANNER} />
-      <section className="relative col-span-12 -mt-16">
-        <div className="container">
+      <section className="relative -mt-16">
+        <Container>
           <div className="flex flex-wrap justify-center gap-10">
             <div className="grid h-[183px] w-72 place-content-center border-4 border-white bg-secondary p-10 text-center text-white">
               <h1 className="whitespace-pre-line font-montserrat text-xl font-bold">
@@ -65,17 +66,17 @@ export default function CarbonPrintPage() {
             </div>
           </div>
           <CarbonEstimationHome />
-        </div>
+        </Container>
         <div className="bg-[#e5edf7]">
-          <div className="mx-6 lg:container">
+          <Container>
             <CarbonFeatures />
-          </div>
+          </Container>
         </div>
-        <div className="mx-6 lg:container">
+        <Container>
           <CarbonApiGuide />
-        </div>
+        </Container>
         <div className="bg-[#e5edf7]">
-          <div className="mx-6 space-y-[6rem] pt-[5rem] lg:container">
+          <Container className="space-y-[6rem] pt-[5rem]">
             <h2 className="text-center font-montserrat text-xl text-secondary">
               Defend Sustainability, Empower Artisans: Join the Movement for a
               Greener Future in Kashmiri Crafts
@@ -86,7 +87,7 @@ export default function CarbonPrintPage() {
             </h2>
             <Counter counterValues={counter} />
             <BottomBanner />
-          </div>
+          </Container>
         </div>
       </section>
     </>

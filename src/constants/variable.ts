@@ -13,11 +13,11 @@ export const MenuItems : MenuItemProps[] = [
         },
         {
           title: "GEOGRAPHICAL INDICATION",
-          href: "#",
+          href: "/craft-registry/GI",
           submenu: [
-            { title: "ABOUT GI & IT PROCESS", href: "/craft-registry/process" },
-            { title: "CONSUMER REPORTING", href: "/craft-registry/reporting" },
-            { title: "GI LISTING", href: "/craft-registry/listing" },
+            { title: "ABOUT GI & IT PROCESS", href: "/craft-registry/GI/process" },
+            { title: "CONSUMER REPORTING", href: "/craft-registry/GI/reporting" },
+            { title: "GI LISTING", href: "/craft-registry/GI/listing" },
           ],
         },
         {

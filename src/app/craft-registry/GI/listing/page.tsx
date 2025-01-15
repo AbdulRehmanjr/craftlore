@@ -1,4 +1,5 @@
 import { type Metadata } from "next";
+import { Container } from "~/components/common/container";
 import { GIListing } from "~/components/craft-repository/gi/listing";
 
 export const metadata: Metadata = {
@@ -7,10 +8,10 @@ export const metadata: Metadata = {
 
 export default function GIListingPage() {
   return (
-    <section className="col-span-12 grid gap-4 bg-[#e5edf7]">
-      <div className="mx-6 my-10 grid gap-10 lg:container">
+    <section className="grid gap-4 bg-[#e5edf7]">
+      <Container className="my-10 grid gap-10">
         <GIListing />
-      </div>
+      </Container>
     </section>
   );
 }

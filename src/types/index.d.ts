@@ -372,3 +372,165 @@ type MenuItemProps = {
 type SubMenuProps = {
     items: MenuItemProps[];
 };
+
+type VerificationResultProps = {
+    authentic: boolean;
+    authenticityScore: number;
+    blockchainDetails: {
+        hash: string;
+        timestamp: string;
+        network: string;
+        smartContract: string;
+        verifications: number;
+        lastVerified: string;
+    };
+    materialVerification: {
+        primaryMaterial: string;
+        sourceLocation: string;
+        sourcingDate: string;
+        batchNumber: string;
+        qualityGrade: string;
+        testResults: {
+            purity: string;
+            micronCount: string;
+            testDate: string;
+            labCertification: string;
+        };
+        sustainabilityMetrics: {
+            sourcingEthics: string;
+            environmentalImpact: string;
+            carbonFootprint: string;
+        };
+    };
+    journeyTracking: {
+        currentStage: string;
+        lastUpdated: string;
+        totalStages: number;
+        stagesCompleted: number;
+        locationHistory: {
+            stage: string;
+            location: string;
+            timestamp: string;
+            verifiedBy: string;
+            gpsCoordinates: string;
+        }[];
+    };
+    paymentTracking: {
+        craftsman: {
+            totalDue: number;
+            totalPaid: number;
+            paymentStatus: string;
+            transactions: {
+                amount: number;
+                date: string;
+                type: string;
+                transactionId: string;
+                status: string;
+                verifiedBy: string;
+            }[];
+            wageMetrics: {
+                hourlyRate: number;
+                totalHours: number;
+                bonuses: number;
+                marketRateComparison: string;
+                lastWageReview: string;
+            };
+        };
+        marketTransaction: {
+            buyerId: string;
+            sellerId: string;
+            productPrice: number;
+            transactionStatus: string;
+            paymentFlow: {
+                stage: string;
+                amount: number;
+                status: string;
+                date: string;
+            }[];
+            escrowDetails: {
+                enabled: boolean;
+                releaseConditions: string;
+                status: string;
+            };
+        };
+    };
+    giCertification: {
+        number: string;
+        issuanceDate: string;
+        validUntil: string;
+        category: string;
+        verificationAuthority: string;
+        specifications: string[];
+    };
+    paymentDetails: {
+        status: string;
+        lastPayment: string;
+        totalAmount: number;
+        method: string;
+        transactionId: string;
+        history: {
+            date: string;
+            amount: number;
+            type: string;
+        }[];
+    };
+    productionDetails: {
+        startDate: string;
+        completionDate: string;
+        location: string;
+        gpsCoordinates: string;
+        materials: {
+            primary: string;
+            source: string;
+            quality: string;
+        };
+        techniques: string[];
+    };
+    craftsman: {
+        name: string;
+        id: string;
+        experience: string;
+        certification: string;
+        wageCompliance: number;
+        paymentHistory: string;
+        ratings: number;
+    };
+    exploitationPrevention: {
+        wageMonitoring: {
+            status: string;
+            lastAudit: string;
+            averageWage: string;
+            timely: boolean;
+        };
+        compliance: {
+            labor: string;
+            safety: string;
+            benefits: string;
+        };
+    };
+    marketAccess: {
+        directListing: boolean;
+        platformVerified: boolean;
+        buyerRating: number;
+        transactions: number;
+        averageResponse: string;
+    };
+    cost: {
+        materialCost: {
+            amount: number,
+            percentage: number,
+        },
+        craftsmanPayment: {
+            amount: number,
+            percentage: number,
+        },
+        manufacturerProfit: {
+            amount: number,
+            percentage: number,
+        },
+        retailerProfit: {
+            amount: number,
+            percentage: number,
+        },
+    },
+} 

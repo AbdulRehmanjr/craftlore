@@ -61,55 +61,55 @@ export const REGISTER = [
         icon: '/icons/profile.png',
         title: "Craft Profiling",
         description: "Historical, Artistic, & Scientific Exploration of Kashmir Craft",
-        link:'#'
+        link: '#'
     },
     {
         icon: '/icons/location.png',
         title: "Geographical Indicators",
         description: "Geo-Certification Protocols and Standardization of Kashmir Craft",
-        link:"#"
+        link: "#"
     },
     {
         icon: '/icons/blockchain.png',
         title: "Block Chain Traceability",
         description: "Verified Kashmir Craft Journey against the Threat of Counterfeits",
-        link:'#'
+        link: '#'
     },
     {
         icon: '/icons/carbon.png',
         title: "Craft Carbon Footprint",
         description: "Measuring and Endorsing Kashmir Eco-Friendly Practices in Artisan Crafts",
-        link:'#'
+        link: '#'
     },
     {
         icon: '/icons/money.png',
         title: "Craft Price Valuation",
         description: "Self Estimator – Your Kashmir Craft, Your Price, Your Value",
-        link:'#'
+        link: '#'
     },
     {
         icon: '/icons/vulnerability.png',
         title: "Craft Vulnerability",
         description: "Undermining authenticity & disrupting the Kashmir Craft Industry",
-        link:'#'
+        link: '#'
     },
     {
         icon: '/icons/economy.png',
         title: "Craft Economics",
         description: "The Lifeblood of Kashmir Craft Artisans and Heritage Industry",
-        link:'#'
+        link: '#'
     },
     {
         icon: '/icons/business.png',
         title: "Craft Business Evaluation",
         description: "Regulating Ethical Standards in Kashmir Craft Commerece as Whistleblower",
-        link:'#'
+        link: '#'
     },
     {
         icon: '/icons/wages.png',
         title: "Fair Wages Monitoring",
         description: "Empowerment through Education, building a sustainable future for artisans",
-        link:'#'
+        link: '#'
     }
 ];
 
@@ -1449,20 +1449,73 @@ export const PROFILEFEATURES = [
 export const PROFILEBENEFITS = [
     {
         title: "For the Artisans",
-        des : "The registry empowers artisans by providing global recognition, distinguishing their authentic creations from counterfeits through certification standards. It ensures equitable compensation by connecting them to fair trade opportunities and international markets. Artisans gain access to buyer line insights, fostering targeted market growth and enabling a direct link with global consumers. Through knowledge transfer programs, traditional techniques are preserved and passed on to future generations, ensuring their craft legacy endures. This initiative fosters economic empowerment and promotes artisan dignity, blending heritage with opportunity.",
+        des: "The registry empowers artisans by providing global recognition, distinguishing their authentic creations from counterfeits through certification standards. It ensures equitable compensation by connecting them to fair trade opportunities and international markets. Artisans gain access to buyer line insights, fostering targeted market growth and enabling a direct link with global consumers. Through knowledge transfer programs, traditional techniques are preserved and passed on to future generations, ensuring their craft legacy endures. This initiative fosters economic empowerment and promotes artisan dignity, blending heritage with opportunity.",
     },
     {
         title: "For the Buyers",
-        des:"The registry empowers artisans by providing global recognition, distinguishing their authentic creations from counterfeits through certification standards. It ensures equitable compensation by connecting them to fair trade opportunities and international markets. Artisans gain access to buyer line insights, fostering targeted market growth and enabling a direct link with global consumers. Through knowledge transfer programs, traditional techniques are preserved and passed on to future generations, ensuring their craft legacy endures. This initiative fosters economic empowerment and promotes artisan dignity, blending heritage with opportunity."
+        des: "The registry empowers artisans by providing global recognition, distinguishing their authentic creations from counterfeits through certification standards. It ensures equitable compensation by connecting them to fair trade opportunities and international markets. Artisans gain access to buyer line insights, fostering targeted market growth and enabling a direct link with global consumers. Through knowledge transfer programs, traditional techniques are preserved and passed on to future generations, ensuring their craft legacy endures. This initiative fosters economic empowerment and promotes artisan dignity, blending heritage with opportunity."
     },
     {
         title: "For the Institutions",
-       des:"Institutions gain a platform for cultural preservation and stewardship, safeguarding the identity of Kashmiri crafts. The registry provides data-driven insights on production trends, resource management, and socio-economic impact, enabling informed governance and policymaking. Collaborative opportunities encourage partnerships that uphold certification standards, sustainability, and fair trade practices. By aligning institutional efforts with artisan needs, the registry creates a cohesive framework for supporting the craft ecosystem while promoting innovation and equity."
+        des: "Institutions gain a platform for cultural preservation and stewardship, safeguarding the identity of Kashmiri crafts. The registry provides data-driven insights on production trends, resource management, and socio-economic impact, enabling informed governance and policymaking. Collaborative opportunities encourage partnerships that uphold certification standards, sustainability, and fair trade practices. By aligning institutional efforts with artisan needs, the registry creates a cohesive framework for supporting the craft ecosystem while promoting innovation and equity."
     },
     {
         title: "For the Industry",
-        des:"Institutions gain a platform for cultural preservation and stewardship, safeguarding the identity of Kashmiri crafts. The registry provides data-driven insights on production trends, resource management, and socio-economic impact, enabling informed governance and policymaking. Collaborative opportunities encourage partnerships that uphold certification standards, sustainability, and fair trade practices. By aligning institutional efforts with artisan needs, the registry creates a cohesive framework for supporting the craft ecosystem while promoting innovation and equity."
+        des: "Institutions gain a platform for cultural preservation and stewardship, safeguarding the identity of Kashmiri crafts. The registry provides data-driven insights on production trends, resource management, and socio-economic impact, enabling informed governance and policymaking. Collaborative opportunities encourage partnerships that uphold certification standards, sustainability, and fair trade practices. By aligning institutional efforts with artisan needs, the registry creates a cohesive framework for supporting the craft ecosystem while promoting innovation and equity."
     }
 ];
 
+export const GIFEATURES = [
+    {
+        title: "SFAL: The Pinnacle of Advanced GI Security",
+        des: "The Secure Fusion Authentication Label (SFAL) represents the highest standard in safeguarding GI-certified products like Kashmiri shawls. Combining cutting-edge technologies, SFAL offers unmatched product authenticity, integrity, and traceability. By integrating RFID, NFC, AI-powered image recognition, DNA tagging, nanotechnology, and IoT sensors, SFAL forms a multi-layered security framework, making it nearly impossible for counterfeiters to replicate or forge. Its seamless blend of visible and invisible features ensures that each product’s journey, from artisan to market, remains fully secure. SFAL not only protects authenticity but revolutionizes the GI certification process, setting a global benchmark in craft security technology."
+    },
+    {
+        title: "Unique Identification and Real-Time Supply Chain Tracking",
+        des: "At the core of SFAL's security is the eight-digit Alpha-Numerical Code, a visible yet randomly generated identifier that allows for instant verification. This powerful tool offers artisans, buyers, and inspectors a simple but highly secure method to confirm GI authenticity. Further elevating security, RFID and NFC tags ensure seamless real-time tracking across the product lifecycle. While RFID tags monitor the product’s movement along the supply chain, NFC tags enable consumers to tap their smartphones and access real-time product history. Together, these technologies provide uncompromised tracking and verification, ensuring every product stays true to its GI certification."
+    },
+    {
+        title: "Invisible Protection with Nanotechnology and DNA Tagging",
+        des: "To further elevate security, SFAL incorporates nanotechnology and DNA tagging for invisible yet robust protection. Nano-tangent particles, embedded within the label, are invisible to the naked eye but detectable under infrared light, forming an unreplicable layer of covert security. These particles ensure that no counterfeit attempt goes undetected. Moreover, DNA tagging offers molecular-level security by embedding unique DNA markers directly into the product’s raw materials, such as wool. This innovation guarantees that even the material origin can be authenticated, making SFAL a true powerhouse of advanced security, safeguarding both the product and its heritage."
+    },
+    {
+        title: "AI-Powered Authentication and Consumer Transparency",
+        des: "SFAL leverages AI-powered image recognition and infrared/ultraviolet light detection for tamper-resistant, automated product authentication. AI instantly scans and verifies holographic and overt security features, identifying any signs of tampering. Simultaneously, infrared and UV light detection reveal covert marks, such as “100% Handmade” or “GI Registered,” offering additional layers of protection. The integration of holographic labels and QR codes not only enhances security but also engages consumers. Scanning the QR code provides instant access to the product’s GI certification details, fostering trust and transparency, while ensuring that every Kashmiri craft is unmistakably authentic and traceable."
+    }
+];
 
+export const GIBENEFITS = [
+    {
+        title: 'For Buyer',
+        sub: [
+            { title: 'Guaranteed Authenticity', des: 'Blockchain-backed GI certification ensures the product’s authenticity, connecting consumers directly with artisans.' },
+            { title: 'Informed Choices', des: 'Buyers access detailed information about product origins, promoting conscious and responsible purchasing decisions.' },
+            { title: 'Exclusive Access', des: 'GI-certified products provide buyers with unique, culturally significant crafts that are unavailable in mass markets.' },
+            { title: 'Long-Term Trust', des: 'Transparent traceability builds trust, assuring buyers they are investing in genuine, high-quality Kashmiri products.' },
+        ]
+    },
+    {
+        title: 'For Artisan', sub: [
+            { title: 'Fair Recognition', des: 'GI certification links artisans to their craft, protecting their intellectual property and ensuring recognition.' },
+            { title: 'Global Market Access', des: 'Artisans gain access to international buyers who value authentic, high-quality, and unique Kashmiri crafts.' },
+            { title: 'Higher Revenue', des: "GI-certified products fetch premium prices, increasing artisans' earnings while supporting their cultural heritage." },
+            { title: 'Empowerment', des: "Access to modern technology strengthens artisans' business skills, enabling global competition with greater efficiency." },
+        ]
+    },
+    {
+        title: 'For the Industry', sub: [
+            { title: 'Brand Differentiation', des: 'GI certification establishes industry credibility, distinguishing authentic brands from counterfeit products in global markets.' },
+            { title: 'Market Expansion', des: 'Certified products attract eco-conscious consumers, enabling businesses to access wider markets and new customers.' },
+            { title: 'Regulatory Compliance', des: 'Aligns businesses with international standards, ensuring compliance with GI and environmental regulations for global trade.' },
+            { title: 'Sustainability Practices', des: 'Promotes eco-friendly production, positioning businesses as leaders in responsible and sustainable manufacturing practices.' },
+        ]
+    },
+    {
+        title: 'For the Environment', sub: [
+            { title: 'Eco-Friendly Production', des: 'The registry promotes sustainable craft practices that help reduce the overall carbon footprint in manufacturing.' },
+            { title: 'Biodiversity Protection', des: 'Sustainable materials sourcing helps preserve natural habitats and ecosystems, protecting wildlife and biodiversity.' },
+            { title: 'Resource Conservation', des: 'Encourages the efficient use of materials and energy, helping preserve precious natural resources for future generations.' },
+            { title: 'Carbon Reduction', des: 'Promotes processes that reduce greenhouse gas emissions, contributing to a cleaner, more sustainable environment.' },
+        ]
+    },
+]

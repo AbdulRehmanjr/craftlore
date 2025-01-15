@@ -6,6 +6,7 @@ import { BlockApiGuide } from "~/components/craft-repository/blockchain/api-guid
 import { type Metadata } from "next";
 import { Banner } from "~/components/general/landing/banner";
 import { BLOCKBANNER } from "~/constants/banner";
+import { Container } from "~/components/common/container";
 
 export const metadata: Metadata = {
   title: "CRAFTLORE | Blockchain",
@@ -22,7 +23,7 @@ export default function BlockChainPage() {
     <>
       <Banner banner={BLOCKBANNER} />
       <section className="relative col-span-12 -mt-16">
-        <div className="mx-6 flex gap-10 lg:container">
+        <Container className="flex flex-wrap justify-center gap-10">
           <div className="grid h-[183px] w-72 place-content-center border-4 border-white bg-secondary p-10 text-center text-white">
             <h1 className="whitespace-pre-line font-montserrat text-xl font-bold">
               Block Chain Traceability Registry
@@ -61,22 +62,20 @@ export default function BlockChainPage() {
               Certified Excellence.
             </p>
           </div>
-        </div>
-        <div className="mx-6 mt-6 grid gap-32 lg:container">
-          <div className="lg:container">
-            <BlockchainHome />
-          </div>
-        </div>
+        </Container>
+        <Container className="mt-6 grid gap-32">
+          <BlockchainHome />
+        </Container>
         <div className="bg-[#e5edf7]">
-          <div className="mx-6 lg:container">
+          <Container>
             <BlockFeatures />
-          </div>
+          </Container>
         </div>
-        <div className="mx-6 lg:container">
+        <Container>
           <BlockApiGuide />
-        </div>
+        </Container>
         <div className="bg-[#e5edf7]">
-          <div className="mx-6 space-y-[6rem] pt-[5rem] lg:container">
+          <Container className="space-y-[6rem] pt-[5rem]">
             <h2 className="text-center font-montserrat text-xl text-secondary">
               Ensure Authenticity, Empower Artisans
             </h2>
@@ -86,7 +85,7 @@ export default function BlockChainPage() {
             </h2>
             <Counter counterValues={counter} />
             <BottomBanner />
-          </div>
+          </Container>
         </div>
       </section>
     </>
