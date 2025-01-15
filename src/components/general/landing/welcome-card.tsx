@@ -21,7 +21,7 @@ export const WelcomeCard = () => {
           text={TYPETEXT}
           className="mb-[17px] text-center font-montserrat text-sm font-extrabold text-secondary"
         />
-        <p className="px-4 text-justify font-opensans text-sm lg:text-xl">
+        <p className="px-4 font-opensans text-sm lg:text-xl">
           We are the driving force behind CraftLore, bringing together the
           expertise of a diverse group of professionals—
           <strong>
@@ -59,7 +59,7 @@ export const WelcomeCard = () => {
           Eliminating Middleman, Empowering Artisans/ Buyers
         </h6>
         <br />
-        <p className="font-opnsans px-4 text-justify text-base group-hover:text-white lg:text-2xl">
+        <p className="font-opnsans px-4  text-base group-hover:text-white lg:text-2xl">
           CraftLore is a cutting-edge, <b>Non-Commercial</b> digital platform
           engineered for the in-depth analysis of Kashmir&apos;s<b> 700+</b>{" "}
           year craft heritage. By seamlessly blending historical, artistic, and
@@ -69,29 +69,29 @@ export const WelcomeCard = () => {
           <br />
         </p>
         <ul className="list-inside list-disc space-y-4 pb-6 text-base group-hover:text-white lg:text-2xl [&_li]:px-4">
-          <li className="text-justify">
+          <li className="">
             CraftLore uses advanced <b>Geo-Certification protocols</b> to ensure
             precise geospatial verification of craft origins, delivering
             unmatched accuracy in counterfeit prevention.
           </li>
-          <li className="text-justify">
+          <li className="">
             Our <b>Craft Profile Registry</b> stands as a dynamic digital
             powerhouse, delivering in-depth insights into the origins,
             techniques, & materials of authentic Kashmiri crafts, empowering
             instant recognition of imitations and safeguarding heritage with
             precision.
           </li>
-          <li className="text-justify">
+          <li className="">
             We track the <b>Carbon Footprint</b> of each craft, enabling
             artisans to embrace sustainable practices and empowering consumers
             to choose eco-friendly products, collectively reducing impact.
           </li>
-          <li className="text-justify">
+          <li className="">
             CraftLore offers an <b>Immutable Blockchain Record</b> of every
             craft’s journey, guaranteeing authenticity, preventing counterfeits,
             and ensuring sustainability, empowering consumers with confidence.
           </li>
-          <li className="text-justify">
+          <li className="">
             Our <b>Valuation Tool-Calculator</b> delivers fair,{" "}
             <b>Dynamic Data-Driven Pricing</b> for authentic Kashmiri crafts,
             providing accurate pricing for buyers and fair compensation for
