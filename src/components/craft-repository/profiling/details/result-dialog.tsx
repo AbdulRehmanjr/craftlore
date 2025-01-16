@@ -83,6 +83,7 @@ export const QuizResultDialog = ({
             completed: false,
           });
         }
+        onOpenChange(false);
       }
     },
   });

@@ -33,6 +33,7 @@ type QuizCardProps = {
 export const QuizCard = ({ questions, sectionId }: QuizCardProps) => {
   const { sections } = useOpen();
   const { answers, setAnswer, clearAnswers } = useQuiz();
+  const [show, setShow] = useState<boolean>(false);
   const [resultDialog, setResultDialog] = useState<{
     isOpen: boolean;
     data: { success: boolean; message: string } | null;
@@ -47,8 +48,11 @@ export const QuizCard = ({ questions, sectionId }: QuizCardProps) => {
         isOpen: true,
         data,
       });
+      setShow(() => true);
+      clearAnswers();
     },
     onError: (error) => {
+      clearAnswers();
       setResultDialog({
         isOpen: true,
         data: { success: false, message: error.message },
@@ -74,7 +78,6 @@ export const QuizCard = ({ questions, sectionId }: QuizCardProps) => {
         selectedOption: answer.selectedOption,
       })),
     });
-    clearAnswers();
   };
 
   const handleOptionChange = (quizId: string, value: string) => {
@@ -191,35 +194,52 @@ export const QuizCard = ({ questions, sectionId }: QuizCardProps) => {
           </Card>
         ))}
       </div>
-      <Card className="border-t-4 border-t-primary">
-        <CardContent className="p-4 sm:p-6">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
-            <div className="space-y-1">
-              <h3 className="text-lg font-medium">Ready to submit?</h3>
-              <p className="text-sm text-muted-foreground">
-                You&apos;ve answered {answers.length} out of {questions.length}{" "}
-                questions
-              </p>
-            </div>
-            <Button
-              onClick={handleSubmit}
-              disabled={
-                submitMutation.isPending || answers.length !== questions.length
-              }
-              className="w-full sm:w-auto sm:min-w-[120px]"
-            >
-              {submitMutation.isPending ? (
-                <div className="flex items-center justify-center gap-2">
-                  <Loader2 className="h-4 w-4 animate-spin" />
-                  <span>Checking...</span>
-                </div>
+      {questions.length != 0 && (
+        <Card className="border-t-4 border-t-primary">
+          <CardContent className="p-4 sm:p-6">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+              <div className="space-y-1">
+                <h3 className="text-lg font-medium">Ready to submit?</h3>
+                <p className="text-sm text-muted-foreground">
+                  You&apos;ve answered {answers.length} out of{" "}
+                  {questions.length} questions
+                </p>
+              </div>
+
+              {show && resultDialog.data?.success ? (
+                <Button
+                  type="button"
+                  onClick={() => {
+                    setResultDialog((prev) => ({ ...prev, isOpen: true }));
+                  }}
+                  className="w-full sm:w-auto sm:min-w-[120px]"
+                >
+                  Dicount
+                </Button>
               ) : (
-                "Submit Quiz"
+                <Button
+                  type="button"
+                  onClick={handleSubmit}
+                  disabled={
+                    submitMutation.isPending ||
+                    answers.length !== questions.length
+                  }
+                  className="w-full sm:w-auto sm:min-w-[120px]"
+                >
+                  {submitMutation.isPending ? (
+                    <div className="flex items-center justify-center gap-2">
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                      <span>Checking...</span>
+                    </div>
+                  ) : (
+                    "Submit Quiz"
+                  )}
+                </Button>
               )}
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
+            </div>
+          </CardContent>
+        </Card>
+      )}
       <QuizResultDialog
         isOpen={resultDialog.isOpen}
         onOpenChange={(open) =>
