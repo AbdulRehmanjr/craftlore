@@ -43,6 +43,7 @@ type DiscountFormValues = z.infer<typeof discountFormSchema>;
 interface QuizResultDialogProps {
   isOpen: boolean;
   onOpenChange: (open: boolean) => void;
+  onValidationComplete: () => void;
   data?: {
     success: boolean;
     message: string;
@@ -52,13 +53,15 @@ interface QuizResultDialogProps {
 export const QuizResultDialog = ({
   isOpen,
   onOpenChange,
+  onValidationComplete,
   data,
 }: QuizResultDialogProps) => {
   const [copied, setCopied] = useState(false);
   const [showEmailForm, setShowEmailForm] = useState(false);
   const searchParams = useSearchParams();
   const currentSectionId = searchParams.get("sectionId");
-  const { setEmail, progress, setProgress, setSection } = useOpen();
+  const {  progress, setEmail, setProgress, setSection, setCode } =
+    useOpen();
   const { sectionList } = useTracker();
   const form = useForm<DiscountFormValues>({
     resolver: zodResolver(discountFormSchema),
@@ -70,20 +73,7 @@ export const QuizResultDialog = ({
       if (data.code) {
         setEmail(form.getValues("email"));
         setProgress({ completed: progress.completed + 1 });
-        setSection({
-          id: currentSectionId ?? "",
-          completed: true,
-        });
-
-        const idx = sectionList.indexOf(currentSectionId ?? "");
-        if (idx !== -1 && idx + 1 < sectionList.length) {
-          const nextSectionId = sectionList[idx + 1];
-          setSection({
-            id: nextSectionId ?? '',
-            completed: false,
-          });
-        }
-        onOpenChange(false);
+        setCode(data.code);
       }
     },
   });
@@ -102,8 +92,29 @@ export const QuizResultDialog = ({
     validateDiscount.mutate(values);
   };
 
+  const handleClose = () => {
+    if (validateDiscount.data?.code) {
+      const idx = sectionList.indexOf(currentSectionId ?? "");
+      setSection({
+        id: currentSectionId ?? "",
+        completed: true,
+      });
+
+      if (idx !== -1 && idx + 1 < sectionList.length) {
+        const nextSectionId = sectionList[idx + 1];
+        setSection({
+          id: nextSectionId ?? "",
+          completed: false,
+        });
+      }
+      onValidationComplete();
+
+    }
+    onOpenChange(false);
+  };
+
   return (
-    <Dialog open={isOpen} onOpenChange={onOpenChange}>
+    <Dialog open={isOpen} onOpenChange={handleClose}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
@@ -233,7 +244,7 @@ export const QuizResultDialog = ({
           )}
           <Button
             onClick={() => {
-              onOpenChange(false);
+              handleClose();
             }}
           >
             Close
