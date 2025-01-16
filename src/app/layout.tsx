@@ -51,7 +51,7 @@ export default function RootLayout({
     >
       <body className="flex min-h-screen flex-col">
         <Providers>
-          <Header disabled/>
+          <Header />
           <main className="flex-grow">{children}</main>
           <ScrollToTop />
           <Footer />
