@@ -9,6 +9,7 @@ import {
   Building,
   FileCheck,
   Download,
+  Cpu,
 } from "lucide-react";
 import {
   Card,
@@ -33,6 +34,7 @@ import {
   FormItem,
   FormMessage,
 } from "~/components/ui/form";
+import { formatAmount } from "~/lib/utils";
 
 const formSchema = z.object({
   productCode: z
@@ -41,7 +43,16 @@ const formSchema = z.object({
       message: "The product code must be exactly 12345",
     }),
 });
-
+const entryCodes = [
+  { title: "Raw Material", code: "RM-2024-001" },
+  { title: "Artisan Registration", code: "AR-2024-001" },
+  { title: "Certification Checkpoint", code: "CC-2024-001" },
+  { title: "Manufacturing and Finishing", code: "MF-2024-001" },
+  { title: "Distribution Tracking", code: "DT-2024-001" },
+  { title: "Logistic Tracking", code: "LT-2024-001" },
+  { title: "Carbon Footprint Tracking", code: "CF-2024-001" },
+  { title: "Consumer Authentication", code: "CA-2024-001" },
+];
 export const BlockchainForm = () => {
   const [verificationResult, setVerificationResult] =
     useState<VerificationResultProps | null>(null);
@@ -257,15 +268,15 @@ export const BlockchainForm = () => {
         },
         craftsmanPayment: {
           amount: 4500,
-          percentage: 30,
+          percentage: 60,
         },
         manufacturerProfit: {
           amount: 3000,
-          percentage: 20,
+          percentage: 10,
         },
         retailerProfit: {
           amount: 4500,
-          percentage: 30,
+          percentage: 10,
         },
       },
     };
@@ -359,7 +370,7 @@ export const BlockchainForm = () => {
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-primary">
                   <FileCheck className="h-5 w-5" />
-                  Product Material Verification
+                  Product Material Source Verification
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -592,17 +603,11 @@ export const BlockchainForm = () => {
                     <p className="text-2xl font-bold text-blue-700">
                       {verificationResult.cost.materialCost.percentage}%
                     </p>
-                    <p className="text-sm text-blue-600">
-                      ₹{verificationResult.cost.materialCost.amount}
-                    </p>
                   </div>
                   <div className="rounded-lg bg-green-50 p-4">
                     <p className="text-sm text-green-600">Craftsman Payment</p>
                     <p className="text-2xl font-bold text-green-700">
                       {verificationResult.cost.craftsmanPayment.percentage}%
-                    </p>
-                    <p className="text-sm text-green-600">
-                      ₹{verificationResult.cost.craftsmanPayment.amount}
                     </p>
                   </div>
                   <div className="rounded-lg bg-purple-50 p-4">
@@ -612,17 +617,11 @@ export const BlockchainForm = () => {
                     <p className="text-2xl font-bold text-purple-700">
                       {verificationResult.cost.manufacturerProfit.percentage}%
                     </p>
-                    <p className="text-sm text-purple-600">
-                      ₹{verificationResult.cost.manufacturerProfit.amount}
-                    </p>
                   </div>
                   <div className="rounded-lg bg-amber-50 p-4">
                     <p className="text-sm text-amber-600">Retailer Profit</p>
                     <p className="text-2xl font-bold text-amber-700">
                       {verificationResult.cost.retailerProfit.percentage}%
-                    </p>
-                    <p className="text-sm text-amber-600">
-                      ₹{verificationResult.cost.retailerProfit.amount}
                     </p>
                   </div>
                 </div>
@@ -672,7 +671,9 @@ export const BlockchainForm = () => {
                           className="grid grid-cols-3 rounded bg-gray-50 p-2"
                         >
                           <span className="text-primary">{tx.type}</span>
-                          <span className="font-medium">₹{tx.amount}</span>
+                          <span className="font-medium">
+                            ₹{formatAmount(tx.amount, "X")}
+                          </span>
                           <span className="text-sm text-secondary">
                             {tx.date}
                           </span>
@@ -687,10 +688,11 @@ export const BlockchainForm = () => {
                         <span className="text-secondary">Hourly Rate: </span>
                         <span className="font-medium">
                           ₹
-                          {
+                          {formatAmount(
                             verificationResult.paymentTracking.craftsman
-                              .wageMetrics.hourlyRate
-                          }
+                              .wageMetrics.hourlyRate,
+                            "X",
+                          )}
                         </span>
                       </div>
                     </div>
@@ -716,10 +718,11 @@ export const BlockchainForm = () => {
                       <p className="text-sm text-secondary">Total Amount</p>
                       <p className="font-medium">
                         ₹
-                        {
+                        {formatAmount(
                           verificationResult.paymentTracking.marketTransaction
-                            .productPrice
-                        }
+                            .productPrice,
+                          "X",
+                        )}
                       </p>
                     </div>
                   </div>
@@ -732,7 +735,9 @@ export const BlockchainForm = () => {
                           className="grid grid-cols-3 gap-10 bg-gray-50 p-2"
                         >
                           <p className="text-primary">{payment.stage}</p>
-                          <p className="font-medium">₹{payment.amount}</p>
+                          <p className="font-medium">
+                            ₹{formatAmount(payment.amount, "X")}
+                          </p>
                           <Badge variant="outline" className="w-fit">
                             {payment.status}
                           </Badge>
@@ -790,6 +795,28 @@ export const BlockchainForm = () => {
                     available.
                   </AlertDescription>
                 </Alert>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2 text-primary">
+                  <Cpu className="h-5 w-5" />
+                  Kashmir Handicrafts Block Chain Entry Code 
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="grid gap-4 md:grid-cols-2 ">
+                  {entryCodes.map((entry, index) => (
+                    <div
+                      key={index}
+                      className="rounded-lg border bg-gray-50 p-3"
+                    >
+                      <p className="text-sm text-gray-600">{entry.title}</p>
+                      <p className="mt-1 font-mono font-medium">{entry.code}</p>
+                    </div>
+                  ))}
+                </div>
               </CardContent>
             </Card>
           </div>
