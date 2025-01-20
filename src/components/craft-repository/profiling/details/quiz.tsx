@@ -15,7 +15,6 @@ import { Button } from "~/components/ui/button";
 import { useMemo, useState } from "react";
 import { QuizResultDialog } from "~/components/craft-repository/profiling/details/result-dialog";
 import { useOpen } from "~/hooks/use-profile";
-import { useRouter } from "next/navigation";
 
 type QuizQuestion = {
   quizId: string;

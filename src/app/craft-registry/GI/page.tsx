@@ -47,12 +47,12 @@ export default function CraftProfilingPage() {
             </p>
           </div>
         </div>
-        <div className="col-span-2 flex flex-col gap-6 rounded-lg bg-primary p-6 shadow-lg lg:col-span-1">
-          <h2 className="p-6 text-center font-montserrat text-3xl text-secondary">
-            Demand Authenticity, Reject Fake Craft
-          </h2>
-          <p className="font-montserrat text-sm text-white">
+        <div className="col-span-2 flex flex-col gap-3 rounded-lg bg-primary p-6 shadow-lg lg:col-span-1">
+          <h2 className="p-4 text-center font-montserrat text-3xl text-secondary">
             Verify Geographical Indication of Your Product
+          </h2>
+          <p className="text-center font-montserrat  text-white">
+            Demand Authenticity, Reject Fake Craft
           </p>
           <ReportingForm />
         </div>

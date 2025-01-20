@@ -6,7 +6,7 @@ export const BlockchainHome = () => {
     <div className="my-20 grid grid-cols-2 gap-4">
       <div className="col-span-2 flex flex-col gap-6 p-4 lg:col-span-1">
         <div className="relative h-[25rem] w-[25rem]">
-          <Image src="/images/BC.png" alt="co2 image" fill />
+          <Image src="/images/BC.png" alt="block chain image" fill />
         </div>
         <div className="space-y-6 [&_h3]:font-montserrat [&_h3]:text-3xl [&_h3]:text-secondary [&_p]:font-opensans [&_p]:text-xl">
           <h2 className="font-montserrat text-4xl text-primary">
