@@ -2,6 +2,7 @@ import { Book, Microscope, History } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "~/components/ui/card";
 import { SectionTracking } from "~/components/craft-repository/profiling/details/section-tracker";
 import { SectionProgress } from "~/components/craft-repository/profiling/details/progress";
+import { NavigationButton } from "./goback";
 
 export const DetailAside = () => {
   return (
@@ -9,7 +10,10 @@ export const DetailAside = () => {
       <SectionProgress />
       <Card>
         <CardHeader>
-          <CardTitle className="text-lg">Kashmir Crafts</CardTitle>
+          <div className="flex gap-1 items-center">
+            <CardTitle className="text-lg">Kashmir Crafts</CardTitle>
+            <NavigationButton />
+          </div>
         </CardHeader>
         <CardContent className="p-1">
           <SectionTracking />
