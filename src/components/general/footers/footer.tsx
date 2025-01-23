@@ -24,11 +24,11 @@ export const Footer = () => {
                 />
               </div>
               <p className="text-sm text-gray-300">
-                CraftLore is a non-commercial platform and the world’s largest
+                Craftlore is a non-commercial platform and the world’s largest
                 open craft repository focused on Kashmiri craftsmanship.
               </p>
             </div>
-            <p className="text-sm text-gray-300">
+            <p className="text-left text-sm text-gray-300">
               Led by a scientific narrative, it preserves, documents, and shares
               the rich cultural heritage of Kashmir’s artisanal traditions,
               Offering an extensive craft registry with access to over One

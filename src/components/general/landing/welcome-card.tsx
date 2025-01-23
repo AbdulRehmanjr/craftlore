@@ -19,10 +19,10 @@ export const WelcomeCard = () => {
         </h2>
         <TypedComponent
           text={TYPETEXT}
-          className="mb-[17px] text-center font-montserrat text-sm font-extrabold text-secondary"
+          className="h-[7rem] mb-[17px] text-center font-montserrat text-sm font-extrabold text-secondary"
         />
         <p className="px-4 font-opensans text-sm lg:text-xl">
-          We are the driving force behind CraftLore, bringing together the
+          We are the driving force behind Craftlore, bringing together the
           expertise of a diverse group of professionals—
           <strong>
             Ethnographers, Material Scientists, Craft Educators, Cultural
@@ -53,24 +53,24 @@ export const WelcomeCard = () => {
       </div>
       <div className="group col-span-12 rounded-lg bg-primary px-2 text-white shadow-lg lg:col-span-6">
         <h2 className="pt-8 text-center font-montserrat text-xl font-extrabold text-secondary lg:text-4xl">
-          Welcome to CraftLore
+          Welcome to Craftlore
         </h2>
         <h6 className="pb-[17px] text-center font-montserrat text-sm font-extrabold lg:text-base">
           Eliminating Middleman, Empowering Artisans/ Buyers
         </h6>
         <br />
         <p className="font-opnsans px-4  text-base group-hover:text-white lg:text-2xl">
-          CraftLore is a cutting-edge, <b>Non-Commercial</b> digital platform
+          Craftlore is a cutting-edge, <b>Non-Commercial</b> digital platform
           engineered for the in-depth analysis of Kashmir&apos;s<b> 700+</b>{" "}
           year craft heritage. By seamlessly blending historical, artistic, and
-          scientific frameworks, CraftLore sets the benchmark for authenticity
+          scientific frameworks, Craftlore sets the benchmark for authenticity
           and transparency.
           <br />
           <br />
         </p>
         <ul className="list-inside list-disc space-y-4 pb-6 text-base group-hover:text-white lg:text-2xl [&_li]:px-4">
           <li className="">
-            CraftLore uses advanced <b>Geo-Certification protocols</b> to ensure
+            Craftlore uses advanced <b>Geo-Certification protocols</b> to ensure
             precise geospatial verification of craft origins, delivering
             unmatched accuracy in counterfeit prevention.
           </li>
@@ -87,7 +87,7 @@ export const WelcomeCard = () => {
             to choose eco-friendly products, collectively reducing impact.
           </li>
           <li className="">
-            CraftLore offers an <b>Immutable Blockchain Record</b> of every
+            Craftlore offers an <b>Immutable Blockchain Record</b> of every
             craft’s journey, guaranteeing authenticity, preventing counterfeits,
             and ensuring sustainability, empowering consumers with confidence.
           </li>

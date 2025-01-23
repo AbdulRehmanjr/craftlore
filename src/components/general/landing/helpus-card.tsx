@@ -9,7 +9,7 @@ export const HelpUs = () => {
         Help Us in Our Fight
       </h4>
       <h5 className="my-3 font-montserrat text-xl">
-        CraftLore&apos;s fight to protect Kashmir&apos;s craft identity and
+        Craftlore&apos;s fight to protect Kashmir&apos;s craft identity and
         artisans&apos; livelihoods against the global dilution of our heritage,
         fueled by the legacy of the 19th century Anglicization of Kashmir name
         also known as &quot;Cashmere Conspiracy&quot; !

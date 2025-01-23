@@ -34,7 +34,7 @@ export const FounderCard = () => {
               <p>
                 In a revolutionary step toward preserving cultural heritage, we
                 have leveraged advanced technology to safeguard the rich legacy
-                of Kashmiri crafts. CraftLore has transformed into the{" "}
+                of Kashmiri crafts. Craftlore has transformed into the{" "}
                 <b>
                   World’s Largest, Most Interactive Platform for Kashmir Crafts
                 </b>
@@ -50,7 +50,7 @@ export const FounderCard = () => {
                 from <b>China and Amritsar</b> (India). These imitations tarnish
                 the authentic Kashmiri name, and we are committed to defending
                 the integrity of our artisans and their time-honored traditions.
-                Through CraftLore, we ensure every craft is verified, authentic,
+                Through Craftlore, we ensure every craft is verified, authentic,
                 and a true reflection of the cultural mastery it represents.
               </p>
             </div>
