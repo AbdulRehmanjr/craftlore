@@ -40,7 +40,7 @@ export const InfoCard = () => {
             </b>
             , and <b>Securities & Exchange Commission</b>, as well as{" "}
             <b>Local Business Registries</b>, review platforms and advanced
-            tools like <b>Brandwatch, Hootsuite, LexisNexis, Ripoff Report</b>,
+            tools like <b>Brandwatch, Hootsuite, Lexis Nexis, Ripoff Report</b>,
             and more. We arm you with the knowledge and tools to make confident,
             independent decisions, free from commercial influence and false
             narratives, allowing buyers like you to make educated, independent
