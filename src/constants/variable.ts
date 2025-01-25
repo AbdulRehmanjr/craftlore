@@ -126,6 +126,7 @@ export const MenuItems : MenuItemProps[] = [
         { title: "CAREER", href: "/about/career" },
         { title: "TEAM", href: "/about/team" },
         { title: "CONTACT US", href: "/about/contact-us" },
+        
       ],
     },
   ];
