@@ -5,7 +5,7 @@ import { RegisterForm } from "~/components/common/forms/register";
 import { Button } from "~/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 
-export const CarbonApiForm = () => {
+export const RegisterApiForm = () => {
   const [isLogin, setIsLogin] = useState<boolean>(true);
 
   return (

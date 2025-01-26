@@ -3,15 +3,10 @@ import { CostFeatures } from "~/components/craft-repository/cost-estimations/fea
 import { CostApiGuide } from "~/components/craft-repository/cost-estimations/api-guide";
 import { Counter } from "~/components/animations/counter";
 import { BottomBanner } from "~/components/general/bottom-banner";
-import { type Metadata } from "next";
-import { Banner } from "~/components/general/landing/banner";
-import { PRICEBANNER } from "~/constants/banner";
 import { Container } from "~/components/common/container";
 import { Background } from "~/components/common/background";
 
-export const metadata: Metadata = {
-  title: "CRAFTLORE | Cost estimation",
-};
+
 
 const counter = [
   { name: "Verified artisans", value: 25000 },
@@ -22,9 +17,7 @@ const counter = [
 
 export default function CostEstimatorPage() {
   return (
-    <>
-      <Banner banner={PRICEBANNER} />
-      <section className="relative -mt-16">
+    <section className="relative -mt-16">
         <Container className="flex flex-wrap justify-center gap-10">
           <div className="grid h-[183px] w-72 place-content-center border-4 border-white bg-secondary p-10 text-center text-white">
             <h1 className="whitespace-pre-line font-montserrat text-xl font-bold">
@@ -89,6 +82,5 @@ export default function CostEstimatorPage() {
           </div>
         </Background>
       </section>
-    </>
   );
 }

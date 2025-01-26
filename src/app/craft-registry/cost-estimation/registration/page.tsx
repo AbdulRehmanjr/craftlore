@@ -11,7 +11,7 @@ export default async function RegistrationPage() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid gap-2">
             <h1 className="mb-6 font-montserrat text-4xl font-bold md:text-5xl">
-              CraftLore&apos;s Carbon Footprint Registry & Estimator
+              CraftLore&apos;s Price Estimator
             </h1>
             <p className="mb-8 font-opensans text-xl opacity-90">
               Curated by the Hamadan Craft Revival Foundation, connecting

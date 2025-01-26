@@ -23,7 +23,7 @@ export const CarbonRouter = createTRPCRouter({
                 const uniqueNamesBySection = sections.map((section) => {
                     const uniqueNames = [
                         ...new Set(section.CarbonValue.map((value) => value.name))
-                    ]; // Use Set to ensure uniqueness
+                    ];
                     return {
                         sectionType: section.sectionType, 
                         uniqueNames,
