@@ -225,9 +225,17 @@ model Account {
   password  String
   role      Role     @default(ADMIN)
   createdAt DateTime @default(now())
-  udpatedAt DateTime
+  udpatedAt DateTime @updatedAt
+  ApiKey    ApiKey[]
 
   @@index([email])
+}
+
+model ApiKey {
+  keyId     String  @id @default(cuid())
+  accountId String
+  key       String  @default(cuid())
+  account   Account @relation(fields: [accountId], references: [accountId], onDelete: Cascade, onUpdate: Cascade)
 }
 
 model Category {
@@ -401,6 +409,7 @@ enum Status {
 }
 
 enum Role {
+  API
   ADMIN
   SUPERADMIN
 }

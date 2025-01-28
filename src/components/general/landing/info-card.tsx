@@ -12,7 +12,7 @@ export const InfoCard = () => {
         </h4>
         <div className="my-8 flex flex-col space-y-10">
           <p className="font-opensans text-xl">
-            <b>Your Ultimate Buyer’s Academy-CraftLore</b>, preparing you to
+            <b>Your Ultimate Buyer’s Academy-Craftlore</b>, preparing you to
             make confident, informed decisions from anywhere. We empower you
             with the insights and expertise needed to navigate the global global
             Kashmir Handicraft marketplace with precision, ensuring every
@@ -20,7 +20,7 @@ export const InfoCard = () => {
           </p>
 
           <p className="font-opensans text-xl">
-            At CraftLore, we are not mandated to sell or recommend businesses.
+            At Craftlore, we are not mandated to sell or recommend businesses.
             Our commitment lies in educating and empowering you with profound
             insights into the Kashmiri crafts industry. Our platform provides
             detailed{" "}
@@ -32,7 +32,7 @@ export const InfoCard = () => {
             transparency at every stage.
           </p>
           <p className="font-opensans text-xl">
-            CraftLore employs a robust verification system, intregrating data
+            Craftlore employs a robust verification system, intregrating data
             from trusted regulatory bodies including{" "}
             <b>
               Better Business Bureau, Trustpilot, Consumer Financial Protection
@@ -40,7 +40,7 @@ export const InfoCard = () => {
             </b>
             , and <b>Securities & Exchange Commission</b>, as well as{" "}
             <b>Local Business Registries</b>, review platforms and advanced
-            tools like <b>Brandwatch, Hootsuite, LexisNexis, Ripoff Report</b>,
+            tools like <b>Brandwatch, Hootsuite, Lexis Nexis, Ripoff Report</b>,
             and more. We arm you with the knowledge and tools to make confident,
             independent decisions, free from commercial influence and false
             narratives, allowing buyers like you to make educated, independent
@@ -50,7 +50,7 @@ export const InfoCard = () => {
           <p className="font-opensans text-xl">
             We tackle the longstanding issues of <b>Counterfeit Products</b> and{" "}
             <b>Middlemen Exploitation</b> in the Kashmiri handicraft industry.
-            CraftLore utilizes advanced technology to ensures direct connections
+            Craftlore utilizes advanced technology to ensures direct connections
             between buyers and artisans, providing traceability and verification
             for every handmade product. Together, we can eliminate middlemen and
             counterfeit traders, preserving the true essence of Kashmiri

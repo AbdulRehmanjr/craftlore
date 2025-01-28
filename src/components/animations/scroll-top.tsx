@@ -33,9 +33,10 @@ export const ScrollToTop = () => {
   return (
     <Button
       type="button"
+      variant="secondary"
       onClick={scrollToTop}
       className={cn(
-        "fixed bottom-6 right-6 rounded-full p-3 text-white shadow-lg transition-opacity duration-300 z-[100000]",
+        "fixed bottom-6 right-4 rounded-full p-3 text-white shadow-lg transition-opacity duration-300 z-[100000]",
         {
           "visible opacity-100": isVisible,
           "invisible opacity-0": !isVisible,

@@ -64,7 +64,7 @@ export const SupportNetwork = () => {
               buyers alike.
             </p>
             <p>
-              A visionary partner in anticraft marketing and cultural tourism,{" "}
+              A visionary partner in handicraft marketing and cultural tourism,{" "}
               <strong>ArtStay</strong> connects craft enthusiasts and art lovers
               from around the world, positioning Kashmiri artisans at the center
               of authentic and sustainable travel experiences. By integrating

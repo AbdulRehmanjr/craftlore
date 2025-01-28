@@ -5,19 +5,19 @@ import { Banner } from "~/components/general/landing/banner";
 import { BUSINESSBANNER } from "~/constants/banner";
 
 export const metadata: Metadata = {
-    title: 'CRAFTLORE | Registration',
+    title: 'CRAFTLORE | Listing',
     description: 'Tecch - Technology & IT Solutions Next js Template',
 };
 
-export default function RootLayout({
+export default function ListingLayout({
     children,
 }: Readonly<{ children: React.ReactNode }>) {
     return (
         <>
             <Banner banner={BUSINESSBANNER} />
-            <div className=" relative -mt-16">
+            <section className="relative -mt-16">
                 {children}
-            </div>
+            </section>
         </>
     );
 }

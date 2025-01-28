@@ -1,10 +1,159 @@
-import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
+import { createTRPCRouter, protectedProcedure, publicProcedure } from "~/server/api/trpc";
 import { z } from "zod";
 import { BusinessLevel, InstitutionType, MarketType, ListingRanks, SkillLevel } from "@prisma/client";
 import { TRPCError } from "@trpc/server";
+import { hash } from "bcrypt";
+import { TRPCClientError } from "@trpc/client";
+import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
+import { randomBytes } from "crypto";
 
 
 export const RegistrationRouter = createTRPCRouter({
+
+
+    getApiKey: protectedProcedure
+        .query(async ({ ctx }) => {
+            try {
+                return await ctx.db.apiKey.findFirst({
+                    where: {
+                        accountId: ctx.session.user.accountId,
+                    },
+                    select: {
+                        key: true
+                    }
+                })
+            } catch (error) {
+                if (error instanceof TRPCError) {
+                    console.error(error.message);
+                    throw new TRPCError({
+                        code: "INTERNAL_SERVER_ERROR",
+                        message: error.message,
+                    });
+                }
+                else if (error instanceof TRPCClientError) {
+                    console.error(error.message);
+                    throw new TRPCError({
+                        code: "INTERNAL_SERVER_ERROR",
+                        message: error.message,
+                    });
+                }
+                else if (error instanceof PrismaClientKnownRequestError) {
+                    console.error(error.message);
+                    throw new TRPCError({
+                        code: "INTERNAL_SERVER_ERROR",
+                        message: 'Email already existed',
+                    });
+                }
+                console.error(error);
+                throw new TRPCError({
+                    code: "INTERNAL_SERVER_ERROR",
+                    message: "Something went wrong.",
+                });
+            }
+        }),
+
+    generateKey: protectedProcedure
+        .mutation(async ({ ctx }) => {
+            try {
+
+                const data = await ctx.db.apiKey.findFirst({
+                    where: {
+                        accountId: ctx.session.user.accountId,
+                    },
+                })
+
+                if (data) {
+                    await ctx.db.apiKey.updateMany({
+                        where: {
+                            accountId: ctx.session.user.accountId,
+                        },
+                        data: {
+                            key: randomBytes(32).toString('hex'),
+                        }
+                    })
+                } else {
+                    await ctx.db.apiKey.create({
+                        data: {
+                            accountId: ctx.session.user.accountId,
+                            key: randomBytes(32).toString('hex'),
+                        }
+                    })
+                }
+
+            } catch (error) {
+                if (error instanceof TRPCError) {
+                    console.error(error.message);
+                    throw new TRPCError({
+                        code: "INTERNAL_SERVER_ERROR",
+                        message: error.message,
+                    });
+                }
+                else if (error instanceof TRPCClientError) {
+                    console.error(error.message);
+                    throw new TRPCError({
+                        code: "INTERNAL_SERVER_ERROR",
+                        message: error.message,
+                    });
+                }
+                else if (error instanceof PrismaClientKnownRequestError) {
+                    console.error(error.message);
+                    throw new TRPCError({
+                        code: "INTERNAL_SERVER_ERROR",
+                        message: 'Email already existed',
+                    });
+                }
+                console.error(error);
+                throw new TRPCError({
+                    code: "INTERNAL_SERVER_ERROR",
+                    message: "Something went wrong.",
+                });
+            }
+        }),
+
+    apiRegister: publicProcedure
+        .input(z.object({
+            email: z.string().email(),
+            password: z.string().min(8),
+        }))
+        .mutation(async ({ ctx, input }) => {
+            try {
+                const encryptedPassword = await hash(input.password, 10)
+                await ctx.db.account.create({
+                    data: {
+                        email: input.email,
+                        password: encryptedPassword,
+                        role: "API"
+                    }
+                })
+            } catch (error) {
+                if (error instanceof TRPCError) {
+                    console.error(error.message);
+                    throw new TRPCError({
+                        code: "INTERNAL_SERVER_ERROR",
+                        message: error.message,
+                    });
+                }
+                else if (error instanceof TRPCClientError) {
+                    console.error(error.message);
+                    throw new TRPCError({
+                        code: "INTERNAL_SERVER_ERROR",
+                        message: error.message,
+                    });
+                }
+                else if (error instanceof PrismaClientKnownRequestError) {
+                    console.error(error.message);
+                    throw new TRPCError({
+                        code: "INTERNAL_SERVER_ERROR",
+                        message: 'Email already existed',
+                    });
+                }
+                console.error(error);
+                throw new TRPCError({
+                    code: "INTERNAL_SERVER_ERROR",
+                    message: "Something went wrong.",
+                });
+            }
+        }),
 
     registerListing: publicProcedure
         .input(
@@ -58,7 +207,7 @@ export const RegistrationRouter = createTRPCRouter({
                         businessType: z.string().optional(),
                         businessSold: z.string().optional(),
                         businessEmployee: z.number().optional(),
-                        businessYear:z.number().optional(),
+                        businessYear: z.number().optional(),
                         documents: z.array(z.string()).optional(),
                     })
                     .optional(),
@@ -227,9 +376,9 @@ export const RegistrationRouter = createTRPCRouter({
                                 : BusinessLevel.None,
                             businessSold: business.businessSold ?? "none",
                             businessMarket: (Object.values(MarketType) as string[]).includes(input.market ?? "")
-                            ? (input.market as MarketType)
-                            : MarketType.None,
-                            yearOfOperation : business.businessYear,
+                                ? (input.market as MarketType)
+                                : MarketType.None,
+                            yearOfOperation: business.businessYear,
                             businessEmployee: business.businessEmployee ?? 0,
                             documents: business.documents ?? [],
                             listingCriteria: newCriteria.criteraId,

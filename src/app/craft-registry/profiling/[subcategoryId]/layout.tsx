@@ -17,11 +17,11 @@ export default function ProfileDetailLayout({
         <Sheet>
           <SheetTrigger asChild>
             <Button
-              variant="default"
+              variant="secondary"
               size="icon"
-              className="h-12 w-12 rounded-full"
+              className="animate-pulse rounded-full shadow-lg shadow-blue-500/50 transition-all duration-700 ease-in-out hover:shadow-blue-400/80"
             >
-              <Menu className="h-6 w-6" />
+              <Menu className="h-6 w-6 text-white" />
             </Button>
           </SheetTrigger>
           <SheetContent
@@ -32,7 +32,7 @@ export default function ProfileDetailLayout({
           </SheetContent>
         </Sheet>
       </div>
-      <div className="lg:col-span-2">{children}</div>
+      <div className="col-span-3 lg:col-span-2">{children}</div>
       <div className="hidden lg:block">
         <DetailAside />
       </div>

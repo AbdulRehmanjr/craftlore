@@ -45,12 +45,12 @@ export const SectionTracking = () => {
 
   return (
     <div className="sticky top-[16rem] h-fit">
-      <ScrollArea className="h-[calc(100dvh-20rem)]">
+      <ScrollArea className="max-h-[calc(100dvh-20rem)]">
         <div className="flex flex-col gap-4">
           {sectionData.data?.map((data) => {
-            const isOpen = sections.some(
-              (section) => section.id == data.craftsectionId,
-            );
+            // const isOpen = sections.some(
+            //   (section) => section.id == data.craftsectionId,
+            // );
             const isSelected = data.craftsectionId === currentSectionId;
             const baseBtnClasses = cn(
               "flex justify-start gap-2 text-xs md:text-lg font-montserrat transition-colors",
@@ -59,23 +59,23 @@ export const SectionTracking = () => {
               },
             );
 
-            if (!isOpen) {
-              return (
-                <Button
-                  key={data.craftsectionId}
-                  type="button"
-                  variant="link"
-                  className={cn(
-                    baseBtnClasses,
-                    "cursor-not-allowed opacity-50 [&_svg]:size-4 md:[&_svg]:size-6",
-                  )}
-                  disabled
-                >
-                  <Lock className="text-secondary" />
-                  <span>{data.sectionName}</span>
-                </Button>
-              );
-            }
+            // if (!isOpen) {
+            //   return (
+            //     <Button
+            //       key={data.craftsectionId}
+            //       type="button"
+            //       variant="link"
+            //       className={cn(
+            //         baseBtnClasses,
+            //         "cursor-not-allowed opacity-50 [&_svg]:size-4 md:[&_svg]:size-6",
+            //       )}
+            //       disabled
+            //     >
+            //       <Lock className="text-secondary" />
+            //       <span>{data.sectionName}</span>
+            //     </Button>
+            //   );
+            // }
 
             return (
               <Button

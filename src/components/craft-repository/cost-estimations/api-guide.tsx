@@ -91,7 +91,7 @@ export const CostApiGuide = () => {
             credibility.
           </p>
           <Button type="button" asChild>
-            <Link href={"/listing/registration"}>START NOW</Link>
+            <Link href="/craft-registry/cost-estimation/registration">START NOW</Link>
           </Button>
         </div>
       </div>

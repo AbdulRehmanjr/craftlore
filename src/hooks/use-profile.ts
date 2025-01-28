@@ -15,9 +15,11 @@ type OpenStore = {
     progress: Progress;
     sections: Section[];
     email: string;
+    code: string
     setSection: (data: Section) => void;
     setProgress: (progress: Partial<Progress>) => void;
     setEmail: (email: string) => void;
+    setCode: (code: string) => void;
 };
 
 export const useOpen = create<OpenStore>()(
@@ -28,8 +30,9 @@ export const useOpen = create<OpenStore>()(
                 completed: 0
             },
             email: '',
+            code: '',
             sections: [],
-            setSection: (data: Section) => 
+            setSection: (data: Section) =>
                 set((state) => {
                     const existingIndex = state.sections.findIndex(
                         section => section.id === data.id
@@ -44,11 +47,12 @@ export const useOpen = create<OpenStore>()(
                     }
                     return { sections: [...state.sections, data] };
                 }),
-            setProgress: (progress: Partial<Progress>) => 
-                set((state) => ({ 
-                    progress: { ...state.progress, ...progress } 
+            setProgress: (progress: Partial<Progress>) =>
+                set((state) => ({
+                    progress: { ...state.progress, ...progress }
                 })),
-            setEmail: (email: string) => set({ email })
+            setEmail: (email: string) => set({ email }),
+            setCode: (code: string) => set({ code })
         }),
         {
             name: "CL-PROFILE",

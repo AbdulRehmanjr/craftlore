@@ -12,7 +12,7 @@ export const CraftIntro = () => {
       <CardHeader>
         <CardTitle>{profile.title}</CardTitle>
       </CardHeader>
-      <CardContent className="col-span-2 grid">
+      <CardContent className="grid">
         <div className="relative mb-4 aspect-video rounded-lg">
           <Image
             src="/crafts/pashmina.jpeg"

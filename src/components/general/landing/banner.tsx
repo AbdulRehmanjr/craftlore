@@ -58,6 +58,7 @@ export const Banner = ({ banner }: ComponentProps) => {
       },
     },
     exit: {
+      opacity: 0,
       transition: {
         staggerChildren: 0.2,
         staggerDirection: -1,

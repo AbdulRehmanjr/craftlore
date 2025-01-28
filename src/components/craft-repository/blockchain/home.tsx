@@ -6,7 +6,7 @@ export const BlockchainHome = () => {
     <div className="my-20 grid grid-cols-2 gap-4">
       <div className="col-span-2 flex flex-col gap-6 p-4 lg:col-span-1">
         <div className="relative h-[25rem] w-[25rem]">
-          <Image src="/images/BC.png" alt="co2 image" fill />
+          <Image src="/images/BC.png" alt="block chain image" fill />
         </div>
         <div className="space-y-6 [&_h3]:font-montserrat [&_h3]:text-3xl [&_h3]:text-secondary [&_p]:font-opensans [&_p]:text-xl">
           <h2 className="font-montserrat text-4xl text-primary">
@@ -22,16 +22,8 @@ export const BlockchainHome = () => {
             and authenticity of Kashmiri products in real-time.
           </p>
           <h3>Craftlore Blockchain Traceability Verifier</h3>
-          <p>
-            The Blockchain Traceability Tool is an advanced platform that
-            ensures every step of the Kashmiri craft&apos;s journey—from raw
-            material sourcing to production, distribution, and final sale—is
-            securely recorded on a blockchain. This tool empowers artisans,
-            businesses, and buyers to verify the authenticity and provenance of
-            a craft, ensuring its integrity and preventing counterfeits. By
-            using blockchain technology, stakeholders can build trust, protect
-            heritage, and enhance transparency in the global marketplace.
-          </p>
+          <p>The CraftLore Kashmir Handicraft Blockchain Protocol utilizes Blockchain Technology to provide a decentralized, transparent ledger for secure transactions. Built on a robust Ethereum-based platform, it integrates smart contracts for fair trade, NFTs for authenticity verification, and IPFS for decentralized storage, ensuring seamless, traceable, and tamper-proof transactions in the Kashmir handicrafts industry.</p>
+          <p>The CraftLore Kashmir Handicraft Blockchain Protocol eliminates middlemen and reduces artisan exploitation by enabling direct transactions between artisans and buyers. Through smart contracts, artisans retain greater control over pricing, ensuring fair compensation and transparency, while blockchain guarantees authenticity and traceability of each handcrafted item</p>         
         </div>
       </div>
       <div className="col-span-2 flex flex-col gap-6 rounded-lg bg-primary p-6 shadow-lg lg:col-span-1">

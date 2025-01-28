@@ -23,7 +23,7 @@ export const RegisterCard = () => {
             journey with blockchain, we ensure every craft you encounter
             reflects true heritage and integrity. With services ranging from
             price valuation and carbon footprint assessment to empowering women
-            artisans and protecting vulnerable crafts, CraftLore is your trusted
+            artisans and protecting vulnerable crafts, Craftlore is your trusted
             source for everything related to Kashmir&apos;s rich craft
             tradition.
           </p>

@@ -38,7 +38,7 @@ export default function RegistrationPage() {
   ];
 
   return (
-    <section className="mx-6 mb-6 grid gap-10 rounded-lg bg-white py-10 shadow lg:container">
+    <div className="mx-6 mb-6 grid gap-10 rounded-lg bg-white py-10 shadow lg:container">
       {/* Hero Section with Logo */}
       <div className="bg-primary py-16 text-white rounded-lg">
         <div className="mx-auto max-w-6xl px-6">
@@ -189,6 +189,6 @@ export default function RegistrationPage() {
           </p>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

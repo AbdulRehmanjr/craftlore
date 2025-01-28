@@ -90,8 +90,10 @@ export const CarbonApiGuide = () => {
             ecosystem, fostering transparency, collaboration, and global market
             credibility.
           </p>
-          <Button type="button" asChild>
-            <Link href={"#"}>START NOW</Link>
+          <Button asChild>
+            <Link href="/craft-registry/carbon-footprint/registration">
+              START NOW
+            </Link>
           </Button>
         </div>
       </div>

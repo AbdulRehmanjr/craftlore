@@ -8,11 +8,11 @@ import {
 } from "~/components/ui/card";
 import { RadioGroup, RadioGroupItem } from "~/components/ui/radio-group";
 import { Alert, AlertDescription, AlertTitle } from "~/components/ui/alert";
-import { Gift, Trophy, Timer, Loader2 } from "lucide-react";
+import { Gift, Trophy, Timer, Loader2, Copy } from "lucide-react";
 import { useQuiz } from "~/hooks/use-quiz";
 import { api } from "~/trpc/react";
 import { Button } from "~/components/ui/button";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { QuizResultDialog } from "~/components/craft-repository/profiling/details/result-dialog";
 import { useOpen } from "~/hooks/use-profile";
 
@@ -31,14 +31,18 @@ type QuizCardProps = {
 };
 
 export const QuizCard = ({ questions, sectionId }: QuizCardProps) => {
-  const { sections } = useOpen();
+  const { sections, code } = useOpen();
   const { answers, setAnswer, clearAnswers } = useQuiz();
+
+  const [showDiscountButton, setShowDiscountButton] = useState<boolean>(false);
   const [resultDialog, setResultDialog] = useState<{
     isOpen: boolean;
     data: { success: boolean; message: string } | null;
+    validationCompleted: boolean;
   }>({
     isOpen: false,
     data: null,
+    validationCompleted: false,
   });
 
   const submitMutation = api.craft.submitQuizAnswers.useMutation({
@@ -46,13 +50,22 @@ export const QuizCard = ({ questions, sectionId }: QuizCardProps) => {
       setResultDialog({
         isOpen: true,
         data,
+        validationCompleted: false,
       });
+      setShowDiscountButton(true);
+      clearAnswers();
+      if(!data.success){
+        window.location.reload()
+      }
     },
     onError: (error) => {
+      clearAnswers();
       setResultDialog({
         isOpen: true,
         data: { success: false, message: error.message },
+        validationCompleted: false,
       });
+      window.location.reload()
     },
   });
 
@@ -64,6 +77,7 @@ export const QuizCard = ({ questions, sectionId }: QuizCardProps) => {
           success: false,
           message: "Please answer all questions before submitting.",
         },
+        validationCompleted: false,
       });
       return;
     }
@@ -74,17 +88,61 @@ export const QuizCard = ({ questions, sectionId }: QuizCardProps) => {
         selectedOption: answer.selectedOption,
       })),
     });
-    clearAnswers();
   };
+
+  const isPresent = useMemo(
+    () => sections.find((sec) => sec.id === sectionId)?.completed ?? false,
+    [sections, sectionId],
+  );
 
   const handleOptionChange = (quizId: string, value: string) => {
     setAnswer(quizId, value);
   };
 
-  const section = sections.find((sec) => sec.id === sectionId);
-  const isSectionCompleted = section?.completed ?? false;
+  const handleDialogClose = (open: boolean) => {
+    setResultDialog((prev) => ({ ...prev, isOpen: open }));
+    if (!open && resultDialog.validationCompleted) {
+      setShowDiscountButton(false);
+    }
+  };
 
-  if (isSectionCompleted) return null;
+  const handleValidationComplete = () => {
+    setResultDialog((prev) => ({ ...prev, validationCompleted: true }));
+    setShowDiscountButton(false);
+  };
+
+  const copyToClipboard = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch (err) {
+      console.error("Failed to copy:", err);
+    }
+  };
+
+  if (isPresent)
+    return (
+      <Card className="border-t-4 border-t-primary">
+        <CardContent className="p-4 sm:p-6">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+            <div className="space-y-1">
+              <h3 className="text-lg font-medium">Copy your discount code</h3>
+            </div>
+
+            <code className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold">
+              Your discount code is {code}
+            </code>
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              onClick={() => copyToClipboard(code)}
+            >
+              <Copy className="h-4 w-4" />
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
+    );
   return (
     <div className="space-y-8">
       <Card className="bg-gradient-to-br from-primary/5 to-primary/10">
@@ -160,6 +218,7 @@ export const QuizCard = ({ questions, sectionId }: QuizCardProps) => {
             </CardHeader>
             <CardContent className="p-6">
               <RadioGroup
+                key={question.quizId}
                 className="space-y-3"
                 value={
                   answers.find((a) => a.quizId === question.quizId)
@@ -191,41 +250,57 @@ export const QuizCard = ({ questions, sectionId }: QuizCardProps) => {
           </Card>
         ))}
       </div>
-      <Card className="border-t-4 border-t-primary">
-        <CardContent className="p-4 sm:p-6">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
-            <div className="space-y-1">
-              <h3 className="text-lg font-medium">Ready to submit?</h3>
-              <p className="text-sm text-muted-foreground">
-                You&apos;ve answered {answers.length} out of {questions.length}{" "}
-                questions
-              </p>
-            </div>
-            <Button
-              onClick={handleSubmit}
-              disabled={
-                submitMutation.isPending || answers.length !== questions.length
-              }
-              className="w-full sm:w-auto sm:min-w-[120px]"
-            >
-              {submitMutation.isPending ? (
-                <div className="flex items-center justify-center gap-2">
-                  <Loader2 className="h-4 w-4 animate-spin" />
-                  <span>Checking...</span>
-                </div>
+      {questions.length != 0 && (
+        <Card className="border-t-4 border-t-primary">
+          <CardContent className="p-4 sm:p-6">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+              <div className="space-y-1">
+                <h3 className="text-lg font-medium">Ready to submit?</h3>
+                <p className="text-sm text-muted-foreground">
+                  You&apos;ve answered {answers.length} out of{" "}
+                  {questions.length} questions
+                </p>
+              </div>
+
+              {showDiscountButton && resultDialog.data?.success ? (
+                <Button
+                  type="button"
+                  onClick={() => {
+                    setResultDialog((prev) => ({ ...prev, isOpen: true }));
+                  }}
+                  className="w-full sm:w-auto sm:min-w-[120px]"
+                >
+                  Validate Discount
+                </Button>
               ) : (
-                "Submit Quiz"
+                <Button
+                  type="button"
+                  onClick={handleSubmit}
+                  disabled={
+                    submitMutation.isPending ||
+                    answers.length !== questions.length
+                  }
+                  className="w-full sm:w-auto sm:min-w-[120px]"
+                >
+                  {submitMutation.isPending ? (
+                    <div className="flex items-center justify-center gap-2">
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                      <span>Checking...</span>
+                    </div>
+                  ) : (
+                    "Submit Quiz"
+                  )}
+                </Button>
               )}
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
+            </div>
+          </CardContent>
+        </Card>
+      )}
       <QuizResultDialog
         isOpen={resultDialog.isOpen}
-        onOpenChange={(open) =>
-          setResultDialog((prev) => ({ ...prev, isOpen: open }))
-        }
+        onOpenChange={handleDialogClose}
         data={resultDialog.data}
+        onValidationComplete={handleValidationComplete}
       />
     </div>
   );

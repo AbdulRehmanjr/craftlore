@@ -224,7 +224,6 @@ export const CarbonForm: React.FC = () => {
           onSubmit={form.handleSubmit(onSubmit)}
           className="grid gap-4 text-white [&_label]:text-xl"
         >
-          {/* Category Field */}
           <FormField
             control={form.control}
             name="category"
