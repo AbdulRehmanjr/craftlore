@@ -29,7 +29,7 @@ export const CraftloreComing = () => {
         return dayjs(stored);
       } else {
         // Set deadline to 13 days from now
-        const deadline = dayjs().add(13, 'day');
+        const deadline = dayjs().add(23, 'day');
         localStorage.setItem('craftloreDeadline', deadline.toISOString());
         return deadline;
       }
