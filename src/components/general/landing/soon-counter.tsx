@@ -24,13 +24,13 @@ export const CraftloreComing = () => {
   useEffect(() => {
     // Get the target date from localStorage or set it if not exists
     const getTargetDate = () => {
-      const stored = localStorage.getItem('craftloreDeadline1');
+      const stored = localStorage.getItem('deadline');
       if (stored) {
         return dayjs(stored);
       } else {
         // Set deadline to 13 days from now
-        const deadline = dayjs().add(23, 'day');
-        localStorage.setItem('craftloreDeadline1', deadline.toISOString());
+        const deadline = dayjs().add(10, 'day');
+        localStorage.setItem('deadline', deadline.toISOString());
         return deadline;
       }
     };
