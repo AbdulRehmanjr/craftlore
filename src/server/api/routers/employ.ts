@@ -7,9 +7,7 @@ export const EmployRouter = createTRPCRouter({
     getEmployees: publicProcedure
         .query(async ({ ctx }) => {
             try {
-               const data = await ctx.db.employ.findMany()
-
-               return data
+               return  await ctx.db.employ.findMany()
             } catch (error) {
 
                 if(error instanceof TRPCClientError){
