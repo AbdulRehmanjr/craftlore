@@ -21,6 +21,7 @@ type Employ = {
     fullName: string;
     skills: string;
     contribution: string;
+    organization:string
 };
 
 type User = {

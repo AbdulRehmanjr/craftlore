@@ -22,6 +22,7 @@ model Employ {
   fullName     String @default("none")
   skills       String @default("none")
   contribution String @default("none")
+  organization String @default("none")
 }
 
 model User {
