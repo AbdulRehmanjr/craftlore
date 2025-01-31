@@ -236,7 +236,7 @@ model ApiKey {
   keyId     String  @id @default(cuid())
   accountId String
   key       String  @default(cuid())
-  account   Account @relation(fields: [accountId], references: [accountId], onDelete: Cascade, onUpdate: Cascade)
+  account   Account @relation(fields: [accountId], references: [accountId], onDelete: Cascade)
 }
 
 model Category {
@@ -410,9 +410,9 @@ enum Status {
 }
 
 enum Role {
-  API
   ADMIN
   SUPERADMIN
+  API
 }
 
 enum ListingRanks {
