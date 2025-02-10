@@ -25,6 +25,7 @@ export const GIListing = () => {
             key={index}
             variant={value == list.title ? "default" : "outline"}
             onClick={() => setValue(list.title)}
+            className="hover:bg-primary hover:text-white"
           >
             {list.title}
           </Button>
