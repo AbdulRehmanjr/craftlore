@@ -99,7 +99,7 @@ export const Footer = () => {
               <FooterLink href="/about/team" text="Our Team" />
               <FooterLink href="/about/career" text="Careers" />
               <FooterLink href="/about/contact-us" text="Contact Us" />
-              <FooterLink href="/about/sponsor" text="Become a Sponsor" />
+              <FooterLink href="/sponsorship" text="Become a Sponsor" />
             </ul>
           </div>
         </div>
@@ -169,7 +169,7 @@ const SocialLink = ({
 const FooterLink = ({ href, text }: { href: string; text: string }) => (
   <li>
     <Link
-      href={href}
+      href={"#"}
       className="text-sm text-gray-300 transition-colors hover:text-secondary"
     >
       {text}
