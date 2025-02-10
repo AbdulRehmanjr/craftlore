@@ -22,8 +22,8 @@ export const TeamList = async () => {
                   <h2 className="font-montserrat text-xl font-extrabold text-gray-800 group-hover:text-white">
                     {employ.fullName}
                   </h2>
-                  <p className="font-opensans text-gray-500 group-hover:text-white">
-                    {employ.organization}
+                  <p className="font-opensans text-gray-500 group-hover:text-white mt-3">
+                    <span className="font-bold text-gray-950 mr-1 group-hover:text-white">Deputed Organization :</span>{employ.organization}
                   </p>
                 </div>
                 <div className="space-y-2 font-opensans text-sm">
