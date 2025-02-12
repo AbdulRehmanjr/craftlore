@@ -136,6 +136,7 @@ export const Footer = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex flex-col items-center justify-between space-y-2 text-sm text-gray-300 md:flex-row md:space-y-0">
             <p>© {new Date().getFullYear()} Craftlore. All rights reserved.</p>
+            <p className="text-xs">Powered and Maintained by Prime Logic Solutions USA</p>
             <div className="flex space-x-4">
               <Link href="/terms" className="hover:text-white">
                 Terms
