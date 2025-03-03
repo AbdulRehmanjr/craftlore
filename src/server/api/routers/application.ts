@@ -42,5 +42,7 @@ export const ApplicationRouter = createTRPCRouter({
                     message:'Something went wrong'
                 })
             }
-        })
+        }),
+
+         
 });

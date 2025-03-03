@@ -73,8 +73,8 @@ export const CareerForm = () => {
     });
   };
   return (
-    <section className="col-span-12 gap-4 bg-[#e5edf7]">
-      <Container className="mb-32 lg:container">
+    <section className="col-span-12 bg-[#e5edf7]">
+      <Container className="py-8">
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(formSubmission)}

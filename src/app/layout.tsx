@@ -29,17 +29,6 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: "CRAFTLORE",
   description: "Tecch - Technology & IT Solutions Next js Template",
-  metadataBase: new URL("https://next-learn-dashboard.vercel.sh"),
-  icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/favicon-96x96.png", type: "image/png", sizes: "96x96" },
-      { url: "/favicon.svg", type: "image/svg+xml" },
-    ],
-    shortcut: [{ url: "/favicon.ico" }],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
-  },
-  manifest: "/site.webmanifest",
 };
 export default function RootLayout({
   children,
@@ -51,7 +40,7 @@ export default function RootLayout({
     >
       <body className="flex min-h-screen flex-col">
         <Providers>
-          <Header  disabled/>
+          <Header disabled/>
           <main className="flex-grow">{children}</main>
           <ScrollToTop />
           <Footer />

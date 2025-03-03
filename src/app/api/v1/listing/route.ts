@@ -6,7 +6,7 @@ import { z } from 'zod';
 import { db } from '~/server/db'
 import { BusinessLevel, InstitutionType, MarketType, type ListingRanks, SkillLevel } from "@prisma/client";
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 const requestSchema = z.object({
     user: z.object({
         fullName: z.string(),

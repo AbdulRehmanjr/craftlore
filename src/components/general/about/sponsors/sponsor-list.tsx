@@ -3,8 +3,8 @@ import { SPONSORS } from "~/constants/data";
 
 export const SponsorList = () => {
   return (
-    <section className="col-span-12 gap-4 bg-[#e5edf7]">
-      <Container className="mb-32 grid gap-7 rounded-md bg-white px-6 py-8 shadow-md lg:container">
+    <section className="col-span-12bg-[#e5edf7]">
+      <Container className="grid gap-7 rounded-md bg-white px-6 py-8 shadow-md">
         <h1 className="font-montserrat text-5xl text-primary">
           Craftlore Sponsor
         </h1>

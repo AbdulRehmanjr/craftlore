@@ -22,20 +22,10 @@ export const CraftloreComing = () => {
   });
 
   useEffect(() => {
-    // Get the target date from localStorage or set it if not exists
-    const getTargetDate = () => {
-      const stored = localStorage.getItem('deadline');
-      if (stored) {
-        return dayjs(stored);
-      } else {
-        // Set deadline to 13 days from now
-        const deadline = dayjs().add(10, 'day');
-        localStorage.setItem('deadline', deadline.toISOString());
-        return deadline;
-      }
-    };
-
-    const targetDate = getTargetDate();
+    // Create a fixed date that's exactly 10 days from March 3, 2025
+    // This ensures the countdown is consistent and doesn't reset on refresh
+    const fixedStartDate = dayjs('2025-03-03');
+    const targetDate = fixedStartDate.add(10, 'day');
 
     function updateTimer() {
       const now = dayjs();

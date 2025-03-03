@@ -6,7 +6,6 @@ import { BUSINESSBANNER } from "~/constants/banner";
 
 export const metadata: Metadata = {
     title: 'CRAFTLORE | Listing',
-    description: 'Tecch - Technology & IT Solutions Next js Template',
 };
 
 export default function ListingLayout({

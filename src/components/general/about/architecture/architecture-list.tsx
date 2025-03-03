@@ -3,8 +3,8 @@ import { ARCHITECTURE } from "~/constants/data";
 
 export const ArchitectureList = () => {
   return (
-    <section className="col-span-12 gap-4 bg-[#e5edf7]">
-      <Container className="my-32 grid gap-7 lg:container">
+    <section className="col-span-12 bg-[#e5edf7]">
+      <Container className="grid py-32 gap-7">
         <h1 className="font-montserrat text-5xl text-primary">
           Craftlore Architecture
         </h1>

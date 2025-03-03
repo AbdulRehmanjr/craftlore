@@ -3,8 +3,8 @@ import { INDIAORGANIZATIONS } from "~/constants/data";
 
 export const IndiaList = () => {
   return (
-    <section className="col-span-12 gap-4 bg-[#e5edf7]">
-      <Container className="mb-32 grid gap-7 px-6 py-8 lg:container">
+    <section className="col-span-12  bg-[#e5edf7]">
+      <Container className="py-32 grid gap-7 px-6">
         <h1 className="font-montserrat text-5xl text-primary">
           Craftlore India Network
         </h1>

@@ -19,8 +19,8 @@ export const CareerList = () => {
   });
 
   return (
-    <section className="col-span-12 gap-4 bg-[#e5edf7]">
-      <Container className="mb-20 grid gap-7 py-8 lg:container">
+    <section className="col-span-12 bg-[#e5edf7]">
+      <Container className="grid gap-7 py-8">
         <h1 className="font-montserrat text-5xl text-primary">
           Craftlore Openings
         </h1>
