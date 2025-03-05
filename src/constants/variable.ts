@@ -29,7 +29,7 @@ export const MenuItems : MenuItemProps[] = [
           href: "/craft-registry/carbon-footprint",
         },
         {
-          title: "CRAFT PRICE ESITMATOR",
+          title: "CRAFT APPRAISAL TOOL",
           href: "/craft-registry/cost-estimation",
         },
         {

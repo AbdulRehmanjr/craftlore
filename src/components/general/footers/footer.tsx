@@ -114,7 +114,7 @@ export const Footer = () => {
                 Kashmir&apos;s craft heritage.
               </p>
             </div>
-            <form className="flex gap-4">
+            <form className="flex md:flex-row flex-col gap-4">
               <input
                 type="email"
                 placeholder="Email Address"

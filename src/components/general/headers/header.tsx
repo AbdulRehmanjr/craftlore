@@ -28,7 +28,6 @@ import {
 import { cn } from "~/lib/utils";
 import { MenuItems } from "~/constants/variable";
 
-
 interface HeaderProps {
   disabled?: boolean;
 }
@@ -39,17 +38,13 @@ interface SubMenuItem {
   submenu?: SubMenuItem[];
 }
 
-function getLinkProps(
-  href: string,
-  disabled?: boolean,
-  baseClass?: string,
-) {
+function getLinkProps(href: string, disabled?: boolean, baseClass?: string) {
   return {
     href: disabled ? "#" : href,
     onClick: disabled ? (e: React.MouseEvent) => e.preventDefault() : undefined,
     className: cn(
       baseClass,
-      disabled && "cursor-not-allowed pointer-events-none text-gray-400"
+      disabled && "cursor-not-allowed pointer-events-none text-gray-400",
     ),
   };
 }
@@ -69,7 +64,7 @@ export const Header: FC<HeaderProps> = ({ disabled = false }) => {
   }, []);
 
   const SubMenu = ({ items }: { items: SubMenuItem[] }) => (
-    <div className="absolute left-1/2 top-full z-20 -translate-x-1/2 border-t-2 border-secondary bg-white invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 lg:min-w-[150px] xl:min-w-[200px]">
+    <div className="invisible absolute left-1/2 top-full z-20 -translate-x-1/2 border-t-2 border-secondary bg-white opacity-0 transition-all duration-300 group-hover:visible group-hover:opacity-100 lg:min-w-[150px] xl:min-w-[200px]">
       <ul className="w-full">
         {items.map((item, index) => (
           <li key={index} className="group/nested relative border-b">
@@ -77,14 +72,14 @@ export const Header: FC<HeaderProps> = ({ disabled = false }) => {
               {...getLinkProps(
                 item.href,
                 disabled,
-                "flex h-full w-full items-center justify-between px-4 py-2 text-primary hover:bg-secondary/80 hover:text-white lg:text-xs xl:text-sm 2xl:text-base"
+                "flex h-full w-full items-center justify-between px-4 py-2 text-primary hover:bg-secondary/80 hover:text-white lg:text-xs xl:text-sm 2xl:text-base",
               )}
             >
               {item.title}
               {item.submenu && <FaChevronRight size={10} />}
             </Link>
             {item.submenu && (
-              <div className="absolute top-0 z-30 border-t-2 border-secondary bg-white invisible opacity-0 group-hover/nested:visible group-hover/nested:opacity-100 transition-all duration-300 lg:min-w-[150px] xl:min-w-[200px] lg:right-full 2xl:right-full">
+              <div className="invisible absolute top-0 z-30 border-t-2 border-secondary bg-white opacity-0 transition-all duration-300 group-hover/nested:visible group-hover/nested:opacity-100 lg:right-full lg:min-w-[150px] xl:min-w-[200px] 2xl:right-full">
                 <ul className="w-full">
                   {item.submenu.map((subItem, subIndex) => (
                     <li key={subIndex} className="border-b">
@@ -92,7 +87,7 @@ export const Header: FC<HeaderProps> = ({ disabled = false }) => {
                         {...getLinkProps(
                           subItem.href,
                           disabled,
-                          "block h-full w-full px-4 py-2 text-primary hover:bg-secondary/80 hover:text-white lg:text-xs xl:text-sm 2xl:text-base"
+                          "block h-full w-full px-4 py-2 text-primary hover:bg-secondary/80 hover:text-white lg:text-xs xl:text-sm 2xl:text-base",
                         )}
                       >
                         {subItem.title}
@@ -108,131 +103,156 @@ export const Header: FC<HeaderProps> = ({ disabled = false }) => {
     </div>
   );
 
- // Mobile nested submenu component
-const MobileNestedMenu = ({ items, level = 1 }: { items: SubMenuItem[], level?: number }) => (
-  <ul className="w-full">
-    {items.map((item, index) => (
-      <li key={index} className="py-1">
-        {item.submenu ? (
-          <div className="w-full">
-            {/* Direct link for parent items */}
-            {item.href !== "#" && (
-              <Link
-                {...getLinkProps(
-                  item.href,
-                  disabled,
-                  cn(
-                    "block text-sm text-gray-700 hover:text-secondary py-1 border-b",
-                    level === 1 && "font-medium"
-                  )
-                )}
-              >
-                {item.title}
-              </Link>
-            )}
-            
-            {/* Collapsible for submenu */}
-            <Collapsible className="w-full mt-1">
-              <CollapsibleTrigger className="flex w-full items-center justify-between text-left">
-                <div className={cn(
-                  "text-sm text-gray-700 hover:text-secondary py-1 flex items-center justify-between w-full",
-                  level === 1 && "font-medium"
-                )}>
-                  <span>{item.href === "#" ? item.title : "More in " + item.title}</span>
-                  <span className="inline-flex items-center">
-                    <FaChevronDown className="transition-transform" size={10} />
-                  </span>
-                </div>
-              </CollapsibleTrigger>
-              <CollapsibleContent className="mt-2">
-                <ul className="w-full">
-                  {item.submenu.map((subItem, subIndex) => (
-                    <li key={subIndex} className="py-1">
-                      {subItem.submenu ? (
-                        <div className="w-full">
-                          {/* Direct link for submenu items */}
-                          {subItem.href !== "#" && (
-                            <Link
-                              {...getLinkProps(
-                                subItem.href,
-                                disabled,
-                                "block text-sm text-gray-700 hover:text-secondary py-1 border-b"
-                              )}
-                            >
-                              {subItem.title}
-                            </Link>
-                          )}
-                          
-                          {/* Collapsible for nested submenu */}
-                          <Collapsible className="w-full mt-1">
-                            <CollapsibleTrigger className="flex w-full items-center justify-between text-left">
-                              <div className="text-sm text-gray-700 hover:text-secondary py-1 flex items-center justify-between w-full">
-                                <span>{subItem.href === "#" ? subItem.title : "More in " + subItem.title}</span>
-                                <span className="inline-flex items-center">
-                                  <FaChevronDown className="transition-transform" size={10} />
-                                </span>
-                              </div>
-                            </CollapsibleTrigger>
-                            <CollapsibleContent className="mt-2">
-                              <ul className="w-full">
-                                {subItem.submenu.map((grandChild, grandChildIndex) => (
-                                  <li key={grandChildIndex} className="py-1">
-                                    <Link
-                                      {...getLinkProps(
-                                        grandChild.href,
-                                        disabled,
-                                        "block text-sm text-gray-700 hover:text-secondary py-1"
-                                      )}
-                                    >
-                                      {grandChild.title}
-                                    </Link>
-                                  </li>
-                                ))}
-                              </ul>
-                            </CollapsibleContent>
-                          </Collapsible>
-                        </div>
-                      ) : (
-                        <Link
-                          {...getLinkProps(
-                            subItem.href,
-                            disabled,
-                            "block text-sm text-gray-700 hover:text-secondary py-1"
-                          )}
-                        >
-                          {subItem.title}
-                        </Link>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </CollapsibleContent>
-            </Collapsible>
-          </div>
-        ) : (
-          <Link
-            {...getLinkProps(
-              item.href,
-              disabled,
-              cn(
-                "block text-sm text-gray-700 hover:text-secondary py-1",
-                level === 1 && "font-medium"
-              )
-            )}
-          >
-            {item.title}
-          </Link>
-        )}
-      </li>
-    ))}
-  </ul>
-);
+  // Mobile nested submenu component
+  const MobileNestedMenu = ({
+    items,
+    level = 1,
+  }: {
+    items: SubMenuItem[];
+    level?: number;
+  }) => (
+    <ul className="w-full">
+      {items.map((item, index) => (
+        <li key={index} className="py-1">
+          {item.submenu ? (
+            <div className="w-full">
+              {/* Direct link for parent items */}
+              {item.href !== "#" && (
+                <Link
+                  {...getLinkProps(
+                    item.href,
+                    disabled,
+                    cn(
+                      "block text-sm text-gray-700 hover:text-secondary py-1 border-b",
+                      level === 1 && "font-medium",
+                    ),
+                  )}
+                >
+                  {item.title}
+                </Link>
+              )}
+
+              {/* Collapsible for submenu */}
+              <Collapsible className="mt-1 w-full">
+                <CollapsibleTrigger className="flex w-full items-center justify-between text-left">
+                  <div
+                    className={cn(
+                      "flex w-full items-center justify-between py-1 text-sm text-gray-700 hover:text-secondary",
+                      level === 1 && "font-medium",
+                    )}
+                  >
+                    <span>
+                      {item.href === "#" ? item.title : "More in " + item.title}
+                    </span>
+                    <span className="inline-flex items-center">
+                      <FaChevronDown
+                        className="transition-transform"
+                        size={10}
+                      />
+                    </span>
+                  </div>
+                </CollapsibleTrigger>
+                <CollapsibleContent className="mt-2">
+                  <ul className="w-full">
+                    {item.submenu.map((subItem, subIndex) => (
+                      <li key={subIndex} className="py-1">
+                        {subItem.submenu ? (
+                          <div className="w-full">
+                            {/* Direct link for submenu items */}
+                            {subItem.href !== "#" && (
+                              <Link
+                                {...getLinkProps(
+                                  subItem.href,
+                                  disabled,
+                                  "block text-sm text-gray-700 hover:text-secondary py-1 border-b",
+                                )}
+                              >
+                                {subItem.title}
+                              </Link>
+                            )}
+
+                            {/* Collapsible for nested submenu */}
+                            <Collapsible className="mt-1 w-full">
+                              <CollapsibleTrigger className="flex w-full items-center justify-between text-left">
+                                <div className="flex w-full items-center justify-between py-1 text-sm text-gray-700 hover:text-secondary">
+                                  <span>
+                                    {subItem.href === "#"
+                                      ? subItem.title
+                                      : "More in " + subItem.title}
+                                  </span>
+                                  <span className="inline-flex items-center">
+                                    <FaChevronDown
+                                      className="transition-transform"
+                                      size={10}
+                                    />
+                                  </span>
+                                </div>
+                              </CollapsibleTrigger>
+                              <CollapsibleContent className="mt-2">
+                                <ul className="w-full">
+                                  {subItem.submenu.map(
+                                    (grandChild, grandChildIndex) => (
+                                      <li
+                                        key={grandChildIndex}
+                                        className="py-1"
+                                      >
+                                        <Link
+                                          {...getLinkProps(
+                                            grandChild.href,
+                                            disabled,
+                                            "block text-sm text-gray-700 hover:text-secondary py-1",
+                                          )}
+                                        >
+                                          {grandChild.title}
+                                        </Link>
+                                      </li>
+                                    ),
+                                  )}
+                                </ul>
+                              </CollapsibleContent>
+                            </Collapsible>
+                          </div>
+                        ) : (
+                          <Link
+                            {...getLinkProps(
+                              subItem.href,
+                              disabled,
+                              "block text-sm text-gray-700 hover:text-secondary py-1",
+                            )}
+                          >
+                            {subItem.title}
+                          </Link>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </CollapsibleContent>
+              </Collapsible>
+            </div>
+          ) : (
+            <Link
+              {...getLinkProps(
+                item.href,
+                disabled,
+                cn(
+                  "block text-sm text-gray-700 hover:text-secondary py-1",
+                  level === 1 && "font-medium",
+                ),
+              )}
+            >
+              {item.title}
+            </Link>
+          )}
+        </li>
+      ))}
+    </ul>
+  );
 
   return (
     <header
       className={cn(
         "sticky top-0 z-10 flex w-full flex-col bg-white text-primary transition-colors duration-300",
-        isScrolled && "bg-primary text-white"
+        isScrolled && "bg-primary text-white",
       )}
     >
       <div className="ml-auto hidden justify-between gap-6 rounded-bl-lg bg-primary p-6 py-2 text-white lg:flex">
@@ -252,35 +272,47 @@ const MobileNestedMenu = ({ items, level = 1 }: { items: SubMenuItem[], level?: 
             size="sm"
             variant="secondary"
             className={cn(
-              "text-white text-xs xl:text-base",
-              disabled && "pointer-events-none cursor-not-allowed opacity-50"
+              "text-xs text-white xl:text-base",
+              disabled && "pointer-events-none cursor-not-allowed opacity-50",
             )}
             asChild
           >
-            <Link
-              {...getLinkProps("#", disabled)}
-            >
-              Register / Login
-            </Link>
+            <Link {...getLinkProps("#", disabled)}>Register / Login</Link>
           </Button>
           <div className="flex gap-6">
             <Link
-              {...getLinkProps("#", disabled, "flex items-center gap-2 hover:text-secondary text-sm xl:text-base")}
+              {...getLinkProps(
+                "#",
+                disabled,
+                "flex items-center gap-2 hover:text-secondary text-sm xl:text-base",
+              )}
             >
               <FaTwitter />
             </Link>
             <Link
-              {...getLinkProps("#", disabled, "flex items-center gap-2 hover:text-secondary text-sm xl:text-base")}
+              {...getLinkProps(
+                "#",
+                disabled,
+                "flex items-center gap-2 hover:text-secondary text-sm xl:text-base",
+              )}
             >
               <FaFacebook />
             </Link>
             <Link
-              {...getLinkProps("#", disabled, "flex items-center gap-2 hover:text-secondary text-sm xl:text-base")}
+              {...getLinkProps(
+                "#",
+                disabled,
+                "flex items-center gap-2 hover:text-secondary text-sm xl:text-base",
+              )}
             >
               <FaLinkedin />
             </Link>
             <Link
-              {...getLinkProps("#", disabled, "flex items-center gap-2 hover:text-secondary text-sm xl:text-base")}
+              {...getLinkProps(
+                "#",
+                disabled,
+                "flex items-center gap-2 hover:text-secondary text-sm xl:text-base",
+              )}
             >
               <FaSignal />
             </Link>
@@ -291,16 +323,18 @@ const MobileNestedMenu = ({ items, level = 1 }: { items: SubMenuItem[], level?: 
       <div className="flex w-full justify-between p-4">
         <div
           className={cn(
-            "relative ml-6 h-[100px] w-[100px] md:ml-0",
-            !isScrolled && "xl:h-[150px] xl:w-[150px]"
+            "relative ml-6 h-20 w-20 md:ml-0 md:h-24 md:w-24 xl:h-32 xl:w-32",
+            !isScrolled && "xl:h-36 xl:w-36",
           )}
         >
           <Image
             src="/logo/logo.png"
             alt="logo for craftlore"
             fill
-            sizes="100%"
+            sizes="(max-width: 768px) 80px, (max-width: 1280px) 96px, 144px"
             priority
+            quality={85}
+            className="object-contain"
           />
         </div>
         <div className="flex items-center px-6 py-4 lg:mx-auto">
@@ -312,7 +346,7 @@ const MobileNestedMenu = ({ items, level = 1 }: { items: SubMenuItem[], level?: 
                     {...getLinkProps(
                       item.href,
                       disabled,
-                      "flex items-center gap-1 px-3 py-2 hover:text-secondary lg:text-xs xl:text-sm 2xl:text-base"
+                      "flex items-center gap-1 px-3 py-2 hover:text-secondary lg:text-xs xl:text-sm 2xl:text-base",
                     )}
                   >
                     {item.title}
@@ -339,12 +373,12 @@ const MobileNestedMenu = ({ items, level = 1 }: { items: SubMenuItem[], level?: 
               className={cn(
                 "text-white lg:hidden",
                 !isScrolled && "text-primary",
-                disabled && "pointer-events-none cursor-not-allowed opacity-50"
+                disabled && "pointer-events-none cursor-not-allowed opacity-50",
               )}
             >
               <FaBars size={32} />
             </SheetTrigger>
-            <SheetContent className="bg-white overflow-y-auto">
+            <SheetContent className="overflow-y-auto bg-white">
               <SheetHeader>
                 <SheetTitle>Craftlore</SheetTitle>
               </SheetHeader>

@@ -75,6 +75,9 @@ export const CareerForm = () => {
   return (
     <section className="col-span-12 bg-[#e5edf7]">
       <Container className="py-8">
+        <h2 className="text-primary font-montserrat text-4xl"> Job Application Form</h2>
+      <p className="text-secondary font-opensans text-2xl font-bold">Apply for open positions by submitting your details and uploading your resume</p>
+      
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(formSubmission)}

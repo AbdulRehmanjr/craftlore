@@ -16,7 +16,7 @@ export const ProfileFeatures = () => {
           valuations, preserving authenticity, and supporting sustainable
           practices across the handicraft industry.
         </p>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {PROFILEFEATURES.map((feature, index) => (
             <article
               key={index}
@@ -34,7 +34,7 @@ export const ProfileFeatures = () => {
         <h2 className="font-montserrat text-4xl text-primary">
         Benefits of the Kashmir Craft Repository Registry
         </h2>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {PROFILEBENEFITS.map((benefit, index) => (
             <article
               key={index}

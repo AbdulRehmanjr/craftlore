@@ -16,7 +16,7 @@ export const CostFeatures = () => {
           valuations, preserving authenticity, and supporting sustainable
           practices across the handicraft industry.
         </p>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {COSTFEATURES.map((feature, index) => (
             <div
               key={index}
@@ -34,7 +34,7 @@ export const CostFeatures = () => {
         <h2 className="font-montserrat text-4xl text-primary">
           Benefits of CraftLore Price Valuation Registry
         </h2>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {COSTBENEFITS.map((benefit, index) => (
             <div
               key={index}

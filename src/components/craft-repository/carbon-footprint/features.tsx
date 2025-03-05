@@ -10,7 +10,7 @@ export const CarbonFeatures = () => {
         <p className="font-opensans text-xl">
         Our Craft Carbon Footprint System offers a comprehensive solution to help artisans and businesses track, evaluate, and reduce their environmental impact. Through real-time calculations, material-specific analysis, and actionable insights, the system empowers users to make informed, sustainable decisions across the production process.
         </p>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {CARBONFEATURES.map((feature, index) => (
             <div
               key={index}
@@ -28,7 +28,7 @@ export const CarbonFeatures = () => {
         <h2 className="font-montserrat text-4xl text-primary">
         Benefits of Craftlore Carbon Footprint Registry?
         </h2>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {CARBONBENEFITS.map((benefit, index) => (
             <div
               key={index}
