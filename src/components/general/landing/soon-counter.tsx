@@ -24,8 +24,8 @@ export const CraftloreComing = () => {
   useEffect(() => {
     // Create a fixed date that's exactly 10 days from March 3, 2025
     // This ensures the countdown is consistent and doesn't reset on refresh
-    const fixedStartDate = dayjs('2025-03-03');
-    const targetDate = fixedStartDate.add(10, 'day');
+    const fixedStartDate = dayjs('2025-04-03');
+    const targetDate = fixedStartDate.add(30, 'day');
 
     function updateTimer() {
       const now = dayjs();

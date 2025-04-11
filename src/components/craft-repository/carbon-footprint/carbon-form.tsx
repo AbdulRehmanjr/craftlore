@@ -22,6 +22,7 @@ import {
 } from "~/components/ui/select";
 import { api } from "~/trpc/react";
 import { toast } from "~/hooks/use-toast";
+import { Leaf, AlertTriangle, AlertCircle, XCircle, ShoppingCart, Scissors, Heart } from "lucide-react";
 
 const superData = {category:'',subcategory:''}
 const formSchema = z
@@ -707,20 +708,142 @@ export const CarbonForm: React.FC = () => {
       </Form>
 
       {calculations.lower != 0 && (
-        <div className="mt-6 rounded border border-gray-200 bg-gray-50 p-4">
-          <h3 className="mb-2 font-montserrat text-3xl">
-            Carbon Footprint Results
-          </h3>
-          <div className="grid gap-4">
-            <p className="font-opensans">
-              Estimated Carbon Footprint:
-              <br />
-              <span className="text-secondary">
-                {calculations.lower.toFixed(2)}-{calculations.upper.toFixed(2)}
-              </span>{" "}
-              kg CO2
-              <br />
+        <div className="mt-6 space-y-6">
+          {/* Main Carbon Footprint Card */}
+          <div className="rounded-lg border border-green-200 bg-green-50 p-6">
+            <div className="flex items-center gap-3">
+              <div className="rounded-full bg-green-100 p-2">
+                <Leaf className="h-6 w-6 text-green-600" />
+              </div>
+              <h3 className="text-2xl font-semibold text-green-800">
+                Your Carbon Footprint Trace Is Complete
+              </h3>
+            </div>
+            <div className="mt-4 grid gap-2 text-green-700">
+              <p><span className="font-medium">Product ID:</span> DKC-HAND-101</p>
+              <p><span className="font-medium">Craft:</span> Hand-embroidered Sozni Shawl</p>
+              <p><span className="font-medium">Origin:</span> Kashmir</p>
+              <p className="text-lg font-semibold">
+                <span className="font-medium">Footprint:</span> {calculations.lower.toFixed(1)} kg CO₂e
+                <span className="ml-2 rounded-full bg-green-100 px-2 py-1 text-sm">
+                  Artisan-Made, Low Emission
+                </span>
+              </p>
+            </div>
+          </div>
+
+          {/* Environmental Impact Comparison */}
+          <div className="rounded-lg border border-gray-200 bg-white p-6">
+            <h4 className="mb-4 text-xl font-semibold">Environmental Impact Comparison</h4>
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b">
+                    <th className="px-4 py-2 text-left">Product Type</th>
+                    <th className="px-4 py-2 text-left">CO₂ Emissions per Unit</th>
+                    <th className="px-4 py-2 text-left">Risk Level</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b">
+                    <td className="px-4 py-2">Handcrafted Sozni Shawl</td>
+                    <td className="px-4 py-2">{calculations.lower.toFixed(1)} kg CO₂e</td>
+                    <td className="px-4 py-2">
+                      <span className="rounded-full bg-green-100 px-2 py-1 text-green-700">
+                        ✅ Eco-Friendly
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-2">Machine-Made Imitation</td>
+                    <td className="px-4 py-2">86.5 kg CO₂e</td>
+                    <td className="px-4 py-2">
+                      <span className="rounded-full bg-red-100 px-2 py-1 text-red-700">
+                        ⚠️ Toxic & Polluting
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Warning Section */}
+          <div className="rounded-lg border border-red-200 bg-red-50 p-6">
+            <div className="flex items-center gap-3">
+              <AlertTriangle className="h-6 w-6 text-red-600" />
+              <h4 className="text-xl font-semibold text-red-800">
+                Warning: Mass Production Comes at a Cost
+              </h4>
+            </div>
+            <p className="mt-4 text-red-700">
+              Machine-made products flood markets with synthetic dyes, petrochemical fibers, and plastic micro-pollutants. Each unit releases more than 40x the emissions of an authentic Kashmiri craft.
             </p>
+            <p className="mt-2 text-red-700">
+              They don&apos;t just harm the earth — they erase artisan livelihoods, disrupt local economies, and suffocate heritage.
+            </p>
+          </div>
+
+          {/* Benefits Section */}
+          <div className="rounded-lg border border-blue-200 bg-blue-50 p-6">
+            <h4 className="mb-4 text-xl font-semibold text-blue-800">The Choice is Yours</h4>
+            <p className="mb-4 text-blue-700">When you choose handmade, you choose:</p>
+            <ul className="space-y-2 text-blue-700">
+              <li className="flex items-center gap-2">
+                <Leaf className="h-5 w-5" />
+                A living ecosystem over industrial decay
+              </li>
+              <li className="flex items-center gap-2">
+                <Scissors className="h-5 w-5" />
+                A weaver&apos;s dignity over a factory&apos;s exhaust
+              </li>
+              <li className="flex items-center gap-2">
+                <Heart className="h-5 w-5" />
+                A legacy of harmony over a footprint of harm
+              </li>
+            </ul>
+          </div>
+
+          {/* Policy Section */}
+          <div className="rounded-lg border border-yellow-200 bg-yellow-50 p-6">
+            <div className="flex items-center gap-3">
+              <AlertCircle className="h-6 w-6 text-yellow-600" />
+              <h4 className="text-xl font-semibold text-yellow-800">
+                Policy Shift Incoming
+              </h4>
+            </div>
+            <p className="mt-4 text-yellow-700">
+              International buyers, eco-certifications, and climate-conscious markets are moving fast.
+              Products with high carbon footprints may soon face:
+            </p>
+            <ul className="mt-2 space-y-2 text-yellow-700">
+              <li className="flex items-center gap-2">
+                <XCircle className="h-5 w-5" />
+                Eco-tax surcharges
+              </li>
+              <li className="flex items-center gap-2">
+                <XCircle className="h-5 w-5" />
+                Retail bans
+              </li>
+              <li className="flex items-center gap-2">
+                <XCircle className="h-5 w-5" />
+                Sustainability blacklisting
+              </li>
+            </ul>
+          </div>
+
+          {/* Call to Action */}
+          <div className="rounded-lg border border-purple-200 bg-purple-50 p-6 text-center">
+            <h4 className="mb-4 text-xl font-semibold text-purple-800">
+              Be the Change. Wear the Future.
+            </h4>
+            <p className="mb-4 text-purple-700">
+              Support climate-smart artisans. Support Kashmir. Support tomorrow.
+            </p>
+            <Button className="bg-purple-600 text-white hover:bg-purple-700">
+              <ShoppingCart className="mr-2 h-4 w-4" />
+              Explore Certified Low-Carbon Kashmiri Masterpieces
+            </Button>
           </div>
         </div>
       )}
