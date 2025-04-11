@@ -62,15 +62,16 @@ const formSchema = z
           path: ["production"],
         });
       }
-    } else {
-      if (!data.crafting) {
-        ctx.addIssue({
-          code: z.ZodIssueCode.custom,
-          message: "Field is required",
-          path: ["crafting"],
-        });
-      }
     }
+    //  else {
+    //   if (!data.crafting) {
+    //     ctx.addIssue({
+    //       code: z.ZodIssueCode.custom,
+    //       message: "Field is required",
+    //       path: ["crafting"],
+    //     });
+    //   }
+    // }
 
     if (superData.subcategory == "Khatamband" || superData.subcategory == "Pinjrakari") {
       if (!data.installation) {
@@ -381,43 +382,44 @@ export const CarbonForm: React.FC = () => {
                   )}
                 />
               );
-            } else {
-              return (
-                <FormField
-                  control={form.control}
-                  name="crafting"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>
-                        Crafting<span className="text-red-500">*</span>
-                      </FormLabel>
-                      <FormControl>
-                        <Select
-                          onValueChange={field.onChange}
-                          value={field.value}
-                        >
-                          <SelectTrigger className="bg-white text-gray-950">
-                            <SelectValue placeholder="Select Crafting" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            {sections.data
-                              ?.find(
-                                (section) => section.sectionType == "Crafting",
-                              )
-                              ?.uniqueNames?.map((craft, index) => (
-                                <SelectItem value={craft} key={index}>
-                                  {craft}
-                                </SelectItem>
-                              ))}
-                          </SelectContent>
-                        </Select>
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              );
-            }
+            } 
+            // else {
+            //   return (
+            //     <FormField
+            //       control={form.control}
+            //       name="crafting"
+            //       render={({ field }) => (
+            //         <FormItem>
+            //           <FormLabel>
+            //             Crafting<span className="text-red-500">*</span>
+            //           </FormLabel>
+            //           <FormControl>
+            //             <Select
+            //               onValueChange={field.onChange}
+            //               value={field.value}
+            //             >
+            //               <SelectTrigger className="bg-white text-gray-950">
+            //                 <SelectValue placeholder="Select Crafting" />
+            //               </SelectTrigger>
+            //               <SelectContent>
+            //                 {sections.data
+            //                   ?.find(
+            //                     (section) => section.sectionType == "Crafting",
+            //                   )
+            //                   ?.uniqueNames?.map((craft, index) => (
+            //                     <SelectItem value={craft} key={index}>
+            //                       {craft}
+            //                     </SelectItem>
+            //                   ))}
+            //               </SelectContent>
+            //             </Select>
+            //           </FormControl>
+            //           <FormMessage />
+            //         </FormItem>
+            //       )}
+            //     />
+            //   );
+            // }
           })()}
 
           {/* Installation Field */}
