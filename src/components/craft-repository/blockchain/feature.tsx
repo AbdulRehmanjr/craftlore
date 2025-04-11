@@ -10,7 +10,7 @@ export const BlockFeatures = () => {
         <p className="font-opensans text-xl">
         CraftLore’s Blockchain Traceability Registry integrates state-of-the-art technology to guarantee the authenticity, traceability, and protection of Kashmiri crafts. Through blockchain, RFID, NFC, AI, DNA tagging, and IoT sensors, the system offers real-time, secure verification of product origins, safeguarding against counterfeiting while promoting transparency across the entire craft lifecycle.
         </p>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {BLOCKCHAINFEATURES.map((feature, index) => (
             <div
               key={index}
@@ -28,7 +28,7 @@ export const BlockFeatures = () => {
         <h2 className="font-montserrat text-4xl text-primary">
         Benefits of CraftLore Blockchain Traceability Registry
         </h2>
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {BLOCKCHAINBENEFITS.map((benefit, index) => (
             <div
               key={index}
