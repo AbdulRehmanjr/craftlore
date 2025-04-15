@@ -99,22 +99,58 @@ export const GenderInsightGraph = () => {
       },
     },
   };
+
   return (
-    <div className="h-[500px] space-y-7 pb-32">
-      <Bar data={data} options={options} />
-      <div className="grid grid-cols-2 gap-2 lg:container">
-        <div className="col-span-2 rounded-md border border-black p-4 lg:col-span-1">
-          <p>A. Wage Disparity (₹ Women)</p>
-          <p>B. Wage Disparity (₹ Men)</p>
-          <p>C. Labor Market Participation (Women)</p>
-          <p>D. Labor Market Participation (Men)</p>
+    <div className="space-y-8">
+      <div className="h-[400px]">
+        <Bar data={data} options={options} />
+      </div>
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div className="space-y-4 rounded-lg bg-gray-50 p-6">
+          <h3 className="text-lg font-medium text-gray-800">Categories A-D</h3>
+          <div className="space-y-3">
+            <div className="flex items-center gap-3">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-pink-200 text-sm font-medium text-gray-700">A</span>
+              <p className="text-sm text-gray-600">Wage Disparity (Women) - 5,000</p>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-200 text-sm font-medium text-gray-700">B</span>
+              <p className="text-sm text-gray-600">Wage Disparity (Men) - 10,000</p>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-purple-200 text-sm font-medium text-gray-700">C</span>
+              <p className="text-sm text-gray-600">Labor Market Participation (Women) - 5,000</p>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-orange-200 text-sm font-medium text-gray-700">D</span>
+              <p className="text-sm text-gray-600">Labor Market Participation (Men) - 4,700</p>
+            </div>
+          </div>
         </div>
-        <div className="col-span-2 rounded-md border border-black p-4 lg:col-span-1">
-          <p>E. Access to Resources (Women)</p>
-          <p>F. Access to Resources (Men)</p>
-          <p>G. Unpaid Work (Women Hours)</p>
-          <p>H. Entrepreneurship (Women-owned Businesses)</p>
-          <p>I. Entrepreneurship (Men-owned Businesses)</p>
+        <div className="space-y-4 rounded-lg bg-gray-50 p-6">
+          <h3 className="text-lg font-medium text-gray-800">Categories E-I</h3>
+          <div className="space-y-3">
+            <div className="flex items-center gap-3">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-green-200 text-sm font-medium text-gray-700">E</span>
+              <p className="text-sm text-gray-600">Access to Resources (Women) - 200</p>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-orange-200 text-sm font-medium text-gray-700">F</span>
+              <p className="text-sm text-gray-600">Access to Resources (Men) - 8,500</p>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-pink-200 text-sm font-medium text-gray-700">G</span>
+              <p className="text-sm text-gray-600">Unpaid Work (Women Hours) - 8,000</p>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-purple-200 text-sm font-medium text-gray-700">H</span>
+              <p className="text-sm text-gray-600">Entrepreneurship (Women-owned Businesses) - 500</p>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-200 text-sm font-medium text-gray-700">I</span>
+              <p className="text-sm text-gray-600">Entrepreneurship (Men-owned Businesses) - 9,500</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

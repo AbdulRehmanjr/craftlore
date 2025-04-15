@@ -41,7 +41,7 @@ export default function EmploymentPage() {
           Future Vision
         </h2>
         <p className="font-opensans text-xl">
-          The <b>CraftLore Kashmir Handicrafts Economics Monitoring Center</b>
+          The <b>Craftlore Kashmir Handicrafts Economics Monitoring Center</b>
           aims to be a global leader in promoting gender equality within the
           handicraft industry. As it grows, the center will expand its analysis
           to include the role of women artisans in leadership positions and

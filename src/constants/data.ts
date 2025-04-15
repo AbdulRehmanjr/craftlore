@@ -38,19 +38,19 @@ export const SERVICES = [
 ];
 
 export const TYPETEXT = [
-    "CraftLore is the World’s Largest Kashmir Craft Platform",
+    "Craftlore is the World’s Largest Kashmir Craft Platform",
     "Interactive and Transformative for Global Craft Enthusiasts Everywhere",
     "Access Over One Million Elements on Kashmir Crafts",
     "With Data Representing 28 Major Kashmir Craft Traditions.",
     "We combat Counterfeit Products and Middlemen Exploitation, head-on.",
-    "CraftLore defends Kashmir’s craft identity and artisans' livelihoods",
+    "Craftlore defends Kashmir’s craft identity and artisans' livelihoods",
     "Safeguarding against global dilution of our heritage.",
     "A powerful stand for authenticity and cultural preservation.",
-    "Buyer’s Academy-CraftLore: empowering confident, informed decisions.",
+    "Buyer’s Academy-Craftlore: empowering confident, informed decisions.",
     "Gain insights and expertise for navigating Kashmir’s marketplace.",
     "A transformative guide to the world of authentic handicrafts.",
     "Experience the art of informed, impactful purchasing today.",
-    "CraftLore integrates a robust verification system for authenticity",
+    "Craftlore integrates a robust verification system for authenticity",
     "Using trusted data from key regulatory bodies worldwide.",
     "Sources include Better Business Bureau, Trustpilot, and CFPB",
     "Plus FTC and the Securities & Exchange Commission."
@@ -130,14 +130,14 @@ export const NETWORK = [
 
 
 export const MISSIONS = [
-    { id: 1, title: 'Biggest Craft Repository of Kashmir', description: 'Our mission is to establish CraftLore as the largest and most comprehensive repository of Kashmiri crafts, preserving and promoting the rich artisanal heritage, craftsmanship methodologies, and artisan profiles of the region. Through a centralized data ecosystem, we aim to deliver deep-dive intelligence on Kashmiri crafts, offering stakeholders unparalleled insights into the cultural and economic significance of each craft. We aim to be the single source of truth for artisans, consumers, and researchers, providing scalable, data-driven insights into craft authenticity, innovation pathways, and market dynamics. Our mission is to reinforce Kashmir’s position as a global leader in artisanal excellence and ensure the continued growth and sustainability of its craft industry.' },
-    { id: 2, title: 'Transforming Colonial Narrative', description: 'Our mission is to transform the colonial business narrative of Kashmiri crafts by adopting a science-based approach that documents the history, material sourcing, and production techniques through data-driven, empirical methodologies. By shifting the narrative, we ensure that every craft is validated with scientific rigor, preserving its authenticity and historical significance. Through scientific validation, CraftLore aims to strengthen the credibility and global positioning of Kashmiri crafts, elevating them to the status of verified cultural assets with measurable economic and cultural value, free from subjective biases and rooted in empirical evidence.' },
+    { id: 1, title: 'Biggest Craft Repository of Kashmir', description: 'Our mission is to establish Craftlore as the largest and most comprehensive repository of Kashmiri crafts, preserving and promoting the rich artisanal heritage, craftsmanship methodologies, and artisan profiles of the region. Through a centralized data ecosystem, we aim to deliver deep-dive intelligence on Kashmiri crafts, offering stakeholders unparalleled insights into the cultural and economic significance of each craft. We aim to be the single source of truth for artisans, consumers, and researchers, providing scalable, data-driven insights into craft authenticity, innovation pathways, and market dynamics. Our mission is to reinforce Kashmir’s position as a global leader in artisanal excellence and ensure the continued growth and sustainability of its craft industry.' },
+    { id: 2, title: 'Transforming Colonial Narrative', description: 'Our mission is to transform the colonial business narrative of Kashmiri crafts by adopting a science-based approach that documents the history, material sourcing, and production techniques through data-driven, empirical methodologies. By shifting the narrative, we ensure that every craft is validated with scientific rigor, preserving its authenticity and historical significance. Through scientific validation, Craftlore aims to strengthen the credibility and global positioning of Kashmiri crafts, elevating them to the status of verified cultural assets with measurable economic and cultural value, free from subjective biases and rooted in empirical evidence.' },
     { id: 3, title: 'Setting a Universal Craft Price Model', description: 'Our mission is to pioneer a universal craft pricing model that establishes a globally aligned pricing structure for Kashmiri crafts. This framework ensures equitable and consistent pricing across international markets, driven by metrics such as craftsmanship excellence, authenticity validation, and market demand dynamics. We are committed to creating a value-based pricing architecture that reflects the true economic and cultural value of Kashmiri crafts. This pricing system guarantees fair market compensation for artisans while maintaining the premium positioning of their products in global markets, ensuring both economic sustainability and brand prestige.' },
-    { id: 4, title: 'Education & Market Awareness', description: 'Our mission is to implement a global consumer education strategy that elevates the value proposition of authentic Kashmiri crafts. By promoting the cultural significance, craftsmanship, and heritage of Kashmiri products, we aim to foster deeper consumer engagement and drive demand in premium markets. Through targeted market intelligence, sustainable practices education, and technological training, CraftLore empowers artisans with the expertise required to excel in the global economy. Our knowledge-driven approach ensures artisans stay ahead of industry trends and leverage cutting-edge tools to enhance both their craft and market presence.' },
-    { id: 5, title: 'Blockchain-Backed Digital Authentication', description: 'Our mission is to utilize blockchain-backed digital authentication to create indelible, tamper-proof records for each artisanal product. This advanced system guarantees fraud prevention and ensures the authenticity of every Kashmiri craft, providing an elevated level of security in the global market. By leveraging this blockchain-powered verification system, CraftLore significantly enhances market confidence and builds trust between artisans and global consumers. Our mission is to ensure that only genuine, high-quality Kashmiri products are traded internationally, fostering long-term consumer confidence and reinforcing brand integrity.' },
-    { id: 6, title: 'Big Data-Driven Craft Platform', description: 'Our mission is to leverage a big data-driven platform that delivers real-time economic intelligence, providing granular insights into the financial health and market dynamics of the Kashmiri craft sector. By utilizing advanced analytics, we empower artisans to make data-driven, precision decisions that enhance their economic sustainability and competitiveness in global markets. Through predictive data models and market trend analysis, CraftLore enables artisans to refine production workflows and adapt strategies for maximum profitability. Our platform’s AI-powered insights help artisans align their operations with shifting global demand, ensuring smarter, more profitable business decisions.' },
-    { id: 7, title: 'Sustainable Craft Leadership', description: 'Our mission is to lead the sustainable transformation of the craft industry by ensuring that all materials are ethically sourced and that production processes align with the highest environmental responsibility standards. Through our commitment to eco-conscious methodologies, we minimize environmental impact and foster long-term sustainability. As a leader in sustainable craftsmanship, CraftLore positions Kashmiri products as eco-friendly luxury goods in the global market. By championing green practices and setting new industry standards, we are building a sustainable future for the craft sector, reinforcing the environmental and cultural value of Kashmiri crafts.' },
-    { id: 8, title: 'Advanced Counterfeit Detection', description: 'Our mission is to deploy cutting-edge counterfeit detection infrastructure that dynamically identifies and neutralizes fraudulent products in real time. This system ensures uncompromising protection for both artisans and consumers, safeguarding the authenticity of every Kashmiri craft in the global marketplace. By implementing advanced counterfeit detection protocols, CraftLore protects the cultural and economic integrity of Kashmiri crafts, preventing market dilution from counterfeit goods. This proactive approach ensures that the brand equity of genuine artisanal products is preserved, reinforcing their premium status in global markets.' },
+    { id: 4, title: 'Education & Market Awareness', description: 'Our mission is to implement a global consumer education strategy that elevates the value proposition of authentic Kashmiri crafts. By promoting the cultural significance, craftsmanship, and heritage of Kashmiri products, we aim to foster deeper consumer engagement and drive demand in premium markets. Through targeted market intelligence, sustainable practices education, and technological training, Craftlore empowers artisans with the expertise required to excel in the global economy. Our knowledge-driven approach ensures artisans stay ahead of industry trends and leverage cutting-edge tools to enhance both their craft and market presence.' },
+    { id: 5, title: 'Blockchain-Backed Digital Authentication', description: 'Our mission is to utilize blockchain-backed digital authentication to create indelible, tamper-proof records for each artisanal product. This advanced system guarantees fraud prevention and ensures the authenticity of every Kashmiri craft, providing an elevated level of security in the global market. By leveraging this blockchain-powered verification system, Craftlore significantly enhances market confidence and builds trust between artisans and global consumers. Our mission is to ensure that only genuine, high-quality Kashmiri products are traded internationally, fostering long-term consumer confidence and reinforcing brand integrity.' },
+    { id: 6, title: 'Big Data-Driven Craft Platform', description: 'Our mission is to leverage a big data-driven platform that delivers real-time economic intelligence, providing granular insights into the financial health and market dynamics of the Kashmiri craft sector. By utilizing advanced analytics, we empower artisans to make data-driven, precision decisions that enhance their economic sustainability and competitiveness in global markets. Through predictive data models and market trend analysis, Craftlore enables artisans to refine production workflows and adapt strategies for maximum profitability. Our platform’s AI-powered insights help artisans align their operations with shifting global demand, ensuring smarter, more profitable business decisions.' },
+    { id: 7, title: 'Sustainable Craft Leadership', description: 'Our mission is to lead the sustainable transformation of the craft industry by ensuring that all materials are ethically sourced and that production processes align with the highest environmental responsibility standards. Through our commitment to eco-conscious methodologies, we minimize environmental impact and foster long-term sustainability. As a leader in sustainable craftsmanship, Craftlore positions Kashmiri products as eco-friendly luxury goods in the global market. By championing green practices and setting new industry standards, we are building a sustainable future for the craft sector, reinforcing the environmental and cultural value of Kashmiri crafts.' },
+    { id: 8, title: 'Advanced Counterfeit Detection', description: 'Our mission is to deploy cutting-edge counterfeit detection infrastructure that dynamically identifies and neutralizes fraudulent products in real time. This system ensures uncompromising protection for both artisans and consumers, safeguarding the authenticity of every Kashmiri craft in the global marketplace. By implementing advanced counterfeit detection protocols, Craftlore protects the cultural and economic integrity of Kashmiri crafts, preventing market dilution from counterfeit goods. This proactive approach ensures that the brand equity of genuine artisanal products is preserved, reinforcing their premium status in global markets.' },
 ]
 
 export const PROJECTS = [
@@ -173,7 +173,7 @@ export const REGISTRIES = [
 export const ARCHITECTURE = [
     {
         title: '1. Digital Infrastructure',
-        defination: "The foundational technology that supports CraftLore's operations, including cloud services, servers, and network architecture. This infrastructure ensures high availability, scalability, and security for all digital interactions within the platform.",
+        defination: "The foundational technology that supports Craftlore's operations, including cloud services, servers, and network architecture. This infrastructure ensures high availability, scalability, and security for all digital interactions within the platform.",
         features: "Robust server capabilities, cloud storage solutions, and advanced cybersecurity measures to protect data integrity and accessibility."
     },
     {
@@ -188,7 +188,7 @@ export const ARCHITECTURE = [
     },
     {
         title: '4. Marketplace Integration',
-        defination: "The seamless connection between CraftLore and various e-commerce platforms, enabling artisans to list their products and reach a broader audience. This integration facilitates online sales and expands market access for Kashmiri crafts.",
+        defination: "The seamless connection between Craftlore and various e-commerce platforms, enabling artisans to list their products and reach a broader audience. This integration facilitates online sales and expands market access for Kashmiri crafts.",
         features: "API connections with major e-commerce platforms, streamlined inventory management, and payment processing solutions."
     },
     {
@@ -270,7 +270,7 @@ export const JOBS = [
         name: '1. Data Analyst – Craft Analytics',
         date: '2024-12-10',
         jobCode: 'DA-101',
-        overview: "We are seeking a highly skilled Data Analyst to join our team at CraftLore. The ideal candidate will be responsible for analyzing large datasets related to artisans, market trends, and consumer behavior within the handicraft sector.",
+        overview: "We are seeking a highly skilled Data Analyst to join our team at Craftlore. The ideal candidate will be responsible for analyzing large datasets related to artisans, market trends, and consumer behavior within the handicraft sector.",
         responibilities: "Utilize advanced statistical techniques and tools (e.g., Python, R, SQL) to extract insights from data. Develop predictive models to forecast market demand and inform strategic decisions. Create visualizations and reports to communicate findings to stakeholders effectively.",
         qualification: "Bachelor’s or Master’s degree in Data Science, Statistics, or a related field. Proven experience in data analysis, with proficiency in analytical software and programming languages. Strong understanding of market research methodologies and consumer behavior analytics."
     },
@@ -278,7 +278,7 @@ export const JOBS = [
         name: '2. Blockchain Developer – CraftTrace System',
         date: '2024-12-15',
         jobCode: 'BD-101',
-        overview: "CraftLore is looking for a talented Blockchain Developer to enhance our blockchain-based CraftTrace system. This system ensures the authenticity and traceability of Kashmiri crafts from artisan to consumer.",
+        overview: "Craftlore is looking for a talented Blockchain Developer to enhance our blockchain-based CraftTrace system. This system ensures the authenticity and traceability of Kashmiri crafts from artisan to consumer.",
         responibilities: "Design, develop, and implement blockchain solutions using Ethereum or Hyperledger frameworks. Collaborate with cross-functional teams to define and implement smart contracts. Ensure system security and integrity by conducting code reviews and vulnerability assessments.",
         qualification: "Master’s degree in Environmental Science, Sustainability, or a related field. Proven experience in carbon footprint analysis and sustainability consulting. Strong communication skills and the ability to educate stakeholders on sustainability practices."
     },
@@ -294,7 +294,7 @@ export const JOBS = [
         name: '4. Digital Marketing Specialist – Craft Promotion',
         date: '2024-12-30',
         jobCode: 'DM-101',
-        overview: "CraftLore is looking for a Digital Marketing Specialist to develop and execute online marketing strategies that enhance the visibility of Kashmiri crafts and engage a global audience.",
+        overview: "Craftlore is looking for a Digital Marketing Specialist to develop and execute online marketing strategies that enhance the visibility of Kashmiri crafts and engage a global audience.",
         responibilities: "Manage and optimize digital marketing campaigns across various platforms (social media, email, SEO). Analyze campaign performance using analytics tools and adjust strategies accordingly. Collaborate with content creators to develop compelling narratives that resonate with target audiences.",
         qualification: "Bachelor’s degree in Marketing, Communications, or a related field. Strong understanding of digital marketing principles and tools (Google Analytics, SEMrush, etc.). Proven experience in managing successful online marketing campaigns."
     },
@@ -325,27 +325,27 @@ export const CHALLENGES = [
 export const INITIATIVES = [
     {
         title: '1. Education on Intellectual Property Rights',
-        description: 'CraftLore conducts workshops and outreach programs to educate Kashmiri artisans on their intellectual property rights. These programs empower artisans to understand the value of their designs and provide them with the tools and knowledge to protect their crafts. By raising awareness about IP protections, CraftLore ensures artisans are better equipped to safeguard their cultural heritage.'
+        description: 'Craftlore conducts workshops and outreach programs to educate Kashmiri artisans on their intellectual property rights. These programs empower artisans to understand the value of their designs and provide them with the tools and knowledge to protect their crafts. By raising awareness about IP protections, Craftlore ensures artisans are better equipped to safeguard their cultural heritage.'
     },
     {
         title: '2. Geographical Indication (GI) Tags',
-        description: 'CraftLore supports the implementation of Geographical Indication (GI) tags for Kashmiri crafts like Pashmina, papier-mâché, and walnut wood carving. GI tags legally protect the origin and identity of these crafts, ensuring that only authentic products produced in Kashmir by skilled artisans can carry the Kashmiri name. This initiative not only preserves the heritage of these crafts but also gives artisans legal protection against counterfeiting.'
+        description: 'Craftlore supports the implementation of Geographical Indication (GI) tags for Kashmiri crafts like Pashmina, papier-mâché, and walnut wood carving. GI tags legally protect the origin and identity of these crafts, ensuring that only authentic products produced in Kashmir by skilled artisans can carry the Kashmiri name. This initiative not only preserves the heritage of these crafts but also gives artisans legal protection against counterfeiting.'
     },
     {
         title: '3. Legal Support and Advocacy',
-        description: 'Through partnerships with legal organizations, CraftLore provides artisans with affordable access to legal support. This assistance helps artisans pursue claims of intellectual property infringement, both locally and globally. CraftLore advocates for stronger IP laws that recognize and protect traditional knowledge, ensuring that artisans have a legal recourse when their designs are copied without consent.'
+        description: 'Through partnerships with legal organizations, Craftlore provides artisans with affordable access to legal support. This assistance helps artisans pursue claims of intellectual property infringement, both locally and globally. Craftlore advocates for stronger IP laws that recognize and protect traditional knowledge, ensuring that artisans have a legal recourse when their designs are copied without consent.'
     },
     {
         title: '4. Blockchain for Craft Authentication',
-        description: 'CraftLore is pioneering the use of blockchain technology to provide artisans with a secure way to verify the authenticity of their crafts. By creating a tamper-proof digital record for each piece, blockchain ensures that consumers can trace the origin of their purchase, confirming its authenticity and supporting genuine artisans. This system protects against counterfeiting and ensures that artisans retain control over their intellectual property.'
+        description: 'Craftlore is pioneering the use of blockchain technology to provide artisans with a secure way to verify the authenticity of their crafts. By creating a tamper-proof digital record for each piece, blockchain ensures that consumers can trace the origin of their purchase, confirming its authenticity and supporting genuine artisans. This system protects against counterfeiting and ensures that artisans retain control over their intellectual property.'
     },
     {
         title: '5. Certification Systems for Authentic Crafts',
-        description: 'To combat the issue of unauthorized replication, CraftLore has developed certification systems that distinguish authentic Kashmiri crafts from imitations. These certification systems include physical tags and digital certificates that validate the authenticity of each craft. Consumers can be confident that the products they are purchasing are genuine, and artisans are protected from the devaluation of their work.'
+        description: 'To combat the issue of unauthorized replication, Craftlore has developed certification systems that distinguish authentic Kashmiri crafts from imitations. These certification systems include physical tags and digital certificates that validate the authenticity of each craft. Consumers can be confident that the products they are purchasing are genuine, and artisans are protected from the devaluation of their work.'
     },
     {
         title: '6. Consumer Awareness Campaigns',
-        description: 'CraftLore runs global awareness campaigns to educate consumers on the importance of buying authentic Kashmiri crafts. These campaigns emphasize the value of supporting artisans directly and the negative impact counterfeit products have on the local economy and cultural heritage. By raising awareness, CraftLore helps build a market that values and demands authenticity, benefiting artisans who rely on their craft for their livelihood.'
+        description: 'Craftlore runs global awareness campaigns to educate consumers on the importance of buying authentic Kashmiri crafts. These campaigns emphasize the value of supporting artisans directly and the negative impact counterfeit products have on the local economy and cultural heritage. By raising awareness, Craftlore helps build a market that values and demands authenticity, benefiting artisans who rely on their craft for their livelihood.'
     }
 ]
 
@@ -373,27 +373,27 @@ export const COUNTERFEITCHALLENGES = [
 export const COUNTERFEITSINITIATIVES = [
     {
         title: '1. Certification and Labeling Systems',
-        description: 'CraftLore has developed comprehensive certification systems to help consumers easily identify genuine Kashmiri products. This includes both physical labels and digital certificates of authenticity that are attached to certified products. These labels ensure transparency in the market and protect artisans from the financial harm caused by counterfeit goods. Consumers can trust that the products they buy with these certifications are made by skilled Kashmiri artisans.'
+        description: 'Craftlore has developed comprehensive certification systems to help consumers easily identify genuine Kashmiri products. This includes both physical labels and digital certificates of authenticity that are attached to certified products. These labels ensure transparency in the market and protect artisans from the financial harm caused by counterfeit goods. Consumers can trust that the products they buy with these certifications are made by skilled Kashmiri artisans.'
     },
     {
         title: '2. Anti-Counterfeiting Awareness Campaigns',
-        description: 'CraftLore runs global awareness campaigns aimed at educating consumers about the detrimental effects of purchasing counterfeit Kashmiri products. These campaigns highlight the importance of supporting authentic Kashmiri artisans and how counterfeit goods damage both the economy and the cultural heritage of Kashmir. By fostering a more informed customer base, CraftLore encourages consumers to make ethical purchasing decisions.'
+        description: 'Craftlore runs global awareness campaigns aimed at educating consumers about the detrimental effects of purchasing counterfeit Kashmiri products. These campaigns highlight the importance of supporting authentic Kashmiri artisans and how counterfeit goods damage both the economy and the cultural heritage of Kashmir. By fostering a more informed customer base, Craftlore encourages consumers to make ethical purchasing decisions.'
     },
     {
         title: '3. Legal Action Against Counterfeiters',
-        description: 'CraftLore works closely with legal authorities and international trade organizations to combat the production and distribution of counterfeit Kashmiri goods. The platform supports artisans in taking legal action against counterfeiters, ensuring that fake products are removed from the market. CraftLore also advocates for stricter enforcement of intellectual property rights to protect artisans from counterfeiters.'
+        description: 'Craftlore works closely with legal authorities and international trade organizations to combat the production and distribution of counterfeit Kashmiri goods. The platform supports artisans in taking legal action against counterfeiters, ensuring that fake products are removed from the market. Craftlore also advocates for stricter enforcement of intellectual property rights to protect artisans from counterfeiters.'
     },
     {
         title: '4. Blockchain Technology for Verification',
-        description: 'To further combat counterfeiting, CraftLore is utilizing blockchain technology to verify the authenticity of Kashmiri crafts. By creating an unchangeable digital record for each craft, blockchain ensures that each product is traceable back to the artisan who created it. This transparency guarantees consumers are purchasing authentic Kashmiri products while also protecting artisans from the financial harm caused by counterfeit goods.'
+        description: 'To further combat counterfeiting, Craftlore is utilizing blockchain technology to verify the authenticity of Kashmiri crafts. By creating an unchangeable digital record for each craft, blockchain ensures that each product is traceable back to the artisan who created it. This transparency guarantees consumers are purchasing authentic Kashmiri products while also protecting artisans from the financial harm caused by counterfeit goods.'
     },
     {
         title: '5. Empowering Artisans Through Digital Tools',
-        description: 'CraftLore empowers artisans by equipping them with digital tools that allow them to track and protect their products in the global market. These tools help artisans mark their crafts with unique identifiers, ensuring that their work can be distinguished from counterfeits. Additionally, CraftLore provides artisans with access to e-commerce platforms, allowing them to sell directly to global consumers and avoid the risks posed by counterfeit products in traditional retail markets'
+        description: 'Craftlore empowers artisans by equipping them with digital tools that allow them to track and protect their products in the global market. These tools help artisans mark their crafts with unique identifiers, ensuring that their work can be distinguished from counterfeits. Additionally, Craftlore provides artisans with access to e-commerce platforms, allowing them to sell directly to global consumers and avoid the risks posed by counterfeit products in traditional retail markets'
     },
     {
         title: '6. Strengthening Consumer Trust',
-        description: 'CraftLore’s initiatives work to rebuild consumer trust in the Kashmiri craft market. By ensuring that genuine products are clearly distinguishable from counterfeits through certification and blockchain verification, CraftLore helps restore confidence in the authenticity of Kashmiri crafts. This renewed trust encourages consumers to invest in authentic products, which directly benefits artisans and helps preserve the integrity of Kashmiri craftsmanship.'
+        description: 'CraftLore’s initiatives work to rebuild consumer trust in the Kashmiri craft market. By ensuring that genuine products are clearly distinguishable from counterfeits through certification and blockchain verification, Craftlore helps restore confidence in the authenticity of Kashmiri crafts. This renewed trust encourages consumers to invest in authentic products, which directly benefits artisans and helps preserve the integrity of Kashmiri craftsmanship.'
     }
 ]
 
@@ -419,27 +419,27 @@ export const DEPENDCYCHALLENGES = [
 export const DEPENDCYINITIATIVES = [
     {
         title: '1. Direct-to-Consumer Marketplaces',
-        description: 'CraftLore is actively developing e-commerce platforms and direct market channels that empower artisans to sell their products directly to consumers, eliminating the need for intermediaries. These platforms provide artisans with full control over pricing, marketing, and customer engagement, ensuring they receive fair compensation for their work. By connecting artisans directly to global markets, CraftLore helps artisans retain more of the profits from their sales.'
+        description: 'Craftlore is actively developing e-commerce platforms and direct market channels that empower artisans to sell their products directly to consumers, eliminating the need for intermediaries. These platforms provide artisans with full control over pricing, marketing, and customer engagement, ensuring they receive fair compensation for their work. By connecting artisans directly to global markets, Craftlore helps artisans retain more of the profits from their sales.'
     },
     {
         title: '2. Microfinance Programs for Artisan Empowerment',
-        description: 'To reduce artisans’ dependency on exploitative loans or intermediaries, CraftLore has introduced microfinance programs that provide artisans with access to small, affordable loans. These loans allow artisans to purchase raw materials, expand production, or invest in their businesses without relying on middlemen. By supporting artisans with financial independence, CraftLore helps them grow their businesses sustainably.'
+        description: 'To reduce artisans’ dependency on exploitative loans or intermediaries, Craftlore has introduced microfinance programs that provide artisans with access to small, affordable loans. These loans allow artisans to purchase raw materials, expand production, or invest in their businesses without relying on middlemen. By supporting artisans with financial independence, Craftlore helps them grow their businesses sustainably.'
     },
     {
         title: '3. Sustainable Raw Material Sourcing',
-        description: 'CraftLore is working to establish ethical and sustainable raw material supply chains for Kashmiri artisans. By connecting artisans with fair and reliable suppliers, CraftLore ensures that artisans have consistent access to high-quality materials at fair prices. This reduces their reliance on exploitative middlemen who often control the supply chain and inflate prices, enabling artisans to plan production and maintain sustainable business operations.'
+        description: 'Craftlore is working to establish ethical and sustainable raw material supply chains for Kashmiri artisans. By connecting artisans with fair and reliable suppliers, Craftlore ensures that artisans have consistent access to high-quality materials at fair prices. This reduces their reliance on exploitative middlemen who often control the supply chain and inflate prices, enabling artisans to plan production and maintain sustainable business operations.'
     },
     {
         title: '4. Artisan Cooperatives for Collective Bargaining',
-        description: "CraftLore promotes the formation of artisan cooperatives, where craftsmen and women can join together to negotiate better terms with suppliers and buyers. These cooperatives increase the artisans' bargaining power, allowing them to secure better deals on raw materials and receive fair prices for their products. Cooperatives also foster a sense of community, where artisans can share resources, knowledge, and skills to improve their collective well-being."
+        description: "Craftlore promotes the formation of artisan cooperatives, where craftsmen and women can join together to negotiate better terms with suppliers and buyers. These cooperatives increase the artisans' bargaining power, allowing them to secure better deals on raw materials and receive fair prices for their products. Cooperatives also foster a sense of community, where artisans can share resources, knowledge, and skills to improve their collective well-being."
     },
     {
         title: '5. Business and Entrepreneurial Training',
-        description: 'CraftLore offers training programs that teach artisans how to manage their businesses independently, covering areas such as finance, marketing, inventory management, and customer relations. These programs empower artisans with the skills they need to grow their businesses without relying on intermediaries. By fostering entrepreneurial skills, CraftLore helps artisans transition from being dependent on middlemen to becoming self-sufficient business owners.'
+        description: 'Craftlore offers training programs that teach artisans how to manage their businesses independently, covering areas such as finance, marketing, inventory management, and customer relations. These programs empower artisans with the skills they need to grow their businesses without relying on intermediaries. By fostering entrepreneurial skills, Craftlore helps artisans transition from being dependent on middlemen to becoming self-sufficient business owners.'
     },
     {
         title: '6. Expanding Market Opportunities',
-        description: 'CraftLore collaborates with international trade bodies and fair-trade organizations to open new markets for Kashmiri artisans. These partnerships create opportunities for artisans to showcase their products at global fairs and exhibitions, where they can connect with international buyers and build long-term business relationships. By providing artisans with more market access, CraftLore helps reduce dependency on local markets controlled by intermediaries, ensuring artisans can grow their customer base and income streams.'
+        description: 'Craftlore collaborates with international trade bodies and fair-trade organizations to open new markets for Kashmiri artisans. These partnerships create opportunities for artisans to showcase their products at global fairs and exhibitions, where they can connect with international buyers and build long-term business relationships. By providing artisans with more market access, Craftlore helps reduce dependency on local markets controlled by intermediaries, ensuring artisans can grow their customer base and income streams.'
     }
 ]
 
@@ -627,19 +627,19 @@ export const KEYCOMPONENTS = [
 
 export const STAKHOLDERS = [
     {
-        title: '1. For Artisans',
+        title: 'For Artisans',
         desc: 'Artisans receive timely economic insights into the value and demand for their craft. This allows them to price their goods more competitively and plan their production in line with market demand, helping to mitigate risk and reduce wastage.'
     },
     {
-        title: '2. For Business Owners',
+        title: 'For Business Owners',
         desc: 'Businesses benefit from enhanced visibility into production and export data, allowing them to make informed decisions about inventory management, supply chain optimization, and market positioning.'
     },
     {
-        title: '3. For Policymakers',
+        title: 'For Policymakers',
         desc: 'The center provides invaluable data for policymakers looking to craft effective legislation and support programs. By identifying the most economically viable crafts, policymakers can direct investment and subsidies where they are most needed.'
     },
     {
-        title: '4. For Global Consumers',
+        title: 'For Global Consumers',
         desc: 'Consumers worldwide gain access to more transparent information about the economic and environmental impact of the products they buy. This builds trust and promotes ethical purchasing decisions.'
     }
 ]
@@ -701,19 +701,19 @@ export const EMPLOYMENTCOMPONENTS = [
 
 export const EMPLOYMENTSTAKHOLDERS = [
     {
-        title: '1. For Artisans',
+        title: 'For Artisans',
         desc: 'Artisans benefit from improved job security, fair wages, and access to training programs that enhance their skills and employability.'
     },
     {
-        title: '2. For Business Owners',
+        title: 'For Business Owners',
         desc: 'Businesses gain visibility into workforce dynamics, helping them manage their artisans effectively, promote skill development, and optimize productivity.'
     },
     {
-        title: '3. For Policymakers',
+        title: 'For Policymakers',
         desc: 'Policymakers can leverage employment data to create effective labor policies and support programs, fostering job creation and improving working conditions in the handicraft sector.'
     },
     {
-        title: '4. For Global Consumers',
+        title: 'For Global Consumers',
         desc: 'Consumers are assured that the products they purchase are created by artisans who work under fair labor conditions, supporting ethical practices and sustainable livelihoods.'
     }
 ]
@@ -774,19 +774,19 @@ export const GENDERCOMPONENTS = [
 
 export const GENDERSTAKHOLDERS = [
     {
-        title: '1. For Women Artisans',
+        title: 'For Women Artisans',
         desc: 'Women artisans gain visibility and access to training, leadership roles, and fair wages, empowering them to contribute meaningfully to the craft sector.'
     },
     {
-        title: '2. For Business Owners',
+        title: 'For Business Owners',
         desc: 'Businesses gain insights on how to create gender-inclusive work environments, ensuring fair wages and career advancement opportunities for women artisans.'
     },
     {
-        title: '3. For Policymakers',
+        title: 'For Policymakers',
         desc: 'The center provides policymakers with critical data to support the development of gender-inclusive policies that promote economic equality in the handicraft sector.'
     },
     {
-        title: '4. For Global Consumers',
+        title: 'For Global Consumers',
         desc: 'Consumers can make informed choices by supporting businesses that practice fair trade, gender equality, and ethical labor practices.'
     }
 ]
@@ -865,7 +865,7 @@ export const LISTINGBENEFITS = [
 export const BUSINESSLISTINGS = [
     {
         title: 'Artisan Listing',
-        desc: 'The CraftLore Artisan Listing highlights artisans based on skill level, craftsmanship quality, and market reach. This listing enables buyers to discover skilled artisans and ensures artisans gain recognition for their craft.',
+        desc: 'The Craftlore Artisan Listing highlights artisans based on skill level, craftsmanship quality, and market reach. This listing enables buyers to discover skilled artisans and ensures artisans gain recognition for their craft.',
         criteria: [
             { title: 'Skill Level', desc: 'Master, Skilled, Semi-Skilled, Apprentice, Hobbyist.' },
             { title: 'Craftsmanship Quality', desc: 'Based on buyer feedback and market demand.' },
@@ -881,7 +881,7 @@ export const BUSINESSLISTINGS = [
     },
     {
         title: 'Business Listing',
-        desc: 'The CraftLore Business Listing features verified profiles of businesses in the Kashmiri handicraft sector, from local shops to international exporters, highlighting transparency, ethical practices, and market reach.',
+        desc: 'The Craftlore Business Listing features verified profiles of businesses in the Kashmiri handicraft sector, from local shops to international exporters, highlighting transparency, ethical practices, and market reach.',
         criteria: [
             { title: 'Business Type', desc: 'Master, Skilled, Semi-Skilled, Apprentice, Hobbyist.' },
             { title: 'Market Reach', desc: 'Based on buyer feedback, peer reviews, and market demand.' },
@@ -897,7 +897,7 @@ export const BUSINESSLISTINGS = [
     },
     {
         title: 'Institution Listing',
-        desc: "CraftLore's Institution Listing highlights organizations that play a key role in governance, education, training, and policy development within the handicraft industry. These institutions contribute to artisan welfare and promote sustainability.",
+        desc: "Craftlore's Institution Listing highlights organizations that play a key role in governance, education, training, and policy development within the handicraft industry. These institutions contribute to artisan welfare and promote sustainability.",
         criteria: [
             { title: 'Institution Type', desc: 'Governance, NGO, Training, Educational body.' },
             { title: 'Impact', desc: 'Artisan development, policy contribution, capacity building.' },
@@ -912,7 +912,7 @@ export const BUSINESSLISTINGS = [
     },
     {
         title: 'Blacklisted Listing',
-        desc: "CraftLore's Blacklisted Listing highlights artisans, businesses, and institutions that violated ethical standards in the handicraft industry. These entities failed to support artisan welfare, ignored sustainability, or engaged in corruption, harming the industry's integrity and communities.",
+        desc: "Craftlore's Blacklisted Listing highlights artisans, businesses, and institutions that violated ethical standards in the handicraft industry. These entities failed to support artisan welfare, ignored sustainability, or engaged in corruption, harming the industry's integrity and communities.",
         criteria: [
             { title: 'Counterfeit', desc: 'Producing, selling, or distributing counterfeit handicrafts.' },
             { title: 'Exploitation', desc: 'Unfair wages, poor working conditions.' },

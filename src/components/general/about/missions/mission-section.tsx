@@ -64,7 +64,7 @@ export const MissionSection = () => {
       </Container>
       
       {/* Mission display - Matching project section styles */}
-      <Container className="my-32 grid gap-6">
+      <Container className="my-12 md:my-32 grid gap-6">
         <h2 className="font-montserrat text-4xl text-primary lg:text-6xl">
           {mission.title}
         </h2>

@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import { SectionContainer } from "~/components/common/section-container";
 import { ComponentList } from "~/components/general/economics/component-list";
 import { HandiCraftGraph } from "~/components/general/economics/production/handicraft-graph";
@@ -12,7 +13,7 @@ export default async function EconomyPage() {
           Kashmir Handicrafts Economics Monitoring
         </h1>
         <p className="font-opensans text-xl leading-[31px]">
-          The CraftLore Kashmir Handicrafts Economics Monitoring Center stands
+          The Craftlore Kashmir Handicrafts Economics Monitoring Center stands
           as a pioneering initiative dedicated to the ongoing assessment,
           analysis, and promotion of the economic health of the Kashmiri
           handicrafts sector. Designed as a comprehensive platform that
@@ -46,7 +47,7 @@ export default async function EconomyPage() {
           </h2>
           <p className="font-opensans text-xl">
             The <strong>
-              CraftLore Kashmir Handicrafts Economics Monitoring Center
+              Craftlore Kashmir Handicrafts Economics Monitoring Center
             </strong>{" "}
             aspires to become the world’s most comprehensive database for the
             Kashmiri handicraft industry. As it grows, the center will expand
@@ -72,12 +73,12 @@ export default async function EconomyPage() {
         </div>
         <h2 className="text-center font-montserrat text-[40px] leading-[48px] text-primary">
           Overall Handicraft Production Trend(
-          <span className="text-secondary">2010-2024</span>)
+          <span className="text-secondary">2010-{dayjs().year()}</span>)
         </h2>
         <ProductionTrendGraph />
         <h2 className="text-center font-montserrat text-[40px] leading-[48px] text-primary">
           Estimated Production Across Different Crafts of the Handicraft
-          Industry of J&K(<span className="text-secondary">2010-2024</span>)
+          Industry of J&K(<span className="text-secondary">2010-{dayjs().year()}</span>)
         </h2>
         <HandiCraftGraph />
     </SectionContainer>

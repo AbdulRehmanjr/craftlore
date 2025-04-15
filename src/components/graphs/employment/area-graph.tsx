@@ -13,8 +13,6 @@ ChartJS.register(
 );
 
 
-
-
 export const WorkforceAreaGraph = () => {
     const labels: string[] = [
         'Rural Artisans',
