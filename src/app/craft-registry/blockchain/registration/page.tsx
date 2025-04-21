@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import { Alert, AlertDescription, AlertTitle } from "~/components/ui/alert";
-import { Shield, AlertTriangle, Landmark, Leaf } from "lucide-react";
+import { Shield, AlertTriangle, Landmark, Link as LinkIcon } from "lucide-react";
 import { SessionRegister } from "~/components/craft-repository/registration/session";
 
 export default async function RegistrationPage() {
@@ -12,14 +12,14 @@ export default async function RegistrationPage() {
           <div className="relative mx-auto max-w-6xl px-6">
             <div className="grid gap-2">
               <div className="flex items-center gap-4">
-                <Leaf className="h-12 w-12 text-white/90" />
+                <LinkIcon className="h-12 w-12 text-white/90" />
                 <h1 className="font-montserrat text-4xl font-bold md:text-5xl">
-                  CraftLore&apos;s Carbon Footprint Registry
+                  CraftLore&apos;s Blockchain Registry
                 </h1>
               </div>
               <p className="mb-8 font-opensans text-xl opacity-90">
-                Measuring and certifying the environmental impact of Kashmiri crafts,
-                promoting sustainable practices in the handicraft industry
+                Securing the authenticity and traceability of Kashmiri crafts through
+                blockchain technology, ensuring transparency in the global market
               </p>
             </div>
           </div>
@@ -35,11 +35,11 @@ export default async function RegistrationPage() {
             </CardHeader>
             <CardContent>
               <p className="text-gray-600">
-                At CraftLore, we are dedicated to promoting sustainable practices in
-                the Kashmiri handicraft industry. Our Carbon Footprint Registry
-                helps artisans and businesses measure, reduce, and offset their
-                environmental impact, ensuring a greener future for traditional
-                craftsmanship.
+                At CraftLore, we leverage blockchain technology to create an
+                immutable record of Kashmiri crafts&apos; journey from artisan to
+                consumer. Our Blockchain Registry ensures transparency, prevents
+                counterfeiting, and builds trust in the global marketplace while
+                protecting the rights of artisans.
               </p>
             </CardContent>
           </Card>
@@ -51,13 +51,13 @@ export default async function RegistrationPage() {
               <Alert variant="destructive" className="border-2 transition-all hover:shadow-md">
                 <AlertTriangle className="h-5 w-5" />
                 <AlertTitle className="font-montserrat text-lg font-bold">
-                  Environmental Compliance Policy
+                  Blockchain Integrity Policy
                 </AlertTitle>
                 <AlertDescription className="mt-2 text-base opacity-90">
-                  Failure to comply with environmental standards and carbon footprint
-                  regulations will result in immediate blacklisting from the
-                  CraftLore Global Registry. This status is permanent and serves to
-                  protect our commitment to sustainability.
+                  Any attempt to manipulate or falsify blockchain records will result
+                  in immediate blacklisting from the CraftLore Global Registry. This
+                  status is permanent and serves to protect the integrity of our
+                  digital verification system.
                 </AlertDescription>
               </Alert>
             </div>
@@ -69,10 +69,10 @@ export default async function RegistrationPage() {
                   Legal Notice
                 </AlertTitle>
                 <AlertDescription className="mt-2 text-base opacity-90">
-                  CraftLore enforces strict environmental regulations to ensure
-                  sustainable practices in the Kashmiri handicraft industry. Any
-                  violation of environmental standards will be met with legal action
-                  to protect our planet and future generations.
+                  CraftLore maintains strict legal measures to protect the integrity
+                  of our blockchain records. Any attempt to compromise the system&apos;s
+                  security or authenticity will be met with legal action to preserve
+                  trust in the marketplace.
                 </AlertDescription>
               </Alert>
             </div>
@@ -85,4 +85,4 @@ export default async function RegistrationPage() {
       </div>
     </div>
   );
-}
+} 

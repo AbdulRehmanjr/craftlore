@@ -1,44 +1,119 @@
+'use client'
 import { Button } from "~/components/ui/button"
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "~/components/ui/select"
+import { useRouter } from "next/navigation"
+import { useForm } from "react-hook-form"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { z } from "zod"
+import { Form, FormControl, FormField, FormItem } from "~/components/ui/form"
 
+const formSchema = z.object({
+    listingType: z.string().min(1, "Please select a listing type"),
+    businessType: z.string().min(1, "Please select a business type"),
+})
 
-
+type FormValues = z.infer<typeof formSchema>
 
 export const TraderRegistryInfo = () => {
+    const router = useRouter();
+    
+    const form = useForm<FormValues>({
+        resolver: zodResolver(formSchema),
+        defaultValues: {
+            listingType: "",
+            businessType: "",
+        },
+    })
+
+    const onSubmit = (data: FormValues) => {
+        // Map business types to tab values
+        const tabMap: Record<string, string> = {
+            "Artisan": "artisans",
+            "Business": "businesses",
+            "Institution": "institutions"
+        };
+
+        const selectedTab = tabMap[data.businessType] ?? "registry";
+        
+        // Add the listing type as a query parameter
+        const searchParams = new URLSearchParams();
+        searchParams.set('tab', selectedTab);
+        searchParams.set('type', data.listingType);
+        
+        router.push(`/listing?${searchParams.toString()}`);
+    };
 
     return (
         <div className="mx-6 lg:container grid gap-32 mt-32">
             <div className="lg:container flex flex-col lg:flex-row justify-between gap-5">
                 <p className="text-4xl font-montserrat">May I Help you ?</p>
-                <form action="" className="flex flex-col lg:flex-row gap-6">
-                    <Select >
-                        <SelectTrigger className="w-36">
-                            <SelectValue placeholder="Find a listing" />
-                        </SelectTrigger>
-                        <SelectContent>
-                            <SelectGroup>
-                                <SelectLabel>Listing</SelectLabel>
-                                <SelectItem value="apple">Find a listing</SelectItem>
-                                <SelectItem value="banana">View Rankings</SelectItem>
-                                <SelectItem value="blueberry">Check Blacklisted</SelectItem>
-                            </SelectGroup>
-                        </SelectContent>
-                    </Select>
-                    <Select >
-                        <SelectTrigger className="w-36">
-                            <SelectValue placeholder="Business" />
-                        </SelectTrigger>
-                        <SelectContent>
-                            <SelectGroup>
-                                <SelectLabel>Business</SelectLabel>
-                                <SelectItem value="apple">Artisan</SelectItem>
-                                <SelectItem value="banana">Business</SelectItem>
-                                <SelectItem value="blueberry">Institution</SelectItem>
-                            </SelectGroup>
-                        </SelectContent>
-                    </Select>
-                    <Button variant={'secondary'} type="button">Submit</Button>
-                </form>
+                <Form {...form}>
+                    <form 
+                        onSubmit={form.handleSubmit(onSubmit)}
+                        className="flex flex-col sm:flex-row items-center gap-4 p-4 rounded-lg bg-white/80 backdrop-blur-sm shadow-md"
+                    >
+                        <FormField
+                            control={form.control}
+                            name="listingType"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <Select
+                                        value={field.value}
+                                        onValueChange={field.onChange}
+                                    >
+                                        <FormControl>
+                                            <SelectTrigger className="w-full sm:w-48 bg-white border-2 focus:ring-2 ring-primary/20">
+                                                <SelectValue placeholder="Find a listing" />
+                                            </SelectTrigger>
+                                        </FormControl>
+                                        <SelectContent>
+                                            <SelectGroup>
+                                                <SelectLabel>Listing</SelectLabel>
+                                                <SelectItem value="find">Find a listing</SelectItem>
+                                                <SelectItem value="rankings">View Rankings</SelectItem>
+                                                <SelectItem value="blacklisted">Check Blacklisted</SelectItem>
+                                            </SelectGroup>
+                                        </SelectContent>
+                                    </Select>
+                                </FormItem>
+                            )}
+                        />
+                        <FormField
+                            control={form.control}
+                            name="businessType"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <Select
+                                        value={field.value}
+                                        onValueChange={field.onChange}
+                                    >
+                                        <FormControl>
+                                            <SelectTrigger className="w-full sm:w-48 bg-white border-2 focus:ring-2 ring-primary/20">
+                                                <SelectValue placeholder="Business" />
+                                            </SelectTrigger>
+                                        </FormControl>
+                                        <SelectContent>
+                                            <SelectGroup>
+                                                <SelectLabel>Business</SelectLabel>
+                                                <SelectItem value="Artisan">Artisan</SelectItem>
+                                                <SelectItem value="Business">Business</SelectItem>
+                                                <SelectItem value="Institution">Institution</SelectItem>
+                                            </SelectGroup>
+                                        </SelectContent>
+                                    </Select>
+                                </FormItem>
+                            )}
+                        />
+                        <Button 
+                            variant="secondary"
+                            type="submit"
+                            className="w-full sm:w-auto px-8 py-2 transition-all duration-200 hover:scale-105 disabled:opacity-50 disabled:hover:scale-100"
+                            disabled={!form.formState.isValid}
+                        >
+                            Search
+                        </Button>
+                    </form>
+                </Form>
             </div>
             <div className="lg:container grid grid-cols-2 gap-4">
                 <div className="col-span-2 lg:col-span-1 grid gap-10 p-6 py-12">

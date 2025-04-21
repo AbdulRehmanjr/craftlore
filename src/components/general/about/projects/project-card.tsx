@@ -1,11 +1,50 @@
+"use client";
 import { useProject } from "~/hooks/use-project";
 import { cn } from "~/lib/utils";
+import {
+  Database,
+  BookOpen,
+  DollarSign,
+  GraduationCap,
+  Shield,
+  BarChart2,
+  Leaf,
+  Search,
+} from "lucide-react";
 
-type ProjectProps = {
+interface ProjectCardProps {
   title: string;
   id: number;
   description: string;
   className?: string;
+}
+
+const getProjectIcon = (id: number, isSelected: boolean) => {
+  const iconClass = cn(
+    "h-8 w-8",
+    isSelected ? "text-white" : "text-secondary group-hover:text-white"
+  );
+
+  switch (id) {
+    case 1:
+      return <Database className={iconClass} />;
+    case 2:
+      return <BookOpen className={iconClass} />;
+    case 3:
+      return <DollarSign className={iconClass} />;
+    case 4:
+      return <GraduationCap className={iconClass} />;
+    case 5:
+      return <Shield className={iconClass} />;
+    case 6:
+      return <BarChart2 className={iconClass} />;
+    case 7:
+      return <Leaf className={iconClass} />;
+    case 8:
+      return <Search className={iconClass} />;
+    default:
+      return <Database className={iconClass} />;
+  }
 };
 
 export const ProjectCard = ({
@@ -13,28 +52,29 @@ export const ProjectCard = ({
   id,
   description,
   className,
-}: ProjectProps) => {
+}: ProjectCardProps) => {
   const { project, setProject } = useProject();
+  const isSelected = project.id === id;
+
   return (
     <div
       className={cn(
-        "group flex h-[170px] lg:h-[250px] cursor-pointer flex-col justify-center rounded-lg border-4 border-secondary bg-white px-2 lg:px-5 pb-4 pt-8 shadow-lg hover:bg-secondary lg:pb-7 lg:pt-16",
+        "group flex h-auto cursor-pointer flex-col items-center justify-center rounded-lg border-4 border-secondary bg-white px-5 pb-4 pt-8 shadow-lg transition-colors duration-300 hover:bg-secondary",
         className,
-        project.id == id && "bg-secondary text-white",
+        isSelected && "bg-secondary text-white border-primary",
       )}
-      onClick={() =>
-        setProject({ id: id, title: title, description: description })
-      }
+      onClick={() => setProject({ id, title, description })}
     >
+      <div className="mb-4">{getProjectIcon(id, isSelected)}</div>
       <p
         className={cn(
-          "font-montserrat text-xs sm:text-sm text-primary group-hover:text-white lg:text-2xl",
-          project.id == id && "text-white",
+          "text-center font-montserrat text-lg text-primary group-hover:text-white sm:text-xl lg:text-2xl",
+          isSelected && "text-white",
         )}
       >
         {title}
       </p>
-      <p className="text-left text-sm group-hover:text-white">See more</p>
+      <p className="mt-2 text-left text-sm group-hover:text-white">See more</p>
     </div>
   );
 };

@@ -15,16 +15,12 @@ ChartJS.register(
     Legend
 );
 
-
-
 export const HandiCraftExportGraph = () => {
-
-
     const data = {
-        labels: ['2010-11', '2011-12', '2012-13', '2013-14', '2014-15', '2015-16', '2016-17', '2017-18', '2018-19', '2019-20', '2020-21', '2022-23 (Projected)'],
+        labels: ['2010-11', '2011-12', '2012-13', '2013-14', '2014-15', '2015-16', '2016-17', '2017-18', '2018-19', '2019-20', '2020-21', '2022-23', '2024-25', '2025-26 (Projected)'],
         datasets: [{
             label: 'Total Export (in Cr)',
-            data: [1004.10, 1643.37, 1538.28, 1695.65, 1287.04, 1059.41, 1151.12, 1090.12, 917.93, 935.25, 635.52, 700], // 700 is a placeholder for the projected year
+            data: [1004.10, 1643.37, 1538.28, 1695.65, 1287.04, 1059.41, 1151.12, 1090.12, 917.93, 935.25, 635.52, 700, 800, 900],
             backgroundColor: 'hsl(212 99% 24%)',
             borderColor: 'hsl(212 99% 24%)',
             borderWidth: 2,
@@ -44,7 +40,7 @@ export const HandiCraftExportGraph = () => {
                 beginAtZero: true,
                 title: {
                     display: true,
-                    text: 'Total Production (in Crores ₹)',
+                    text: 'Total Export (in Crores ₹)',
                 },
             },
             x: {

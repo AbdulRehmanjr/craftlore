@@ -9,7 +9,7 @@ export const CorporateAccordin = () => {
                 <AccordionTrigger className="text-xl font-montserrat">1. Sustainable Sourcing and Ethical Partnerships
                 </AccordionTrigger>
                 <AccordionContent className="space-y-10 text-xl font-opensans">
-                    CraftLore offers corporate institutions access to verified, authentic Kashmiri crafts, ensuring that products align with ethical sourcing standards. With blockchain-backed traceability, corporations can be confident in the origin, production methods, and authenticity of the items they source. This transparency enhances corporate credibility and aligns with sustainable sourcing practices, fostering ethical partnerships that benefit both the artisans and corporate stakeholders.
+                    Craftlore offers corporate institutions access to verified, authentic Kashmiri crafts, ensuring that products align with ethical sourcing standards. With blockchain-backed traceability, corporations can be confident in the origin, production methods, and authenticity of the items they source. This transparency enhances corporate credibility and aligns with sustainable sourcing practices, fostering ethical partnerships that benefit both the artisans and corporate stakeholders.
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
@@ -24,7 +24,7 @@ export const CorporateAccordin = () => {
                     3. Corporate Social Responsibility (CSR) Initiatives
                 </AccordionTrigger>
                 <AccordionContent className="space-y-10 text-xl font-opensans">
-                    CraftLore enables corporations to fulfill CSR objectives by directly supporting Kashmiri artisans and sustainable craft practices. Corporations can participate in programs that preserve traditional craftsmanship, reduce the environmental impact of production, and support local economies. By engaging with CraftLore’s initiatives, corporations can demonstrate a commitment to cultural preservation, sustainability, and social impact, enhancing their brand’s CSR profile.
+                    Craftlore enables corporations to fulfill CSR objectives by directly supporting Kashmiri artisans and sustainable craft practices. Corporations can participate in programs that preserve traditional craftsmanship, reduce the environmental impact of production, and support local economies. By engaging with CraftLore’s initiatives, corporations can demonstrate a commitment to cultural preservation, sustainability, and social impact, enhancing their brand’s CSR profile.
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-4">
@@ -32,7 +32,7 @@ export const CorporateAccordin = () => {
                     4. Brand Alignment with Sustainable Practices
                 </AccordionTrigger>
                 <AccordionContent className="space-y-10 text-xl font-opensans">
-                    CraftLore’s emphasis on eco-friendly production, carbon footprint tracking, and sustainable materials enables corporations to source products that align with their own environmental goals. Corporations can showcase their commitment to sustainability by partnering with CraftLore, demonstrating that their supply chains support environmental responsibility and ethical craftsmanship. This alignment strengthens corporate brands and resonates with eco-conscious consumers.
+                    CraftLore’s emphasis on eco-friendly production, carbon footprint tracking, and sustainable materials enables corporations to source products that align with their own environmental goals. Corporations can showcase their commitment to sustainability by partnering with Craftlore, demonstrating that their supply chains support environmental responsibility and ethical craftsmanship. This alignment strengthens corporate brands and resonates with eco-conscious consumers.
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-5">
@@ -40,7 +40,7 @@ export const CorporateAccordin = () => {
                     5. Enhanced Reputation and Brand Loyalty
                 </AccordionTrigger>
                 <AccordionContent className="space-y-10 text-xl font-opensans">
-                    By supporting CraftLore’s mission and working with authentic artisans, corporate institutions can strengthen their brand image and build trust with consumers who value cultural authenticity and sustainable practices. Corporations that integrate CraftLore-sourced products into their offerings can attract loyal customers who prioritize ethical and culturally rich products. This association with CraftLore enhances corporate reputation, making the brand more appealing to socially conscious consumers.
+                    By supporting CraftLore’s mission and working with authentic artisans, corporate institutions can strengthen their brand image and build trust with consumers who value cultural authenticity and sustainable practices. Corporations that integrate Craftlore-sourced products into their offerings can attract loyal customers who prioritize ethical and culturally rich products. This association with Craftlore enhances corporate reputation, making the brand more appealing to socially conscious consumers.
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-6">
@@ -48,7 +48,7 @@ export const CorporateAccordin = () => {
                     6. Educational and Awareness Programs
                 </AccordionTrigger>
                 <AccordionContent className="space-y-10 text-xl font-opensans">
-                    CraftLore provides corporations with educational resources and case studies on Kashmiri crafts, sustainability, and ethical sourcing. These materials serve as valuable training tools for corporate staff, helping them understand the value and significance of Kashmiri crafts. Corporations can use these resources to train teams on cultural sensitivity and sustainable practices, deepening their commitment to ethical business operations.
+                    Craftlore provides corporations with educational resources and case studies on Kashmiri crafts, sustainability, and ethical sourcing. These materials serve as valuable training tools for corporate staff, helping them understand the value and significance of Kashmiri crafts. Corporations can use these resources to train teams on cultural sensitivity and sustainable practices, deepening their commitment to ethical business operations.
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-7">

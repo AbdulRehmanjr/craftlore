@@ -535,3 +535,11 @@ type VerificationResultProps = {
         },
     },
 } 
+
+type TestimonialProps = {
+    quote: string;
+    author: string;
+    role: string;
+    location: string;
+    category: "kashmir" | "us" | "global";
+  }

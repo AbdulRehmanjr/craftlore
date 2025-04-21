@@ -7,6 +7,7 @@ import { RegisterCard } from "~/components/general/landing/register-card";
 import { ServiceCard } from "~/components/general/landing/service-card";
 import { CraftloreComing } from "~/components/general/landing/soon-counter";
 import { SupportNetwork } from "~/components/general/landing/support-network";
+import { Testimonials } from "~/components/general/landing/testimonials";
 import { WelcomeCard } from "~/components/general/landing/welcome-card";
 import { BANNERS } from "~/constants/banner";
 
@@ -17,6 +18,7 @@ export default async function Home() {
       <Banner banner={BANNERS}/>
       <ServiceCard />
       <CraftloreComing/>
+      <Testimonials/>
       <WelcomeCard />
       <RegisterCard />
       <GraphCard />

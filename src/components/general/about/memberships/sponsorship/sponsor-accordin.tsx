@@ -26,7 +26,7 @@ export const SponsorAccordin = () => {
                     3. Artisan Empowerment & Community Development
                 </AccordionTrigger>
                 <AccordionContent className="space-y-10 text-xl font-opensans">
-                    CraftLore offers sponsorship opportunities that directly support artisan empowerment, from financial literacy workshops to skill development training. Sponsors can fund programs that teach artisans to effectively manage finances, market their products, and adapt to global consumer trends. Additionally, sponsorship can extend to community development programs, such as funding local cooperatives or artisan guilds that encourage collaborative work and shared resources. These initiatives improve artisans’ economic stability, provide tools for self-sufficiency, and foster community resilience, allowing sponsors to make a tangible difference in the lives of artisans and their families.
+                    Craftlore offers sponsorship opportunities that directly support artisan empowerment, from financial literacy workshops to skill development training. Sponsors can fund programs that teach artisans to effectively manage finances, market their products, and adapt to global consumer trends. Additionally, sponsorship can extend to community development programs, such as funding local cooperatives or artisan guilds that encourage collaborative work and shared resources. These initiatives improve artisans’ economic stability, provide tools for self-sufficiency, and foster community resilience, allowing sponsors to make a tangible difference in the lives of artisans and their families.
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-4">
@@ -34,7 +34,7 @@ export const SponsorAccordin = () => {
                     4. Enhanced Visibility through Co-Branded Initiatives
                 </AccordionTrigger>
                 <AccordionContent className="space-y-10 text-xl font-opensans">
-                    Sponsors benefit from enhanced brand visibility through co-branded initiatives with CraftLore. By collaborating on high-visibility campaigns, exhibitions, or digital storytelling projects, sponsors can reach CraftLore’s audience of craft enthusiasts, cultural advocates, and socially conscious consumers. Co-branding allows sponsors to demonstrate their support for artisan empowerment and cultural heritage in ways that resonate with audiences. For example, a sponsor might support a series of craft documentaries or a virtual showcase, which can highlight the sponsor’s brand while spotlighting the beauty and significance of Kashmiri crafts. This visibility builds public goodwill and aligns the sponsor’s image with impactful causes.
+                    Sponsors benefit from enhanced brand visibility through co-branded initiatives with Craftlore. By collaborating on high-visibility campaigns, exhibitions, or digital storytelling projects, sponsors can reach CraftLore’s audience of craft enthusiasts, cultural advocates, and socially conscious consumers. Co-branding allows sponsors to demonstrate their support for artisan empowerment and cultural heritage in ways that resonate with audiences. For example, a sponsor might support a series of craft documentaries or a virtual showcase, which can highlight the sponsor’s brand while spotlighting the beauty and significance of Kashmiri crafts. This visibility builds public goodwill and aligns the sponsor’s image with impactful causes.
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-5">
@@ -42,7 +42,7 @@ export const SponsorAccordin = () => {
                     5. Access to Impact Reports & Measurable Outcomes
                 </AccordionTrigger>
                 <AccordionContent className="space-y-10 text-xl font-opensans">
-                    CraftLore provides sponsor institutions with detailed impact reports, ensuring transparency and accountability in their contributions. These reports measure tangible outcomes such as the number of artisans supported, reductions in environmental impact, improvements in craft authenticity, and successful market expansions. Sponsors receive data on how their funding has contributed to the growth and stability of the Kashmiri craft sector. These metrics enable sponsors to communicate the measurable benefits of their support to internal stakeholders, donors, and the public, enhancing the sponsor’s reputation as an impactful contributor to cultural and social development.
+                    Craftlore provides sponsor institutions with detailed impact reports, ensuring transparency and accountability in their contributions. These reports measure tangible outcomes such as the number of artisans supported, reductions in environmental impact, improvements in craft authenticity, and successful market expansions. Sponsors receive data on how their funding has contributed to the growth and stability of the Kashmiri craft sector. These metrics enable sponsors to communicate the measurable benefits of their support to internal stakeholders, donors, and the public, enhancing the sponsor’s reputation as an impactful contributor to cultural and social development.
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-6">
@@ -50,7 +50,7 @@ export const SponsorAccordin = () => {
                     6. Corporate Social Responsibility (CSR) Fulfillment
                 </AccordionTrigger>
                 <AccordionContent className="space-y-10 text-xl font-opensans">
-                    CraftLore provides sponsor institutions with a meaningful avenue to fulfill their Corporate Social Responsibility (CSR) commitments by funding initiatives focused on social impact, cultural preservation, and environmental sustainability. Sponsors can align their CSR goals with specific CraftLore projects that resonate with their values, creating a positive impact within the craft sector. By supporting programs such as the artisan empowerment workshops or carbon footprint reduction efforts, sponsors showcase their CSR commitment in a way that appeals to both consumers and employees. This alignment reinforces the sponsor’s brand as socially responsible, increasing brand loyalty and employee engagement.
+                    Craftlore provides sponsor institutions with a meaningful avenue to fulfill their Corporate Social Responsibility (CSR) commitments by funding initiatives focused on social impact, cultural preservation, and environmental sustainability. Sponsors can align their CSR goals with specific Craftlore projects that resonate with their values, creating a positive impact within the craft sector. By supporting programs such as the artisan empowerment workshops or carbon footprint reduction efforts, sponsors showcase their CSR commitment in a way that appeals to both consumers and employees. This alignment reinforces the sponsor’s brand as socially responsible, increasing brand loyalty and employee engagement.
                 </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-7">
@@ -58,7 +58,7 @@ export const SponsorAccordin = () => {
                     7. Networking and Partnership Opportunities
                 </AccordionTrigger>
                 <AccordionContent className="space-y-10 text-xl font-opensans">
-                    CraftLore offers sponsors access to a broad network of artisans, cultural preservationists, corporate partners, and industry leaders. This network creates opportunities for sponsors to establish collaborative projects, build strategic alliances, and participate in knowledge-sharing events. Sponsors gain access to exclusive networking opportunities with other organizations committed to cultural preservation and sustainable development. This network can lead to co-hosted events, collaborative research, or mutually beneficial partnerships, ultimately enhancing the sponsor’s influence and reputation within the global cultural and craft preservation community.
+                    Craftlore offers sponsors access to a broad network of artisans, cultural preservationists, corporate partners, and industry leaders. This network creates opportunities for sponsors to establish collaborative projects, build strategic alliances, and participate in knowledge-sharing events. Sponsors gain access to exclusive networking opportunities with other organizations committed to cultural preservation and sustainable development. This network can lead to co-hosted events, collaborative research, or mutually beneficial partnerships, ultimately enhancing the sponsor’s influence and reputation within the global cultural and craft preservation community.
                 </AccordionContent>
             </AccordionItem>
         </Accordion>

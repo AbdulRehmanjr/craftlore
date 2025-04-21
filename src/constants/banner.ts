@@ -11,12 +11,12 @@ export const BANNERS = [
     buttonText: "Learn More"
   },
   {
-    title: "CraftLore Heritage Preservation",
+    title: "Craftlore Heritage Preservation",
     subtitle: "Authentic insights into 700+ years of Kashmiri craftsmanship.",
     buttonText: "Discover More"
   },
   {
-    title: "CraftLore Expertise Network",
+    title: "Craftlore Expertise Network",
     subtitle: "Ethnographers, scientists, historians unite for craft authenticity.",
     buttonText: "Meet the Team"
   },
@@ -56,17 +56,17 @@ export const BANNERS = [
     buttonText: "Try Valuation Tool"
   },
   {
-    title: "Unlock CraftLore Potential",
+    title: "Unlock Craftlore Potential",
     subtitle: "Free tools and ethical insights on heritage craftsmanship.",
     buttonText: "Explore Features"
   },
   {
-    title: `CraftLore ${dayjs().year()} Milestones`,
+    title: `Craftlore ${dayjs().year()} Milestones`,
     subtitle: "Data-backed commitment to authenticity and artisan empowerment.",
     buttonText: "View Milestones"
   },
   {
-    title: "CraftLore KPI Excellence",
+    title: "Craftlore KPI Excellence",
     subtitle: "Preserving heritage, setting traceability standards for artisans.",
     buttonText: "Learn About KPIs"
   },
@@ -97,7 +97,7 @@ export const BANNERS = [
   },
   {
     title: "Preserve Craft Identity",
-    subtitle: "Protecting artisan livelihoods and Kashmir heritage with CraftLore.",
+    subtitle: "Protecting artisan livelihoods and Kashmir heritage with Craftlore.",
     buttonText: "Support the Cause"
   },
   {
@@ -466,7 +466,7 @@ export const GENDERBANNER = [
  */
 export const MISSIONBANNER = [
   {
-    title: "CraftLore – Mission",
+    title: "Craftlore – Mission",
     subtitle: "Biggest Craft Repository – Creating the world’s largest open craft repository.",
     buttonText: "Learn More",
   },
@@ -569,7 +569,7 @@ export const PROJECTBANNER = [
  */
 export const REGISTERBANNER = [
   {
-    title: "CraftLore Registries",
+    title: "Craftlore Registries",
     subtitle:
       "Craft Profile Repository Registry – Comprehensive documentation of Kashmiri crafts for global access.",
     buttonText: "Learn More",
@@ -616,7 +616,7 @@ export const REGISTERBANNER = [
  */
 export const ARCHBANNER = [
   {
-    title: "CraftLore Architecture",
+    title: "Craftlore Architecture",
     subtitle: "Secure Digital Infrastructure – Reliable, scalable, and secure backbone for operations.",
     buttonText: "Learn More",
   },
@@ -652,7 +652,7 @@ export const ARCHBANNER = [
  */
 export const LISTINGBANNER = [
   {
-    title: "CraftLore Listings",
+    title: "Craftlore Listings",
     subtitle: "Artisan Excellence Registry – Showcasing skilled artisans preserving cultural craft heritage.",
     buttonText: "Learn More",
   },
@@ -683,7 +683,7 @@ export const LISTINGBANNER = [
  */
 export const SPOBANNER = [
   {
-    title: "CraftLore Alliance and Sponsors",
+    title: "Craftlore Alliance and Sponsors",
     subtitle:
       "Global Kashmir Craft Alliance – Uniting stakeholders for sustainable craft innovation worldwide.",
     buttonText: "Learn More",
@@ -715,7 +715,7 @@ export const SPOBANNER = [
  */
 export const MEMBERBANNER = [
   {
-    title: "CraftLore Membership",
+    title: "Craftlore Membership",
     subtitle:
       "Buyer Support Membership – Connecting buyers with authentic crafts and trusted artisans.",
     buttonText: "Learn More",
@@ -752,7 +752,7 @@ export const MEMBERBANNER = [
  */
 export const NETWORKBANNER = [
   {
-    title: "CraftLore Network",
+    title: "Craftlore Network",
     subtitle:
       "International Network – Connecting global communities to Kashmiri crafts and artisans.",
     buttonText: "Learn More",
@@ -799,7 +799,7 @@ export const NETWORKBANNER = [
  */
 export const CAREERBANNER = [
   {
-    title: "CraftLore Careers and Apprenticeships",
+    title: "Craftlore Careers and Apprenticeships",
     subtitle: "Career Growth Platform – Building impactful careers in the global craft sector.",
     buttonText: "Learn More",
   },
@@ -839,7 +839,7 @@ export const CAREERBANNER = [
     buttonText: "Learn More",
   },
   {
-    title: "CraftLore Career Pathways",
+    title: "Craftlore Career Pathways",
     subtitle: "Pioneering professional opportunities in heritage preservation.",
     buttonText: "Learn More",
   },
@@ -850,7 +850,7 @@ export const CAREERBANNER = [
  */
 export const TEAMBANNER = [
   {
-    title: "CraftLore Team",
+    title: "Craftlore Team",
     subtitle: "Visionary Leadership Team – Driving innovation to preserve and promote global crafts.",
     buttonText: "Learn More",
   },

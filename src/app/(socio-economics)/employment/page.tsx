@@ -2,11 +2,9 @@ import { SectionContainer } from "~/components/common/section-container";
 import { EmploymentComponentList } from "~/components/general/employment/componment-list";
 import { EmploymentStakHolder } from "~/components/general/employment/stakholder";
 import { EmploymentVisionList } from "~/components/general/employment/vision-list";
-import { WorkforceAreaGraph } from "~/components/graphs/employment/area-graph";
-import { ArtianGraph } from "~/components/graphs/employment/arstian-graph";
-import { GrowthGraph } from "~/components/graphs/employment/growth-graph";
+import { EmploymentDashboard } from "~/components/graphs/employment/employment-dashboard";
 import { WageGraph } from "~/components/graphs/employment/wage-graph";
-import { WorkforceGraph } from "~/components/graphs/employment/workforce-graph";
+import { GrowthGraph } from "~/components/graphs/employment/growth-graph";
 
 export default function EmploymentPage() {
   return (
@@ -15,7 +13,7 @@ export default function EmploymentPage() {
         Kashmir Handicrafts Employment Monitoring
       </h1>
       <p className="font-opensans text-xl leading-[31px]">
-        The CraftLore Kashmir Handicrafts Employment Monitoring Center is a
+        The Craftlore Kashmir Handicrafts Employment Monitoring Center is a
         pioneering initiative focused on the assessment, analysis, and promotion
         of employment within the Kashmiri handicrafts sector. By integrating
         real-time data collection and advanced analytics, the center provides a
@@ -46,7 +44,7 @@ export default function EmploymentPage() {
           Future Vision
         </h2>
         <p className="font-opensans text-xl">
-          The <b>CraftLore Kashmir Handicrafts Economics Monitoring Center</b>
+          The <b>Craftlore Kashmir Handicrafts Economics Monitoring Center</b>
           aspires to be a leading platform for employment data and workforce
           development in the Kashmiri handicraft sector. The center will expand
           its scope to cover labor migration trends, skill transfer across
@@ -66,11 +64,9 @@ export default function EmploymentPage() {
       </h2>
       <WageGraph />
       <h2 className="text-center font-montserrat text-[40px] leading-[48px] text-primary">
-        Kashmir Handicrafts Employment Trend
+        Employment Analytics Dashboard
       </h2>
-      <ArtianGraph />
-      <WorkforceGraph />
-      <WorkforceAreaGraph />
+      <EmploymentDashboard />
       <h2 className="text-center font-montserrat text-[40px] leading-[48px] text-primary">
         Kashmir Handicrafts Employment Growth
       </h2>
