@@ -97,7 +97,7 @@ export const BuyerMembershipForm = () => {
                     <CardHeader>
                         <CardTitle>Personal Information</CardTitle>
                     </CardHeader>
-                    <CardContent className="grid gap-2">
+                    <CardContent className="gr id gap-2">
                         <FormField
                             control={form.control}
                             name="fullName"

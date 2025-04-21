@@ -2,7 +2,7 @@ import { BlockchainHome } from "~/components/craft-repository/blockchain/home";
 import { BottomBanner } from "~/components/general/bottom-banner";
 import { Counter } from "~/components/animations/counter";
 import { BlockFeatures } from "~/components/craft-repository/blockchain/feature";
-import { BlockApiGuide } from "~/components/craft-repository/blockchain/api-guide";
+import { BlockchainApiGuide } from "~/components/craft-repository/blockchain/api-guide";
 import { type Metadata } from "next";
 import { Banner } from "~/components/general/landing/banner";
 import { BLOCKBANNER } from "~/constants/banner";
@@ -72,7 +72,7 @@ export default function BlockChainPage() {
           </Container>
         </div>
         <Container>
-          <BlockApiGuide />
+          <BlockchainApiGuide />
         </Container>
         <div className="bg-[#e5edf7]">
           <Container className="space-y-[6rem] pt-[5rem]">

@@ -15,19 +15,21 @@ export const NetworkList = () => {
               className="group col-span-2 grid rounded-lg bg-white p-6 text-gray-900 shadow-sm hover:bg-primary hover:shadow-lg lg:col-span-1"
               key={index}
             >
-              <div className="mb-4 h-20 w-20 overflow-hidden rounded-full bg-gray-100 p-2">
-                <Image
-                  src="/logo/logo.png"
-                  alt={organization.name}
-                  width={80}
-                  height={80}
-                  className="h-full w-full object-contain"
-                />
+              <div className="flex items-center gap-4">
+                <div className="h-20 w-20 overflow-hidden rounded-full bg-gray-100 p-2">
+                  <Image
+                    src="/logo/logo.png"
+                    alt={organization.name}
+                    width={80}
+                    height={80}
+                    className="h-full w-full object-contain"
+                  />
+                </div>
+                <h2 className="font-montserrat text-xl font-bold text-gray-900 group-hover:text-white">
+                  {organization.name}
+                </h2>
               </div>
-              <h2 className="mt-3 font-montserrat font-bold text-gray-900 group-hover:text-white">
-                {organization.name}
-              </h2>
-              <p className="group-hover:text-white">
+              <p className="mt-4 group-hover:text-white">
                 {organization.description}
               </p>
             </div>
