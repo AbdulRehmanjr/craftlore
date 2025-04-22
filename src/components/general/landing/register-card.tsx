@@ -5,67 +5,72 @@ import { REGISTER } from "~/constants/data";
 
 export const RegisterCard = () => {
   return (
-    <section className=" bg-[#e5edf7] pb-72 lg:pt-32">
-      <Container className="grid grid-cols-12 gap-4">
-        <div className="col-span-12 lg:col-span-8">
-          <div className="my-10 border-2 border-secondary" />
-          <h4 className="font-montserrat text-3xl font-extrabold">
-            Unlock Everything Our Platform Offers-At No Cost to You
-          </h4>
-          <h4 className="py-3 font-montserrat text-4xl font-bold text-secondary">
-            A wealth of tools and insights, completely free.
-          </h4>
-          <p className="py-7 font-opensans text-xl leading-[31px]">
-            Our platform provides a comprehensive suite of tools designed to
-            offer transparency, ethical evaluation, and deeper insights into the
-            craftsmanship behind every piece. From verifying origins through{" "}
-            <b>Geographical Indications (GI)</b> to tracking each product&apos;s
-            journey with blockchain, we ensure every craft you encounter
-            reflects true heritage and integrity. With services ranging from
-            price valuation and carbon footprint assessment to empowering women
-            artisans and protecting vulnerable crafts, Craftlore is your trusted
-            source for everything related to Kashmir&apos;s rich craft
-            tradition.
-          </p>
-        </div>
-        <div className="col-span-12 lg:col-span-4">
-          <Link href="#">
-            <Image
-              src={"/images/register.png"}
-              alt="image"
-              width={360}
-              height={450}
-            />
-          </Link>
-        </div>
-        {REGISTER.map((register, index) => (
-          <div
-            className="group col-span-12 flex cursor-pointer flex-col gap-2 rounded-lg border bg-white px-6 py-2 transition-all duration-300 hover:bg-primary hover:shadow-2xl md:col-span-6 xl:col-span-4"
-            key={index}
-          >
-            <div className="flex flex-col gap-2 py-4">
+    <section className="bg-[#e5edf7] py-16 sm:py-32 md:py-40">
+      <Container className="grid gap-8 sm:gap-12">
+        <div className="grid gap-8 lg:grid-cols-12 lg:gap-12">
+          <article className="space-y-6 lg:col-span-8">
+            <div className="h-0.5 w-24 bg-secondary" />
+            <h4 className="font-montserrat text-2xl font-extrabold sm:text-3xl md:text-4xl">
+              Unlock Everything Our Platform Offers-At No Cost to You
+            </h4>
+            <h4 className="font-montserrat text-2xl font-bold text-secondary sm:text-3xl md:text-4xl">
+              A wealth of tools and insights, completely free.
+            </h4>
+            <p className="text-base leading-relaxed sm:text-lg md:text-xl">
+              Our platform provides a comprehensive suite of tools designed to
+              offer transparency, ethical evaluation, and deeper insights into the
+              craftsmanship behind every piece. From verifying origins through{" "}
+              <b>Geographical Indications (GI)</b> to tracking each product&apos;s
+              journey with blockchain, we ensure every craft you encounter
+              reflects true heritage and integrity. With services ranging from
+              price valuation and carbon footprint assessment to empowering women
+              artisans and protecting vulnerable crafts, Craftlore is your trusted
+              source for everything related to Kashmir&apos;s rich craft
+              tradition.
+            </p>
+          </article>
+
+          <div className="relative aspect-[4/5] lg:col-span-4">
+            <Link href="#" className="block h-full w-full">
               <Image
-                className="transition-all duration-300 group-hover:[filter:brightness(0)_saturate(100%)_invert(1)]"
-                src={register.icon}
-                alt="service icon"
-                width={55}
-                height={55}
+                src="/images/register.png"
+                alt="Register for Craftlore platform"
+                fill
+                className="object-cover"
+                priority
               />
-              <p className="font-montserrat text-xl font-bold text-gray-900 group-hover:text-white">
-                {register.title}
-              </p>
-              <p className="my-2 font-montserrat text-sm font-light text-gray-900 group-hover:text-white">
-                {register.description}
-              </p>
-              <Link
-                href={register.link}
-                className="text-sm text-gray-900 underline underline-offset-4 group-hover:text-secondary"
-              >
-                Read more
-              </Link>
-            </div>
+            </Link>
           </div>
-        ))}
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {REGISTER.map((register, index) => (
+            <Link
+              href={register.link}
+              key={index}
+              className="group relative flex flex-col gap-4 rounded-lg border bg-white p-6 transition-all duration-300 hover:bg-primary hover:shadow-2xl"
+            >
+              <div className="flex flex-col gap-4">
+                <Image
+                  className="h-14 w-14 transition-all duration-300 group-hover:[filter:brightness(0)_saturate(100%)_invert(1)]"
+                  src={register.icon}
+                  alt={`${register.title} icon`}
+                  width={55}
+                  height={55}
+                />
+                <h3 className="font-montserrat text-lg font-bold text-gray-900 group-hover:text-white sm:text-xl">
+                  {register.title}
+                </h3>
+                <p className="text-sm text-gray-900 group-hover:text-white sm:text-base">
+                  {register.description}
+                </p>
+                <span className="mt-2 text-sm text-gray-900 underline underline-offset-4 group-hover:text-secondary">
+                  Read more
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
       </Container>
     </section>
   );

@@ -1,4 +1,5 @@
 "use client";
+
 import { Button } from "~/components/ui/button";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -109,7 +110,7 @@ export const Banner = ({ banner }: ComponentProps) => {
   };
 
   return (
-    <section className="h-[calc(70dvh)] bg-primary text-white">
+    <section className="relative h-[calc(70dvh)] min-h-[400px] bg-primary text-white">
       <Container className="grid h-full items-center">
         <AnimatePresence>
           <motion.div
@@ -125,22 +126,26 @@ export const Banner = ({ banner }: ComponentProps) => {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="mx-6 grid gap-2 lg:container"
+              className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8"
             >
               <motion.p
                 variants={titleVariants}
-                className="whitespace-normal font-montserrat text-[2rem] font-extrabold leading-[3rem] md:leading-[5rem] lg:leading-[7rem] lg:text-[3rem] xl:text-[5rem] 2xl:text-[6rem]"
+                className="whitespace-normal font-montserrat text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl"
               >
                 {firstLine} <span className="block">{secondLine}</span>
               </motion.p>
               <motion.p
                 variants={subtitleVariants}
-                className="mt-2 font-montserrat text-base md:text-lg lg:text-2xl"
+                className="mt-4 font-montserrat text-base leading-relaxed sm:text-lg md:text-xl lg:text-2xl"
               >
                 {banner[activeIndex]?.subtitle}
               </motion.p>
-              <motion.div variants={buttonVariants} className="mt-6">
-                <Button variant="secondary" size="lg" className="w-fit text-xl">
+              <motion.div variants={buttonVariants} className="mt-8">
+                <Button 
+                  variant="secondary" 
+                  size="lg" 
+                  className="w-full sm:w-auto text-base sm:text-lg md:text-xl px-6 py-3 sm:px-8 sm:py-4"
+                >
                   {banner[activeIndex]?.buttonText}
                 </Button>
               </motion.div>

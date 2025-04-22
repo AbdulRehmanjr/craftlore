@@ -43,7 +43,7 @@ export default function GIProcessPage() {
         {GIPROCESS.map((process, index) => (
           <div
             key={index}
-            className="grid transform gap-4 p-6 duration-500 hover:rounded-lg hover:bg-primary hover:text-white hover:shadow-lg"
+            className="col-span-2 md:col-span-1 grid transform gap-4 p-3 md:p-6 duration-500 hover:rounded-lg hover:bg-primary hover:text-white hover:shadow-lg"
           >
             <h2 className="font-montserrat text-xl">
               Step {index + 1}: {process.title}
