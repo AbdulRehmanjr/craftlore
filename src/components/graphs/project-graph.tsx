@@ -10,7 +10,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Container } from "~/components/common/container";
 
 ChartJS.register(
@@ -25,12 +25,16 @@ ChartJS.register(
 export const ProjectGraph = () => {
   const [thickness, setThickness] = useState<number>(40);
   const [fontSize, setFontSize] = useState<number>(20);
+  const [barPercentage, setBarPercentage] = useState<number>(0.8);
+  const [categoryPercentage, setCategoryPercentage] = useState<number>(0.8);
 
   useEffect(() => {
     const handleResize = () => {
       const isSmallScreen = window.innerWidth < 640;
-      setThickness(isSmallScreen ? 20 : 40);
-      setFontSize(isSmallScreen ? 14 : 20);
+      setThickness(isSmallScreen ? 5 : 40);
+      setFontSize(isSmallScreen ? 12 : 20);
+      setBarPercentage(isSmallScreen ? 0.3 : 0.8);
+      setCategoryPercentage(isSmallScreen ? 0.3 : 0.8);
     };
 
     handleResize();
@@ -49,14 +53,13 @@ export const ProjectGraph = () => {
         borderWidth: 1,
         barThickness: thickness,
         maxBarThickness: thickness,
-        barPercentage: 0.8,
-        categoryPercentage: 0.8,
+        barPercentage: barPercentage,
+        categoryPercentage: categoryPercentage,
       },
     ],
   };
 
   const options = {
-    
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
@@ -86,6 +89,9 @@ export const ProjectGraph = () => {
             size: fontSize,
           },
         },
+        grid: {
+          display: false,
+        },
       },
       y: {
         beginAtZero: true,
@@ -102,12 +108,15 @@ export const ProjectGraph = () => {
             size: fontSize,
           },
         },
+        grid: {
+          color: "rgba(0, 0, 0, 0.1)",
+        },
       },
     },
   };
 
   return (
-    <section className="col-span-12 mt-12 gap-4 bg-[#e5edf7] py-32">
+    <section className="col-span-12 mt-12 gap-4 bg-[#e5edf7] py-16 sm:py-24 md:py-32">
       <Container className="grid gap-7">
         <div className="flex flex-col gap-4">
           <h2 className="text-center font-montserrat text-xl text-secondary sm:text-2xl lg:text-4xl">
@@ -118,54 +127,54 @@ export const ProjectGraph = () => {
           </h2>
         </div>
 
-        <div className="relative h-[200px] overflow-x-auto md:h-[300px] lg:h-[400px] xl:h-[500px]">
+        <div className="relative h-[300px] overflow-x-auto sm:h-[400px] md:h-[500px] lg:h-[600px]">
           <Bar data={data} options={options} />
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <div className="space-y-4 rounded-lg bg-gray-50 p-6">
-            <h3 className="text-lg font-medium text-gray-800">Categories A-D</h3>
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-sm font-medium text-white">A</span>
-                <p className="text-sm text-gray-600">Craft Authentication Registry</p>
+        <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2">
+          <div className="space-y-4 rounded-lg bg-gray-50 p-4 sm:p-6">
+            <h3 className="text-base sm:text-lg font-medium text-gray-800">Categories A-D</h3>
+            <div className="space-y-2 sm:space-y-3">
+              <div className="flex items-center gap-2 sm:gap-3">
+                <span className="flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-full bg-primary text-xs sm:text-sm font-medium text-white">A</span>
+                <p className="text-xs sm:text-sm text-gray-600">Craft Authentication Registry</p>
               </div>
-              <div className="flex items-center gap-3">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-sm font-medium text-white">B</span>
-                <p className="text-sm text-gray-600">Craft Traceability Registry</p>
+              <div className="flex items-center gap-2 sm:gap-3">
+                <span className="flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-full bg-primary text-xs sm:text-sm font-medium text-white">B</span>
+                <p className="text-xs sm:text-sm text-gray-600">Craft Traceability Registry</p>
               </div>
-              <div className="flex items-center gap-3">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-sm font-medium text-white">C</span>
-                <p className="text-sm text-gray-600">Craft Carbon Footprint Registry</p>
+              <div className="flex items-center gap-2 sm:gap-3">
+                <span className="flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-full bg-primary text-xs sm:text-sm font-medium text-white">C</span>
+                <p className="text-xs sm:text-sm text-gray-600">Craft Carbon Footprint Registry</p>
               </div>
-              <div className="flex items-center gap-3">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-sm font-medium text-white">D</span>
-                <p className="text-sm text-gray-600">Craft Business Listing Registry</p>
+              <div className="flex items-center gap-2 sm:gap-3">
+                <span className="flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-full bg-primary text-xs sm:text-sm font-medium text-white">D</span>
+                <p className="text-xs sm:text-sm text-gray-600">Craft Business Listing Registry</p>
               </div>
             </div>
           </div>
-          <div className="space-y-4 rounded-lg bg-gray-50 p-6">
-            <h3 className="text-lg font-medium text-gray-800">Categories E-I</h3>
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-sm font-medium text-white">E</span>
-                <p className="text-sm text-gray-600">Craft Economic Monitoring System</p>
+          <div className="space-y-4 rounded-lg bg-gray-50 p-4 sm:p-6">
+            <h3 className="text-base sm:text-lg font-medium text-gray-800">Categories E-I</h3>
+            <div className="space-y-2 sm:space-y-3">
+              <div className="flex items-center gap-2 sm:gap-3">
+                <span className="flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-full bg-primary text-xs sm:text-sm font-medium text-white">E</span>
+                <p className="text-xs sm:text-sm text-gray-600">Craft Economic Monitoring System</p>
               </div>
-              <div className="flex items-center gap-3">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-sm font-medium text-white">F</span>
-                <p className="text-sm text-gray-600">Blockchain-Powered Digital Authentication</p>
+              <div className="flex items-center gap-2 sm:gap-3">
+                <span className="flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-full bg-primary text-xs sm:text-sm font-medium text-white">F</span>
+                <p className="text-xs sm:text-sm text-gray-600">Blockchain-Powered Digital Authentication</p>
               </div>
-              <div className="flex items-center gap-3">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-sm font-medium text-white">G</span>
-                <p className="text-sm text-gray-600">Craft Gender Registry</p>
+              <div className="flex items-center gap-2 sm:gap-3">
+                <span className="flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-full bg-primary text-xs sm:text-sm font-medium text-white">G</span>
+                <p className="text-xs sm:text-sm text-gray-600">Craft Gender Registry</p>
               </div>
-              <div className="flex items-center gap-3">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-sm font-medium text-white">H</span>
-                <p className="text-sm text-gray-600">Craft Employment Registry</p>
+              <div className="flex items-center gap-2 sm:gap-3">
+                <span className="flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-full bg-primary text-xs sm:text-sm font-medium text-white">H</span>
+                <p className="text-xs sm:text-sm text-gray-600">Craft Employment Registry</p>
               </div>
-              <div className="flex items-center gap-3">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-sm font-medium text-white">I</span>
-                <p className="text-sm text-gray-600">Craft Digital Marketing Platform</p>
+              <div className="flex items-center gap-2 sm:gap-3">
+                <span className="flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-full bg-primary text-xs sm:text-sm font-medium text-white">I</span>
+                <p className="text-xs sm:text-sm text-gray-600">Craft Digital Marketing Platform</p>
               </div>
             </div>
           </div>
