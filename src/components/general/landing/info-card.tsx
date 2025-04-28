@@ -2,19 +2,19 @@ import { Container } from "~/components/common/container";
 
 export const InfoCard = () => {
   return (
-    <section className="bg-[#e5edf7] py-16 sm:py-24 md:py-32">
-      <Container className="space-y-8">
-        <header className="space-y-3">
-          <h2 className="font-montserrat text-3xl font-bold text-primary sm:text-4xl md:text-[40px] md:leading-[48px]">
+    <section className="bg-[#e5edf7] py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24">
+      <Container className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8 md:space-y-10">
+        <header className="space-y-2 sm:space-y-3">
+          <h2 className="font-montserrat text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary">
             Craftlore: A Preparatory School for Buyers
           </h2>
-          <h3 className="font-montserrat text-xl font-semibold text-secondary sm:text-2xl">
+          <h3 className="font-montserrat text-lg sm:text-xl md:text-2xl font-semibold text-secondary">
             One Platform for Everything About Kashmiri Crafts
           </h3>
         </header>
 
-        <div className="space-y-6 sm:space-y-8">
-          <p className="text-base leading-relaxed sm:text-lg md:text-xl">
+        <div className="space-y-4 sm:space-y-6 md:space-y-8">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
             <strong>Your Ultimate Buyer&apos;s Academy-Craftlore</strong>, preparing you to
             make confident, informed decisions from anywhere. We empower you
             with the insights and expertise needed to navigate the global Kashmir 
@@ -22,7 +22,7 @@ export const InfoCard = () => {
             purchase reflects authenticity, integrity, and trust.
           </p>
 
-          <p className="text-base leading-relaxed sm:text-lg md:text-xl">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
             At Craftlore, we are not mandated to sell or recommend businesses.
             Our commitment lies in educating and empowering you with profound
             insights into the Kashmiri crafts industry. Our platform provides
@@ -35,7 +35,7 @@ export const InfoCard = () => {
             transparency at every stage.
           </p>
 
-          <p className="text-base leading-relaxed sm:text-lg md:text-xl">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
             Craftlore employs a robust verification system, integrating data
             from trusted regulatory bodies including{" "}
             <strong>
@@ -51,7 +51,7 @@ export const InfoCard = () => {
             decisions.
           </p>
 
-          <p className="text-base leading-relaxed sm:text-lg md:text-xl">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
             We tackle the longstanding issues of <strong>Counterfeit Products</strong> and{" "}
             <strong>Middlemen Exploitation</strong> in the Kashmiri handicraft industry.
             Craftlore utilizes advanced technology to ensure direct connections

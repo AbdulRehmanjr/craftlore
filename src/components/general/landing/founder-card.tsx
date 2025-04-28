@@ -1,24 +1,25 @@
 import { CounterInfo } from "~/components/general/counter-info";
 import { BottomBanner } from "~/components/general/bottom-banner";
 import { SectionContainer } from "~/components/common/section-container";
+import { Testimonials } from "~/components/general/landing/testimonials";
 
 export const FounderCard = () => {
   return (
-    <SectionContainer className="pt-12 sm:pt-16 md:pt-20">
-      <div className="grid gap-8 sm:gap-12">
-        <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
+    <SectionContainer className="pt-8 sm:pt-12 md:pt-16 lg:pt-20">
+      <div className="grid gap-6 sm:gap-8 md:gap-10">
+        <div className="grid gap-6 sm:gap-8 md:gap-10 lg:grid-cols-2 lg:gap-12">
           <article className="order-2 lg:order-1">
-            <div className="space-y-6 rounded-xl border-2 border-secondary bg-primary p-6 text-white sm:p-8 md:p-10 lg:p-12">
-              <h2 className="font-montserrat text-2xl leading-relaxed sm:text-3xl md:text-4xl lg:text-[2.5rem] lg:leading-tight">
+            <div className="space-y-4 sm:space-y-6 rounded-xl border-2 border-secondary bg-primary p-4 sm:p-6 md:p-8 lg:p-10 text-white">
+              <h2 className="font-montserrat text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-relaxed">
                 Join Craftlore, in exploring the vast repository and experience
                 the artistry of Kashmir like never before!
               </h2>
               <footer className="flex justify-end">
                 <div className="space-y-1">
-                  <p className="text-right font-montserrat text-lg text-secondary sm:text-xl">
+                  <p className="text-right font-montserrat text-base sm:text-lg md:text-xl text-secondary">
                     Jasif Khan
                   </p>
-                  <p className="text-right font-montserrat text-lg sm:text-xl">
+                  <p className="text-right font-montserrat text-base sm:text-lg md:text-xl">
                     Founder & CEO
                   </p>
                 </div>
@@ -26,17 +27,17 @@ export const FounderCard = () => {
             </div>
           </article>
 
-          <article className="order-1 space-y-6 lg:order-2">
-            <header className="space-y-3">
-              <p className="font-montserrat text-lg text-primary sm:text-xl">
+          <article className="order-1 space-y-4 sm:space-y-6 lg:order-2">
+            <header className="space-y-2 sm:space-y-3">
+              <p className="font-montserrat text-base sm:text-lg md:text-xl text-primary">
                 Unlocking 700+ Years of Kashmiri Craft Heritage:
               </p>
-              <h2 className="font-montserrat text-2xl font-semibold text-secondary sm:text-3xl">
+              <h2 className="font-montserrat text-xl sm:text-2xl md:text-3xl font-semibold text-secondary">
                 Fully Digitized for a New Era, Backed by Science!
               </h2>
             </header>
 
-            <div className="space-y-6 text-base leading-relaxed sm:text-lg md:text-xl">
+            <div className="space-y-4 sm:space-y-6 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
               <p>
                 In a revolutionary step toward preserving cultural heritage, we
                 have leveraged advanced technology to safeguard the rich legacy
@@ -62,7 +63,7 @@ export const FounderCard = () => {
             </div>
           </article>
         </div>
-
+        <Testimonials/>
         <CounterInfo className="w-full" />
         <BottomBanner className="w-full" />
       </div>

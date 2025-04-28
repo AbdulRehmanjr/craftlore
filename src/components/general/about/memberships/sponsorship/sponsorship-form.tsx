@@ -148,7 +148,7 @@ export const SponsorMemberShipForm = () => {
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="col-span-2 md:col-span-1 space-y-8">
                 {/* Sponsor Information */}
                 <Card>
                     <CardHeader>

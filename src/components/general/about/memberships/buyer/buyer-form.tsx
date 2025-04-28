@@ -91,7 +91,7 @@ export const BuyerMembershipForm = () => {
 
     return (
         <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="col-span-2 md:col-span-1 space-y-6">
                 {/* Personal Information */}
                 <Card>
                     <CardHeader>

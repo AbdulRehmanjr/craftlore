@@ -11,6 +11,8 @@ export const Container: React.FC<ContainerProps> = ({
   className = "",
 }) => {
   return (
-    <div className={cn("mx-3 lg:container", className)}>{children}</div>
+    <div className={cn("mx-4 sm:mx-6 lg:mx-auto lg:max-w-[90%] xl:max-w-7xl", className)}>
+      {children}
+    </div>
   );
 };

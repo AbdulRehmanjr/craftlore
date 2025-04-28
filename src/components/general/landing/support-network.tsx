@@ -4,19 +4,19 @@ import { NETWORK } from "~/constants/data";
 
 export const SupportNetwork = () => {
   return (
-    <section className="bg-primary py-12 sm:py-16 md:py-20">
+    <section className="bg-primary py-8 sm:py-12 md:py-16 lg:py-20">
       <Container>
-        <article className="space-y-8 rounded-b-lg border-t-4 border-secondary bg-white px-6 py-8 sm:px-8 sm:py-12 md:px-12 md:py-16 lg:px-20 lg:py-24">
-          <header className="space-y-4">
-            <p className="font-montserrat text-lg text-primary sm:text-xl">
+        <article className="space-y-6 sm:space-y-8 rounded-b-lg border-t-4 border-secondary bg-white px-4 py-6 sm:px-6 sm:py-8 md:px-8 md:py-12 lg:px-12 lg:py-16">
+          <header className="space-y-2 sm:space-y-4">
+            <p className="font-montserrat text-base sm:text-lg md:text-xl text-primary">
               Who Support our Initiative
             </p>
-            <h2 className="font-montserrat text-3xl font-bold text-secondary sm:text-4xl md:text-[40px] md:leading-[48px]">
+            <h2 className="font-montserrat text-2xl sm:text-3xl md:text-4xl lg:text-[40px] lg:leading-[48px] font-bold text-secondary">
               Craftlore Formidable Support Network
             </h2>
           </header>
 
-          <div className="space-y-6 text-base leading-relaxed sm:text-lg md:text-xl">
+          <div className="space-y-4 sm:space-y-6 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
             <p>
               In the rapidly evolving landscape of the global craft industry,
               the success of Craftlore&apos;s mission is driven by the unwavering
@@ -83,23 +83,23 @@ export const SupportNetwork = () => {
           </div>
         </article>
 
-        <div className="relative -mt-10 px-4 sm:px-6 md:px-8">
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="relative -mt-6 sm:-mt-8 md:-mt-10 px-2 sm:px-4 md:px-6">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:gap-4 lg:grid-cols-4">
             {NETWORK.map((network, index) => (
               <article
                 key={index}
-                className="group flex min-h-[10rem] flex-col justify-between rounded-lg border-2 border-gray-900 bg-white p-5 transition-all duration-300 hover:border-white hover:bg-primary"
+                className="group flex min-h-[8rem] sm:min-h-[10rem] flex-col justify-between rounded-lg border-2 border-gray-900 bg-white p-3 sm:p-4 md:p-5 transition-all duration-300 hover:border-white hover:bg-primary"
               >
-                <div className="space-y-2">
-                  <h3 className="font-montserrat text-lg font-semibold group-hover:text-white">
+                <div className="space-y-1 sm:space-y-2">
+                  <h3 className="font-montserrat text-base sm:text-lg font-semibold group-hover:text-white">
                     {network.title}
                   </h3>
-                  <p className="text-sm leading-relaxed group-hover:text-white">
+                  <p className="text-xs sm:text-sm leading-relaxed group-hover:text-white">
                     ({network.description})
                   </p>
                 </div>
                 <Link
-                  className="text-sm transition-colors group-hover:text-secondary"
+                  className="text-xs sm:text-sm transition-colors group-hover:text-secondary"
                   href={network.redirect}
                 >
                   {network.link}
