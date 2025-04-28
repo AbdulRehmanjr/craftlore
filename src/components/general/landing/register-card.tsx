@@ -13,7 +13,7 @@ export const RegisterCard = () => {
             <h4 className="font-montserrat text-xl font-extrabold sm:text-2xl md:text-3xl lg:text-4xl">
               Unlock Everything Our Platform Offers-At No Cost to You
             </h4>
-            <h4 className="font-montserrat text-xl font-bold text-secondary sm:text-2xl md:text-3xl lg:text-4xl">
+            <h4 className="font-montserrat text-lg font-bold text-secondary sm:text-xl md:text-2xl lg:text-3xl">
               A wealth of tools and insights, completely free.
             </h4>
             <p className="text-sm leading-relaxed sm:text-base md:text-lg lg:text-xl">
@@ -31,7 +31,7 @@ export const RegisterCard = () => {
           </article>
 
           <div className="relative lg:col-span-4">
-            <div className="relative aspect-[4/5] h-64 w-full sm:h-80 md:h-96 lg:h-full">
+            <div className="relative h-64 w-64 md:h-96 md:w-96 lg:h-[40rem] lg:w-[40rem]">
               <Link href="#" className="block h-full w-full">
                 <Image
                   src="/images/register.png"

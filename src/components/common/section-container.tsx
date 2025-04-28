@@ -8,7 +8,17 @@ type ContainerProps = {
 
 export const SectionContainer: React.FC<ContainerProps> = ({ children, className = '' }) => {
   return (
-    <section className={cn("mx-4 sm:mx-6 md:mx-8 lg:mx-auto lg:max-w-[90%] xl:max-w-7xl", className)}>
+    <section 
+      className={cn(
+        "w-full max-w-full px-4 mx-auto", 
+        "sm:max-w-[540px]",
+        "md:max-w-[720px]",
+        "lg:max-w-[960px]",
+        "xl:max-w-[1140px]",
+        "2xl:max-w-[1320px]",
+        className
+      )}
+    >
       {children}
     </section>
   );
