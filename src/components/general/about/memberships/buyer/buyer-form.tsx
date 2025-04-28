@@ -24,7 +24,7 @@ const formSchema = z.object({
     businessType: z.string().optional(),
     taxId: z.string().optional(),
     country: z.string().optional(),
-    website: z.string().url("Invalid URL").optional(),
+    website: z.string().optional(),
     productInterest: z.array(z.string()).optional(),
     orderVolume: z.string().optional(),
     authentication: z.string().optional(),

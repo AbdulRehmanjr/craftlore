@@ -31,7 +31,7 @@ const formSchema = z.object({
     primaryContact: z.string().min(2, "Primary Contact is required."),
     contactEmail: z.string().email("Invalid email."),
     contactPhone: z.string().min(10, "Contact phone must be at least 10 digits."),
-    website: z.string().url("Invalid URL").optional(),
+    website: z.string().optional(),
 
     // Business Address
     headquartersAddress: z.string().min(5, "Headquarters Address is required."),
