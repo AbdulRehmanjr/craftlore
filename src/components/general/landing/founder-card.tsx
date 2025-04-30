@@ -8,13 +8,16 @@ export const FounderCard = () => {
     <SectionContainer className="pt-8 sm:pt-12 md:pt-16 lg:pt-20">
       <div className="grid gap-6 sm:gap-8 md:gap-10">
         <div className="grid gap-6 sm:gap-8 md:gap-10 lg:grid-cols-2 lg:gap-12">
-          <article className="order-2 lg:order-1">
-            <div className="space-y-4 sm:space-y-6 rounded-xl border-2 border-secondary bg-primary p-4 sm:p-6 md:p-8 lg:p-10 text-white">
-              <h2 className="font-montserrat text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-relaxed">
-                Join Craftlore, in exploring the vast repository and experience
-                the artistry of Kashmir like never before!
-              </h2>
-              <footer className="flex justify-end">
+          {/* Blue section - Added flex and justify-between for vertical centering */}
+          <article className="order-2 lg:order-1 h-full">
+            <div className="h-full space-y-4 sm:space-y-6 rounded-xl border-2 border-secondary bg-primary p-4 sm:p-6 md:p-8 lg:p-10 text-white flex flex-col justify-between">
+              <div className="flex items-center justify-center flex-grow">
+                <h2 className="font-montserrat text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-relaxed text-center">
+                  Join Craftlore, in exploring the vast repository and experience
+                  the artistry of Kashmir like never before!
+                </h2>
+              </div>
+              <footer className="flex justify-end mt-auto">
                 <div className="space-y-1">
                   <p className="text-right font-montserrat text-base sm:text-lg md:text-xl text-secondary">
                     Jasif Khan
@@ -27,7 +30,8 @@ export const FounderCard = () => {
             </div>
           </article>
 
-          <article className="order-1 space-y-4 sm:space-y-6 lg:order-2">
+          {/* Text section */}
+          <article className="order-1 space-y-4 sm:space-y-6 lg:order-2 h-full flex flex-col">
             <header className="space-y-2 sm:space-y-3">
               <p className="font-montserrat text-base sm:text-lg md:text-xl text-primary">
                 Unlocking 700+ Years of Kashmiri Craft Heritage:
@@ -37,7 +41,7 @@ export const FounderCard = () => {
               </h2>
             </header>
 
-            <div className="space-y-4 sm:space-y-6 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
+            <div className="space-y-4 sm:space-y-6 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed flex-grow">
               <p>
                 In a revolutionary step toward preserving cultural heritage, we
                 have leveraged advanced technology to safeguard the rich legacy

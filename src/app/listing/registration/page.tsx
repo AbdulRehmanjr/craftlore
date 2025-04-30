@@ -38,11 +38,11 @@ export default function RegistrationPage() {
   ];
 
   return (
-    <div className="mx-3 sm:mx-4 md:mx-6 mb-6 grid gap-6 sm:gap-8 md:gap-10 rounded-lg bg-white py-6 sm:py-8 md:py-10 shadow lg:container">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 grid gap-6 sm:gap-8 md:gap-10 rounded-lg bg-white py-6 sm:py-8 md:py-10 shadow-lg">
       {/* Hero Section with Logo */}
       <div className="bg-primary py-8 sm:py-12 md:py-16 text-white rounded-lg">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center sm:items-start">
             <div className="relative h-20 w-32 sm:h-24 sm:w-40 md:h-28 md:w-48 mx-auto sm:mx-0">
               <Image
                 src="https://khcrf.org/assets/images/hcrf_logo.png"
@@ -84,31 +84,31 @@ export default function RegistrationPage() {
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-6 sm:py-10 md:py-16">
         {/* Trust Banner */}
-        <div className="mb-8 sm:mb-12 md:mb-16 rounded-xl border border-blue-100 bg-blue-50 p-4 sm:p-6">
+        <div className="mb-8 sm:mb-12 md:mb-16 rounded-xl border border-primary/20 bg-primary/5 p-4 sm:p-6">
           <div className="grid gap-6 sm:gap-8 sm:grid-cols-2 md:grid-cols-3">
             <div className="text-center">
-              <div className="mb-2 sm:mb-3 font-montserrat font-semibold text-blue-600 text-sm sm:text-base">
+              <div className="mb-2 sm:mb-3 font-montserrat font-semibold text-primary text-sm sm:text-base">
                 Non-Commercial
               </div>
-              <p className="font-opensans text-xs sm:text-sm text-blue-700">
+              <p className="font-opensans text-xs sm:text-sm text-primary/80">
                 We don&apos;t sell or promote businesses, our focus is
                 connecting authentic artisans and business houses
               </p>
             </div>
             <div className="text-center">
-              <div className="mb-2 sm:mb-3 font-montserrat font-semibold text-blue-600 text-sm sm:text-base">
+              <div className="mb-2 sm:mb-3 font-montserrat font-semibold text-primary text-sm sm:text-base">
                 100% Free
               </div>
-              <p className="font-opensans text-xs sm:text-sm text-blue-700">
+              <p className="font-opensans text-xs sm:text-sm text-primary/80">
                 We ensure all our services remain completely free of cost, with
                 no charges, fees, or hidden costs ever
               </p>
             </div>
             <div className="text-center sm:col-span-2 md:col-span-1">
-              <div className="mb-2 sm:mb-3 font-montserrat font-semibold text-blue-600 text-sm sm:text-base">
+              <div className="mb-2 sm:mb-3 font-montserrat font-semibold text-primary text-sm sm:text-base">
                 U.S. Market Access
               </div>
-              <p className="font-opensans text-xs sm:text-sm text-blue-700">
+              <p className="font-opensans text-xs sm:text-sm text-primary/80">
                 Connect directly with the world&apos;s largest handicraft market
                 through our extensive network of buyers
               </p>

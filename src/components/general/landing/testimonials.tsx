@@ -10,13 +10,15 @@ import {
   CarouselPrevious,
 } from "~/components/ui/carousel";
 
-const categoryIcons = {
-  kashmir: "🧵",
-  us: "🇺🇸",
-  global: "🌍",
+// Updated category titles mapping
+const categoryTitles = {
+  kashmir: "Kashmir - India",
+  us: "North America",
+  global: "Global",
 };
 
-const categoryTitles = {
+// Original description texts - keeping them for context display
+const categoryDescriptions = {
   kashmir: "Voices from Kashmir – Artisans & Craft Communities",
   us: "Buyers & Collectors in the U.S. – Trust, Transparency & Storytelling",
   global:
@@ -43,7 +45,7 @@ export const Testimonials = () => {
       </header>
 
       <nav className="mb-6 flex flex-wrap justify-center gap-2 sm:gap-3">
-        {Object.entries(categoryTitles).map(([category]) => (
+        {Object.entries(categoryTitles).map(([category, title]) => (
           <button
             type="button"
             key={category}
@@ -56,10 +58,15 @@ export const Testimonials = () => {
                 : "bg-gray-100 text-gray-600 hover:bg-gray-200"
             }`}
           >
-            {category.charAt(0).toUpperCase() + category.slice(1)}
+            {title}
           </button>
         ))}
       </nav>
+
+      {/* Display the description of the active category */}
+      <p className="mb-6 text-center text-xs text-gray-600 sm:text-sm md:text-base">
+        {categoryDescriptions[activeCategory]}
+      </p>
 
       <Carousel
         opts={{
@@ -72,12 +79,6 @@ export const Testimonials = () => {
           {filteredTestimonials.map((testimonial, index) => (
             <CarouselItem key={index} className="md:basis-1/3">
               <article className="group relative mx-2 h-full overflow-hidden rounded-xl border-2 border-secondary bg-gray-50 p-4 shadow-sm transition-all hover:shadow-md sm:p-5">
-                <div className="mb-3 flex items-center gap-2 sm:mb-4">
-                  <span className="text-lg sm:text-xl">
-                    {categoryIcons[testimonial.category]}
-                  </span>
-                  <div className="h-0.5 flex-1 bg-gray-100" />
-                </div>
                 <blockquote className="mb-3 text-xs italic text-gray-600 sm:mb-4 sm:text-sm md:text-base">
                   &quot;{testimonial.quote}&quot;
                 </blockquote>

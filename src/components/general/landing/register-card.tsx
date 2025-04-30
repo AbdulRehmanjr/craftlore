@@ -68,9 +68,6 @@ export const RegisterCard = () => {
                 <p className="text-xs text-gray-900 group-hover:text-white sm:text-sm md:text-base">
                   {register.description}
                 </p>
-                <span className="mt-1 text-xs text-gray-900 underline underline-offset-4 group-hover:text-secondary sm:mt-2 sm:text-sm">
-                  Read more
-                </span>
               </div>
             </Link>
           ))}
