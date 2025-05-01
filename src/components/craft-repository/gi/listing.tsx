@@ -1,182 +1,396 @@
 "use client";
 
-const GILISTING = [
-  {
-    id: 1,
-    title: "KASHMIR PASHMINA",
-    registered: "Kashmir Pashmina",
-    registration: 46,
-    classes: [
-      "Class 23 - Yarns and Threads, for textile use",
-      "Class 24 - Textiles and Textiles goods, not included in other classes; bed and table covers",
-      "Class 25 – Clothing",
-    ],
-    specifications: [
-      "Made of undergrowth of fleece from the mountain goat “Capra Hiracus” having a fineness of 12-16 Microns.",
-      "Made of delicate, fine woolen yarn that is spun out of this fleece by the hand spinning process.",
-      "Is hand woven using warp & weft yarns.",
-      "Is woven in 3 weaves, the Twill weave, the Diamond weave and the Herringbone weave.",
-      "Have dyed/undyed yarn for weaving.",
-      "Is rendered / un rendered with fine hand embroidery in different proportions.",
-    ],
-  },
+import { useState } from "react";
+import {
+  ChevronDown,
+  ChevronUp,
+  Award,
+  MapPin,
+  Shield,
+  CheckCircle2,
+  FileCheck,
+} from "lucide-react";
+import { GILISTING } from "~/constants/gi";
 
-  {
-    id: 2,
-    title: "SOZANI CRAFT",
-    registered: "Kashmir Sozani Craft",
-    registration: 48,
-    classes: [
-      "Class 26 - Sozani Embroidery performed on different Apparels fabrics",
-    ],
-    specifications: [
-      "Fine Needlework on various fabrics, done by a Sozankar employing predominantly the Sozani Stitch, Darn Stitch and Stem Stitch using silk and viscose yarns. Buttonhole stitch, Herring bone stitch, Chain stitch, Satin Stitch and Knot stitches are also used, though in limited proportions.",
-      "The Sozani stitch is a fine couching stitch with a reinforcing stitch laid over a basic stitch.",
-      "The Sozani stitch can be simple, continuous line or a diamond shaped outline used for petals and flowers. It can also be used in filling up of a motif. It always has a reinforcing stitch.",
-      "The Sozani stitch lends a delicacy to the overall embroidery and uniformity on both sides of the fabric.",
-      "The most dominant motif in Sozani Embroidery is the ‘buti’, which is a floral or Almond motif with a bent tip.",
-      "Sozani Embroidery has a rich colour spectrum and exquisite motifs depicting natural flora and fauna of the Kashmir Valley. Popular motifs include the Chinar leaf and Cypress tree, Almond, Grapes, Pomegranates and Cotton seeds, and flowers like the Iris, Narcissus, Lotus, Daffodil, Pansy, Lily and Rose; as well as geometrical themes like octagonal phanus, Dontavot and Agraphool.",
-    ],
-  },
-  {
-    id: 3,
-    title: "WALNUT WOOD CARVING",
-    registered: "Walnut Wood Carving",
-    registration: 182,
-    classes: [
-      "Class 8, 20 & 27 – Furniture like table desk, dinning tables, dressers, side tables, cabinets, wardrobes, (door panels), chairs sofas, stools, beds, folding screens, bookracks, mirror frames, dry fruits bowls, trays, lamps, candle stands, incense burners, snuff boxes, jewellery boxes, including boxes for holding bracelets, powder, shoe, rings, perfume, handkerchief, cigarette case, pen case, book case, watch box, wooden knives, spoons, forks, sculpture, models of house boats, goods of utilitarian nature and decorative nature that are made of walnut and embellished with hand carving, mirrors, picture frames, goods (not included in other classes) of wood, cork, red, came, wicker, horn, ivory, whalebone, shall, amber, mother of pearl, meerschaum and substitute for all the these materials, of plastics; made from Paper and Paper pulp and wall hanging.",
-    ],
-    specifications: [
-      "The wood used in the products is derived from the walnut tree (Juglans regia), locally known as dhoon kul.",
-      "Kashmir Walnut Wood Carving is made from cultivated varieties of walnut wood (wantu, dun, khakazi), not wild trees.",
-      "Kashmir Walnut Wood is hard, compact, durable, and light in color with close grain and even texture, suitable for fine, detailed carving.",
-      "Designs and motifs often reflect the flora and fauna of Kashmir.",
-      "Different kinds of workmanship include undercutting (Khokerdar), open or lattice work (Jallidahr or Shabokdhar), raised carving (Vaboraveth), engraved carving (Padri), and shallow or plain carving (Sadikaam).",
-      "The range of products includes large furniture items (cabinets, beds, dining tables, folding screens, book racks) to smaller pieces (trays, lamps, candle stands, jewellery cases, mirror cases, cigarette cases, personal accessories, cutlery items, sculptures, display objects, etc.).",
-    ],
-  },
-  {
-    id: 4,
-    title: "KASHMIR PAPER MACHIE",
-    registered: "Kashmir Paper Machie",
-    registration: 181,
-    classes: [
-      "Class 16 & 20 - goods made from paper and paper pulp and embellished with traditional hands painted motifs and designs, and good of utilitarian and decorative nature in particular boxes, bowls vases, lamps, trays, candleholders, photo frames, Christmas decoration, furniture, jewelry boxes all made of light weight base material like paper pulp, paper board or wood and embellished with traditional hand painted motifs and designs.",
-    ],
-    specifications: [
-      "The base object is made of paper pulp, paper board (ghata) or light wood.",
-      "It is smoothened using sareesh or traditional primer and gypsum paste or gacch and later with kirkut or pumice stone/burnt brick.",
-      "Naqash or traditional painter incorporates fine traditional designs and motifs depicting flora and fauna of Kashmir.",
-      "Designs include free hand motifs, floral or vegetative patterns including roses, iris, carnations, apple blossoms, lotus, narcissus, daffodils, grapes, chinar leaves, etc.",
-      "Designs also have characteristic gold and silver metallic effects applied by traditional methods.",
-      "The hand painting could be flat surfaced or have an embossed effect.",
-      "Characteristic products include boxes, bowls, vases, lamps, trays, soorais, candleholders, photo frames, Christmas decorations, screens, tables and large jewellery boxes.",
-    ],
-  },
-  {
-    id: 5,
-    title: "KASHMIR KHATAMBAND",
-    registered: "Khatamband",
-    registration: 204,
-    classes: [
-      "19 - Building materials, ( non- metallic), non - metallic rigid pipes for building, non- metallic transpotable buildings, monuments, not of metal including false ceiling, wood panels, doors & windows, frames made of wood.",
-      "Class 20- Furniture , mirrors, picture frames, goods ( not included in other classes ) of wood.",
-    ],
-    specifications: [
-      "One of the oldest known wooden crafts in Kashmir, dating from the 14th century onwards.",
-      "Commonly used for ceiling and paneling with small pieces of pine, rubber wood, Burma teak, walnut, or budloo wood. Designs originate from repetitive, geometrical, tessellating patterns with a definite mathematical foundation.",
-      "Wooden pieces are carved and cut based on a master scale (kannat) for each design. They are assembled without nails or glue, forming a continuous panel.",
-      "Durable for more than 100 years with minimal maintenance. The final product is dismantlable and reusable.",
-      "Provides natural insulation against cold temperatures.",
-      "May feature value additions like hand carving or hand painting. Historical examples in old monuments are richly decorated with naquashi work, paper-machie layers, traditional Kashmiri motifs, and gold embellishments.",
-    ],
-  },
-  {
-    id: 6,
-    title: "HAND KNOTTED CARPET",
-    registered: "Hand Knotted Carpet",
-    registration: 527,
-    classes: ["Class 27 – Carpets"],
-    specifications: [
-      "Kashmiri Carpet weaving uses a unique coded script called Taleem, understood only by Kashmiri weavers, guiding the number and color of knots.",
-      "Kashmir carpets are always hand-knotted, leading to high knot density and clarity of design.",
-      "Silk/Cotton carpets: Cotton warp, silk pile (knot), cotton weft. Common qualities: 18/18 KPSI, 16/16 KPSI.",
-      "Silk/Silk carpets: Silk warp, silk pile (knot), cotton weft. Most exquisite and costly variety. Qualities include 40x40 (1600 knots/sq.in), 30x30, 24x24, 22x22, 20x20 KPSI.",
-      "All Silk carpets: Silk warp, silk pile (knot), silk weft.",
-      "Wool/Cotton carpets: Cotton warp, woolen pile (knot), cotton weft.",
-      "Wool/Silk/Cotton (Silk Mattan) carpets: Cotton warp, silk and wool pile, cotton weft.",
-      "Designs are traditionally oriental and floral, featuring culturally significant motifs like the paisley, Chinar tree, and the tree-of-life.",
-    ],
-  },
-  {
-    id: 7,
-    title: "KASHMIR CREWEL",
-    registered: "Kashmir Crewel",
-    registration: 1047,
-    classes: ["Class 26"],
-    specifications: [
-      "Crewel embroidery is a spread-out form of embroidery, typically not covering the entire fabric surface.",
-      "Usually done on upholstery and drapery fabrics (like curtains), cushion covers, and accessories such as bags and clutches.",
-      "Crewel embroidery is executed with the help of an Aari needle with a larger hook.",
-      "Natural single-ply wool yarn is used for the embroidery.",
-      "The technique involves long chains of loops, leaving the base fabric visible.",
-      "Primarily done on duck or dosooti cotton fabric.",
-      "The motif does not completely cover the background, creating a contrast between the design and the background fabric.",
-    ],
-  },
-];
+type ExpandedItemsProps = Record<number, boolean>;
 
 export const GIListing = () => {
+  const [expandedItems, setExpandedItems] = useState<ExpandedItemsProps>({});
+  const toggleExpand = (index: number): void => {
+    setExpandedItems((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
+  };
+
   return (
-    <div className="space-y-6">
-      <div className="grid gap-4">
-        {GILISTING.map((list) => (
-          <div
-            key={`list-${list.id}`}
-            className="grid grid-cols-1 gap-4 rounded-lg bg-white px-4 py-6 transition-all duration-300 hover:bg-primary hover:text-white md:grid-cols-2 md:px-6 md:py-10"
-          >
-            <div className="grid gap-4 md:gap-8">
-              <h2 className="font-montserrat text-xl md:text-2xl">
-                {list.title}
-              </h2>
-              <p className="font-montserrat text-base md:text-xl">
-                GEOGRAPHICAL INDICATION
-              </p>
-              <p className="font-montserrat text-base md:text-xl">
-                Registered GI: {list.registered}
-              </p>
-              <p className="font-opensans text-xs font-semibold md:text-sm">
-                Registered GI Application No: {list.registration}
-              </p>
-              <div className="grid gap-2">
-                <p className="font-montserrat text-base md:text-xl">
-                  Glass & Goods:
+    <div className="mx-auto grid max-w-6xl gap-8 px-4 py-8">
+      {GILISTING.map((item, index) => (
+        <div
+          key={index}
+          className="overflow-hidden rounded-xl border border-gray-100 bg-gradient-to-br from-indigo-50 to-blue-50 shadow-md transition-all duration-300"
+        >
+          {/* Header */}
+          <div className="relative px-6 py-5">
+            <div className="flex items-center space-x-3">
+              <Award className="h-8 w-8 text-primary" />
+              <div>
+                <h2 className="font-montserrat text-2xl font-bold text-primary">
+                  {item.Name}
+                </h2>
+                <p className="font-opensans text-sm text-gray-950">
+                  GI Registered in {item.Year_of_Registration} • GI Application #
+                  {item.GI_Application_Number} • GI Certificate #
+                  {item.GI_Certificate_Number}
                 </p>
-                {
-                  list.classes.map((data,index)=>(
-                    <p className="font-opensans text-xs md:text-sm font-bold" key={index}>{data}</p>    
-                  ))
-                }
               </div>
             </div>
-            <div className="flex flex-col gap-4">
-              <h2 className="font-montserrat text-lg md:text-xl">
-                Specifications
-              </h2>
-              <ol className="grid list-inside list-decimal gap-2">
-                {list.specifications.map((data, specIndex) => (
-                  <li
-                    key={`spec-${list.id}-${specIndex}`}
-                    className="text-xs md:text-sm"
-                  >
-                    {data}
-                  </li>
-                ))}
-              </ol>
-            </div>
           </div>
-        ))}
-      </div>
+
+          {/* Basic Info Section */}
+          <div className="border-t border-gray-100 bg-white p-6">
+            <div className="grid gap-8 md:grid-cols-2">
+              {/* Left Column */}
+              <div className="space-y-6">
+                <div className="flex items-center space-x-3">
+                  <div className="rounded-full bg-blue-100 p-2">
+                    <FileCheck className="h-5 w-5 text-primary" />
+                  </div>
+                  <h3 className="font-montserrat font-semibold text-primary">
+                    Registration Details
+                  </h3>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4 pl-4">
+                  <div className="space-y-1">
+                    <p className="font-montserrat text-xs font-medium uppercase text-gray-500">
+                      Journal No
+                    </p>
+                    <p className="font-opensans text-sm font-medium text-gray-950">
+                      {item.GI_Journal_Number}
+                    </p>
+                  </div>
+                  <div className="space-y-1">
+                    <p className="font-montserrat text-xs font-medium uppercase text-gray-500">
+                      Applicant
+                    </p>
+                    <p className="font-opensans text-sm font-medium text-gray-950">
+                      {item.GI_Applicant}
+                    </p>
+                  </div>
+                  <div className="space-y-1">
+                    <p className="font-montserrat text-xs font-medium uppercase text-gray-500">
+                      Class
+                    </p>
+                    <p className="font-opensans text-sm font-medium text-gray-950">
+                      {item.Class.join(", ")}
+                    </p>
+                  </div>
+                  <div className="space-y-1">
+                    <p className="font-montserrat text-xs font-medium uppercase text-gray-500">
+                      Certificate
+                    </p>
+                    <p className="font-opensans text-sm font-medium text-gray-950">
+                      #{item.GI_Certificate_Number}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column */}
+              <div className="space-y-6">
+                <div className="flex items-center space-x-3">
+                  <div className="rounded-full bg-green-100 p-2">
+                    <MapPin className="h-5 w-5 text-green-600" />
+                  </div>
+                  <h3 className="font-montserrat font-semibold text-primary">
+                    Geographical Area
+                  </h3>
+                </div>
+
+                <div className="pl-4">
+                  {/* Static Country and Region */}
+                  <div className="mb-4 space-y-3">
+                    <div className="space-y-1">
+                      <p className="font-montserrat text-xs font-medium uppercase text-gray-500">
+                        Country
+                      </p>
+                      <p className="font-opensans text-sm text-gray-950">
+                        India
+                      </p>
+                    </div>
+                    <div className="space-y-1">
+                      <p className="font-montserrat text-xs font-medium uppercase text-gray-500">
+                        Region
+                      </p>
+                      <p className="font-opensans text-sm text-gray-950">
+                        Jammu and Kashmir
+                      </p>
+                    </div>
+                  </div>
+
+                  {item.Jurisdictional_Area && (
+                    <div className="space-y-3">
+                      {item.Jurisdictional_Area.Crafting_Zone && (
+                        <div className="space-y-1">
+                          <p className="font-montserrat text-xs font-medium uppercase text-gray-500">
+                            Crafting Zones
+                          </p>
+                          <div className="flex flex-wrap gap-2">
+                            {Array.isArray(
+                              item.Jurisdictional_Area.Crafting_Zone,
+                            )
+                              ? item.Jurisdictional_Area.Crafting_Zone.map(
+                                  (zone, i) => (
+                                    <span
+                                      key={i}
+                                      className="inline-block rounded bg-green-100 px-2 py-1 font-opensans text-xs text-green-800"
+                                    >
+                                      {zone}
+                                    </span>
+                                  ),
+                                )
+                              : item.Jurisdictional_Area.Crafting_Zone}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {item.Geographical_Area && (
+                    <div className="space-y-3">
+                      {typeof item.Geographical_Area === "object" &&
+                        !Array.isArray(item.Geographical_Area) &&
+                        item.Geographical_Area.Weaving_Area && (
+                          <div className="space-y-1">
+                            <p className="font-montserrat text-xs font-medium uppercase text-gray-500">
+                              Weaving Areas
+                            </p>
+                            <div className="flex flex-wrap gap-2">
+                              {Array.isArray(
+                                item.Geographical_Area.Weaving_Area,
+                              )
+                                ? item.Geographical_Area.Weaving_Area.map(
+                                    (zone, i) => (
+                                      <span
+                                        key={i}
+                                        className="inline-block rounded bg-green-100 px-2 py-1 font-opensans text-xs text-green-800"
+                                      >
+                                        {zone}
+                                      </span>
+                                    ),
+                                  )
+                                : item.Geographical_Area.Weaving_Area}
+                            </div>
+                          </div>
+                        )}
+                      {typeof item.Geographical_Area === "object" &&
+                        !Array.isArray(item.Geographical_Area) &&
+                        item.Geographical_Area.Material_Source && (
+                          <div className="space-y-1">
+                            <p className="font-montserrat text-xs font-medium uppercase text-gray-500">
+                              Material Source
+                            </p>
+                            <p className="font-opensans text-sm text-gray-950">
+                              {item.Geographical_Area.Material_Source}
+                            </p>
+                          </div>
+                        )}
+                      {Array.isArray(item.Geographical_Area) && (
+                        <div className="space-y-1">
+                          <p className="font-montserrat text-xs font-medium uppercase text-gray-500">
+                            Craft Cluster - Sub Region
+                          </p>
+                          <div className="flex flex-wrap gap-2">
+                            {item.Geographical_Area.map((zone, i) => (
+                              <span
+                                key={i}
+                                className="inline-block rounded bg-green-100 px-2 py-1 font-opensans text-xs text-green-800"
+                              >
+                                {zone}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* Show More Button */}
+            <button
+              className="mt-6 flex w-full items-center justify-center rounded-md bg-gray-50 py-3 font-montserrat text-gray-700 transition-colors hover:bg-gray-100"
+              onClick={() => toggleExpand(index)}
+            >
+              {expandedItems[index] ? (
+                <>
+                  <span className="font-medium">Show Less</span>
+                  <ChevronUp className="ml-2 h-4 w-4" />
+                </>
+              ) : (
+                <>
+                  <span className="font-medium">Show More Details</span>
+                  <ChevronDown className="ml-2 h-4 w-4" />
+                </>
+              )}
+            </button>
+          </div>
+
+          {/* Expanded Section */}
+          {expandedItems[index] && (
+            <div className="bg-white p-6 pt-0">
+              <div className="mt-2 border-t border-gray-200 pt-6">
+                <div className="grid gap-8 md:grid-cols-2">
+                  {/* Technical Specifications */}
+                  <div className="rounded-lg bg-gray-50 p-5">
+                    <div className="mb-5 flex items-center space-x-3">
+                      <div className="rounded-full bg-purple-100 p-2">
+                        <Shield className="h-5 w-5 text-purple-600" />
+                      </div>
+                      <h3 className="font-montserrat font-semibold text-primary">
+                        Technical Specifications
+                      </h3>
+                    </div>
+
+                    <div className="space-y-6">
+                      {item.Technical_Specifications &&
+                        Object.entries(item.Technical_Specifications).map(
+                          ([category, details]) => (
+                            <div
+                              key={category}
+                              className="rounded-lg bg-white p-4 shadow-sm"
+                            >
+                              <h4 className="mb-3 border-b border-gray-100 pb-2 font-montserrat font-medium text-primary">
+                                {category.replace(/_/g, " ")}
+                              </h4>
+
+                              <div className="space-y-4">
+                                {Object.entries(
+                                  details as Record<string, unknown>,
+                                ).map(([key, value]) => (
+                                  <div key={key}>
+                                    <p className="mb-1 font-montserrat text-sm font-medium text-gray-600">
+                                      {key.replace(/_/g, " ")}:
+                                    </p>
+                                    {typeof value === "object" &&
+                                    value !== null &&
+                                    !Array.isArray(value) ? (
+                                      <div className="space-y-2 pl-4">
+                                        {Object.entries(
+                                          value as Record<string, unknown>,
+                                        ).map(([subKey, subValue]) => (
+                                          <div key={subKey} className="flex">
+                                            <span className="w-40 font-montserrat text-xs text-gray-500">
+                                              {subKey.replace(/_/g, " ")}:
+                                            </span>
+                                            <span className="font-opensans text-sm text-gray-950">
+                                              {Array.isArray(subValue)
+                                                ? subValue.join(", ")
+                                                : String(subValue)}
+                                            </span>
+                                          </div>
+                                        ))}
+                                      </div>
+                                    ) : (
+                                      <p className="pl-4 font-opensans text-sm text-gray-950">
+                                        {Array.isArray(value) ? (
+                                          <div className="flex flex-wrap gap-1">
+                                            {value.map((item, i) => (
+                                              <span
+                                                key={i}
+                                                className="inline-block rounded bg-gray-100 px-2 py-1 text-xs text-gray-800"
+                                              >
+                                                {item}
+                                              </span>
+                                            ))}
+                                          </div>
+                                        ) : (
+                                          String(value)
+                                        )}
+                                      </p>
+                                    )}
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          ),
+                        )}
+                    </div>
+                  </div>
+
+                  {/* Authentication Guidelines */}
+                  <div className="rounded-lg bg-gray-50 p-5">
+                    <div className="mb-5 flex items-center space-x-3">
+                      <div className="rounded-full bg-amber-100 p-2">
+                        <CheckCircle2 className="h-5 w-5 text-amber-600" />
+                      </div>
+                      <h3 className="font-montserrat font-semibold text-primary">
+                        Authentication Guidelines
+                      </h3>
+                    </div>
+
+                    <div className="space-y-4">
+                      {/* For items with Authenticity_Verification_Guide structure */}
+                      {item.Authenticity_Verification_Guide &&
+                        Object.entries(
+                          item.Authenticity_Verification_Guide,
+                        ).map(([category, items]) => (
+                          <div
+                            key={category}
+                            className="rounded-lg bg-white p-4 shadow-sm"
+                          >
+                            <h4 className="mb-3 border-b border-gray-100 pb-2 font-montserrat font-medium text-primary">
+                              {category.replace(/_/g, " ")}
+                            </h4>
+                            <ul className="space-y-2">
+                              {Array.isArray(items) &&
+                                items.map((point, idx) => (
+                                  <li key={idx} className="flex items-start">
+                                    <CheckCircle2 className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-green-500" />
+                                    <span className="font-opensans text-sm text-gray-950">
+                                      {point}
+                                    </span>
+                                  </li>
+                                ))}
+                            </ul>
+                          </div>
+                        ))}
+
+                      {/* For items with Authentication structure */}
+                      {item.Authentication &&
+                        Object.entries(item.Authentication).map(
+                          ([category, items]) => (
+                            <div
+                              key={category}
+                              className="rounded-lg bg-white p-4 shadow-sm"
+                            >
+                              <h4 className="mb-3 border-b border-gray-100 pb-2 font-montserrat font-medium text-primary">
+                                {category.replace(/_/g, " ")}
+                              </h4>
+                              <ul className="space-y-2">
+                                {Array.isArray(items) &&
+                                  items.map((point, idx) => (
+                                    <li key={idx} className="flex items-start">
+                                      <CheckCircle2 className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-green-500" />
+                                      <span className="font-opensans text-sm text-gray-950">
+                                        {point}
+                                      </span>
+                                    </li>
+                                  ))}
+                              </ul>
+                            </div>
+                          ),
+                        )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      ))}
     </div>
   );
 };

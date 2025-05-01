@@ -10,14 +10,12 @@ import {
   CarouselPrevious,
 } from "~/components/ui/carousel";
 
-// Updated category titles mapping
 const categoryTitles = {
   kashmir: "Kashmir - India",
   us: "North America",
   global: "Global",
 };
 
-// Original description texts - keeping them for context display
 const categoryDescriptions = {
   kashmir: "Voices from Kashmir – Artisans & Craft Communities",
   us: "Buyers & Collectors in the U.S. – Trust, Transparency & Storytelling",
@@ -78,11 +76,11 @@ export const Testimonials = () => {
         <CarouselContent>
           {filteredTestimonials.map((testimonial, index) => (
             <CarouselItem key={index} className="md:basis-1/3">
-              <article className="group relative mx-2 h-full overflow-hidden rounded-xl border-2 border-secondary bg-gray-50 p-4 shadow-sm transition-all hover:shadow-md sm:p-5">
-                <blockquote className="mb-3 text-xs italic text-gray-600 sm:mb-4 sm:text-sm md:text-base">
+              <article className="group relative mx-2 flex h-full flex-col justify-between overflow-hidden rounded-xl border-2 border-secondary bg-gray-50 p-4 shadow-sm transition-all hover:shadow-md sm:p-5">
+                <blockquote className="mb-auto text-xs italic text-gray-600 sm:text-sm md:text-base">
                   &quot;{testimonial.quote}&quot;
                 </blockquote>
-                <footer className="border-t border-gray-100 pt-3 sm:pt-4">
+                <footer className="mt-3 border-t border-gray-100 pt-3 sm:pt-4">
                   <p className="text-sm font-medium text-gray-900 sm:text-base">
                     {testimonial.author}
                   </p>

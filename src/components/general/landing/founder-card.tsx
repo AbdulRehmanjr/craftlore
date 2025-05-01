@@ -6,7 +6,7 @@ import { Testimonials } from "~/components/general/landing/testimonials";
 export const FounderCard = () => {
   return (
     <SectionContainer className="pt-8 sm:pt-12 md:pt-16 lg:pt-20">
-      <div className="grid gap-6 sm:gap-8 md:gap-10">
+      <div className="grid gap-6 sm:gap-8 md:gap-12 lg:gap-16">
         <div className="grid gap-6 sm:gap-8 md:gap-10 lg:grid-cols-2 lg:gap-12">
           {/* Blue section - Added flex and justify-between for vertical centering */}
           <article className="order-2 lg:order-1 h-full">
