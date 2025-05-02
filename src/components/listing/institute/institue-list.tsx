@@ -12,6 +12,7 @@ interface RankSectionProps {
     };
     instituteType: string;
     instituteEmail: string;
+    instituteMission:string
     instituteRep: string;
     repDes: string;
     yearOfOperation?: number;

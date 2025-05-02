@@ -1,6 +1,5 @@
-'use client'
-import { motion } from "framer-motion";
 import { Award, MapPin, Briefcase, Star, Clock } from "lucide-react";
+import { cn } from "~/lib/utils";
 
 interface User {
   fullName: string;
@@ -27,35 +26,34 @@ export const ArtisanCard: React.FC<ArtisanCardProps> = ({
   artisan,
 }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 }}
-      whileHover={{ y: -5 }}
-      className="group relative border-2 shadow-lg rounded-xl overflow-hidden bg-white hover:shadow-2xl transition-all duration-300"
+    <article
+      className="group relative overflow-hidden rounded-xl border-2 bg-white shadow-lg transition-all duration-300 hover:shadow-2xl"
     >
-      {/* Corner badge */}
+      {/* Corner badge - Updated to match screenshot */}
       <div
-        className={`absolute top-4 right-4 px-3 py-1 text-sm font-semibold rounded-full ${rankingColor} shadow-sm`}
+        className={cn(
+          "absolute right-0 top-0 rounded-bl-lg px-4 py-1 font-medium text-gray-800",
+          rankingColor,
+        )}
       >
         {rankTitle}
       </div>
 
       {/* Card content */}
-      <div className="p-6 space-y-4">
+      <div className="space-y-4 p-6 pt-8">
         <div className="space-y-2">
-          <h2 className="text-xl font-bold text-gray-800 group-hover:text-primary transition-colors">
+          <h2 className="text-xl font-bold text-gray-800 transition-colors group-hover:text-primary">
             {artisan.user.fullName}
           </h2>
           <div className="flex items-center text-gray-500">
-            <MapPin className="w-4 h-4 mr-2" />
+            <MapPin className="mr-2 h-4 w-4" />
             <p className="text-sm">{artisan.user.address}</p>
           </div>
         </div>
 
         <div className="space-y-3 pt-2">
           <div className="flex items-center text-gray-700">
-            <Briefcase className="w-4 h-4 mr-3 text-primary" />
+            <Briefcase className="mr-3 h-4 w-4 text-primary" />
             <div>
               <p className="text-sm font-semibold">Craft Specialty</p>
               <p className="text-sm">{artisan.craftSpecialty}</p>
@@ -63,7 +61,7 @@ export const ArtisanCard: React.FC<ArtisanCardProps> = ({
           </div>
 
           <div className="flex items-center text-gray-700">
-            <Star className="w-4 h-4 mr-3 text-primary" />
+            <Star className="mr-3 h-4 w-4 text-primary" />
             <div>
               <p className="text-sm font-semibold">Skill Level</p>
               <p className="text-sm">{artisan.craftSkill}</p>
@@ -71,7 +69,7 @@ export const ArtisanCard: React.FC<ArtisanCardProps> = ({
           </div>
 
           <div className="flex items-center text-gray-700">
-            <Award className="w-4 h-4 mr-3 text-primary" />
+            <Award className="mr-3 h-4 w-4 text-primary" />
             <div>
               <p className="text-sm font-semibold">Award</p>
               <p className="text-sm">{artisan.craftAward}</p>
@@ -79,7 +77,7 @@ export const ArtisanCard: React.FC<ArtisanCardProps> = ({
           </div>
 
           <div className="flex items-center text-gray-700">
-            <Clock className="w-4 h-4 mr-3 text-primary" />
+            <Clock className="mr-3 h-4 w-4 text-primary" />
             <div>
               <p className="text-sm font-semibold">Experience</p>
               <p className="text-sm">{artisan.craftExperience} years</p>
@@ -89,7 +87,7 @@ export const ArtisanCard: React.FC<ArtisanCardProps> = ({
       </div>
 
       {/* Hover effect overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-    </motion.div>
+      <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+    </article>
   );
 };
