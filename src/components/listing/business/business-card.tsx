@@ -5,6 +5,9 @@ import {
   Mail,
   Users,
   Calendar,
+  Globe,
+  Network,
+  FileText
 } from "lucide-react";
 import { useCallback } from "react";
 import { cn } from "~/lib/utils";
@@ -21,6 +24,9 @@ type BusinessCardProps = {
     businessEmail: string;
     businessEmployee: number;
     businessMarket: string;
+    businessStructure: string;
+    businessWebsite: string;
+    businessNetwork: string;
     yearOfOperation: number;
   };
 };
@@ -82,11 +88,51 @@ export const BusinessCard: React.FC<BusinessCardProps> = ({
             </div>
           </div>
 
+          {/* Business Structure */}
+          <div className="flex items-center text-gray-700">
+            <FileText className="mr-3 h-4 w-4 text-primary" />
+            <div>
+              <p className="text-sm font-semibold">Legal Structure</p>
+              <p className="text-sm">{business.businessStructure}</p>
+            </div>
+          </div>
+
+          {/* Business Network */}
+          <div className="flex items-center text-gray-700">
+            <Network className="mr-3 h-4 w-4 text-primary" />
+            <div>
+              <p className="text-sm font-semibold">Network</p>
+              <p className="text-sm">{business.businessNetwork}</p>
+            </div>
+          </div>
+
           <div className="flex items-center text-gray-700">
             <Briefcase className="mr-3 h-4 w-4 text-primary" />
             <div>
               <p className="text-sm font-semibold">Market</p>
               <p className="text-sm">{business.businessMarket}</p>
+            </div>
+          </div>
+
+          {/* Business Website with "Not available" fallback */}
+          <div className="flex items-center text-gray-700">
+            <Globe className="mr-3 h-4 w-4 text-primary" />
+            <div>
+              <p className="text-sm font-semibold">Website</p>
+              {business.businessWebsite && business.businessWebsite !== "none" && business.businessWebsite !== "" ? (
+                <p className="text-sm">
+                  <a 
+                    href={business.businessWebsite.startsWith("http") ? business.businessWebsite : `https://${business.businessWebsite}`} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline"
+                  >
+                    {business.businessWebsite}
+                  </a>
+                </p>
+              ) : (
+                <p className="text-sm text-gray-500">Not available</p>
+              )}
             </div>
           </div>
 
