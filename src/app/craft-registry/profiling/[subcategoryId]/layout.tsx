@@ -1,4 +1,3 @@
-import { Menu } from "lucide-react";
 import { type Metadata } from "next";
 import { DetailAside } from "~/components/craft-repository/profiling/details/aside";
 import { Button } from "~/components/ui/button";
@@ -13,15 +12,13 @@ export default function ProfileDetailLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <section className="col-span-12 mx-3 grid grid-cols-3 gap-6 px-3 py-4 md:mx-6 md:px-24 md:py-12">
-      <div className="fixed bottom-20 right-4 z-50 lg:hidden">
+      <div className="fixed right-0 top-1/2 z-50 -translate-y-1/2 lg:hidden">
         <Sheet>
           <SheetTrigger asChild>
-            <Button
-              variant="secondary"
-              size="icon"
-              className="animate-pulse rounded-full shadow-lg shadow-blue-500/50 transition-all duration-700 ease-in-out hover:shadow-blue-400/80"
-            >
-              <Menu className="h-6 w-6 text-white" />
+            <Button className="h-auto rounded-l-md rounded-r-none border-0 bg-orange-500 px-3 py-8 text-white shadow-md hover:bg-orange-600">
+              <span className="rotate-180 transform text-sm font-medium [writing-mode:vertical-lr]">
+                Click me 
+              </span>
             </Button>
           </SheetTrigger>
           <SheetContent
