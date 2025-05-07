@@ -2,12 +2,12 @@ import { MapPin, Building2, Mail, User, Clock } from "lucide-react";
 import { useCallback } from "react";
 import { cn } from "~/lib/utils";
 
-interface User {
+type User = {
   fullName: string;
   address: string;
-}
+};
 
-interface Institute {
+type Institute = {
   user: User;
   instituteType: string;
   instituteEmail: string;
@@ -15,19 +15,19 @@ interface Institute {
   instituteMission: string;
   repDes: string;
   yearOfOperation?: number;
-}
+};
 
-interface InstituteCardProps {
+type InstituteCardProps = {
   rankTitle: string;
   rankingColor: string;
   institute: Institute;
-}
+};
 
-export const InstituteCard: React.FC<InstituteCardProps> = ({
+export const InstituteCard = ({
   rankTitle,
   rankingColor,
   institute,
-}) => {
+}: InstituteCardProps) => {
   const getInstituteType = useCallback((level: string) => {
     switch (level) {
       case "None":
@@ -60,8 +60,8 @@ export const InstituteCard: React.FC<InstituteCardProps> = ({
       </div>
 
       {/* Card content */}
-      <div className="space-y-4 p-6 pt-8">
-        <div className="space-y-2">
+      <div className="p-6 pt-8">
+        <div className="space-y-2 mb-6">
           <h2 className="text-xl font-bold text-gray-800 transition-colors group-hover:text-primary">
             {institute.user.fullName}
           </h2>
@@ -71,7 +71,8 @@ export const InstituteCard: React.FC<InstituteCardProps> = ({
           </div>
         </div>
 
-        <div className="space-y-3 pt-2">
+        {/* Responsive two-column layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3">
           <div className="flex items-center text-gray-700">
             <Building2 className="mr-3 h-4 w-4 text-primary" />
             <div>
@@ -79,32 +80,6 @@ export const InstituteCard: React.FC<InstituteCardProps> = ({
               <p className="text-sm">
                 {getInstituteType(institute.instituteType)}
               </p>
-            </div>
-          </div>
-
-          {/* Mission Field with Enhanced Icon */}
-          <div className="flex items-start text-gray-700">
-            <div className="flex-shrink-0 mr-3">
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                width="16" 
-                height="16" 
-                viewBox="0 0 24 24" 
-                fill="none" 
-                stroke="currentColor" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
-                strokeLinejoin="round"
-                className="text-primary"
-              >
-                <path d="M9 21v-6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v6"></path>
-                <path d="M4 16l8-8 8 8"></path>
-                <path d="M2 12h20"></path>
-              </svg>
-            </div>
-            <div>
-              <p className="text-sm font-semibold">Mission</p>
-              <p className="text-sm">{institute.instituteMission}</p>
             </div>
           </div>
 
@@ -136,11 +111,37 @@ export const InstituteCard: React.FC<InstituteCardProps> = ({
               </div>
             </div>
           )}
+
+          {/* Mission Field with Enhanced Icon - spans full width on all screen sizes */}
+          <div className="flex items-start text-gray-700 col-span-1 sm:col-span-2">
+            <div className="flex-shrink-0 mr-3">
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="16" 
+                height="16" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+                className="text-primary"
+              >
+                <path d="M9 21v-6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v6"></path>
+                <path d="M4 16l8-8 8 8"></path>
+                <path d="M2 12h20"></path>
+              </svg>
+            </div>
+            <div>
+              <p className="text-sm font-semibold">Mission</p>
+              <p className="text-sm">{institute.instituteMission}</p>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Hover effect overlay */}
-      <div className={`absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100`} />
+      <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
     </article>
   );
 };

@@ -31,11 +31,11 @@ type BusinessCardProps = {
   };
 };
 
-export const BusinessCard: React.FC<BusinessCardProps> = ({
+export const BusinessCard = ({
   rankingColor,
   rankTitle,
   business,
-}) => {
+}: BusinessCardProps) => {
   const getBusiness = useCallback((level: string) => {
     switch (level) {
       case "None":
@@ -68,8 +68,8 @@ export const BusinessCard: React.FC<BusinessCardProps> = ({
       </div>
 
       {/* Card content */}
-      <div className="space-y-4 p-6 pt-8">
-        <div className="space-y-2">
+      <div className="p-6 pt-8">
+        <div className="space-y-2 mb-6">
           <h2 className="text-xl font-bold text-gray-800 transition-colors group-hover:text-primary">
             {business.user.fullName}
           </h2>
@@ -79,7 +79,8 @@ export const BusinessCard: React.FC<BusinessCardProps> = ({
           </div>
         </div>
 
-        <div className="space-y-3 pt-2">
+        {/* Responsive two-column layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3">
           <div className="flex items-center text-gray-700">
             <Building2 className="mr-3 h-4 w-4 text-primary" />
             <div>
@@ -114,7 +115,24 @@ export const BusinessCard: React.FC<BusinessCardProps> = ({
             </div>
           </div>
 
-          {/* Business Website with "Not available" fallback */}
+          {/* Email moved up, not in same row as website */}
+          <div className="flex items-center text-gray-700">
+            <Mail className="mr-3 h-4 w-4 text-primary" />
+            <div>
+              <p className="text-sm font-semibold">Email</p>
+              <p className="text-sm">{business.businessEmail}</p>
+            </div>
+          </div>
+
+          <div className="flex items-center text-gray-700">
+            <Users className="mr-3 h-4 w-4 text-primary" />
+            <div>
+              <p className="text-sm font-semibold">Employees</p>
+              <p className="text-sm">{business.businessEmployee}</p>
+            </div>
+          </div>
+
+          {/* Website moved down, not in same row as email */}
           <div className="flex items-center text-gray-700">
             <Globe className="mr-3 h-4 w-4 text-primary" />
             <div>
@@ -133,22 +151,6 @@ export const BusinessCard: React.FC<BusinessCardProps> = ({
               ) : (
                 <p className="text-sm text-gray-500">Not available</p>
               )}
-            </div>
-          </div>
-
-          <div className="flex items-center text-gray-700">
-            <Mail className="mr-3 h-4 w-4 text-primary" />
-            <div>
-              <p className="text-sm font-semibold">Email</p>
-              <p className="text-sm">{business.businessEmail}</p>
-            </div>
-          </div>
-
-          <div className="flex items-center text-gray-700">
-            <Users className="mr-3 h-4 w-4 text-primary" />
-            <div>
-              <p className="text-sm font-semibold">Employees</p>
-              <p className="text-sm">{business.businessEmployee}</p>
             </div>
           </div>
 
