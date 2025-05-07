@@ -1,83 +1,89 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "~/components/ui/accordion";
-import { memo } from "react";
+"use client";
+import React, { memo } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "~/components/ui/accordion";
 
-const AccordionContentMemo = memo(({ children }: { children: React.ReactNode }) => (
-  <AccordionContent className="space-y-10 text-xl font-opensans">
-    {children}
-  </AccordionContent>
+// Define accordion data outside component to prevent recreating on each render
+const accordionItems = [
+  {
+    id: "item-1",
+    title: "1. Individual Consumers",
+    content:
+      "Access authentic, GI-certified crafts with personalization options. Enjoy seasonal offers, loyalty rewards, and support for product care, heritage education, and direct interaction with artisans.",
+  },
+  {
+    id: "item-2",
+    title: "2. Retailers",
+    content:
+      "Benefit from wholesale pricing, inventory sync, merchandising support, and exclusive catalogs. Get sales kits, brand stories, and access to verified supply for ethical sourcing and regional distribution.",
+  },
+  {
+    id: "item-3",
+    title: "3. Wholesalers",
+    content:
+      "Gain bulk discounts, early product access, logistics support, and curated assortments. Receive traceability documentation, carbon footprint reports, and priority fulfillment for national or international distribution.",
+  },
+  {
+    id: "item-4",
+    title: "4. Institutional Buyers",
+    content:
+      "Gain bulk discounts, early product access, logistics support, and curated assortments. Receive traceability documentation, carbon footprint reports, and priority fulfillment for national or international distribution.",
+  },
+  {
+    id: "item-5",
+    title: "5. Collectors and Art Connoisseurs",
+    content:
+      "Receive exclusive previews, collector-grade certificates, and artisan provenance data. Support includes restoration guidance, private viewings, and access to limited, historically significant craft editions.",
+  },
+  {
+    id: "item-6",
+    title: "6. Corporate Gifting Buyers",
+    content:
+      "Partner for exhibitions, décor sourcing, and thematic installations. Support includes co-branded pop-up kits, artisan sessions, logistics handling, and curated pieces for immersive craft storytelling.",
+  },
+  {
+    id: "item-7",
+    title: "7. Event and Exhibition Planners",
+    content:
+      "Partner for exhibitions, décor sourcing, and thematic installations. Support includes co-branded pop-up kits, artisan sessions, logistics handling, and curated pieces for immersive craft storytelling.",
+  },
+];
+
+type AccordionItemType = {
+  id: string;
+  title: string;
+  content: string;
+};
+// Memoize the AccordionItem to prevent unnecessary re-renders
+const MemoizedAccordionItem = memo(({ item }: { item: AccordionItemType }) => (
+  <AccordionItem value={item.id} className="text-start">
+    <AccordionTrigger className="text-start font-montserrat text-base sm:text-lg md:text-xl">
+      {item.title}
+    </AccordionTrigger>
+    <AccordionContent className="font-opensans text-sm sm:text-base md:text-lg">
+      {item.content}
+    </AccordionContent>
+  </AccordionItem>
 ));
 
-AccordionContentMemo.displayName = "AccordionContentMemo";
+// Display name for debugging
+MemoizedAccordionItem.displayName = "MemoizedAccordionItem";
 
 export const BuyerAccordin = () => {
   return (
-    <Accordion type="single" collapsible className="col-span-2 lg:col-span-1">
-      <AccordionItem value="item-1">
-        <AccordionTrigger className="text-xl font-montserrat">1. Individual Consumers</AccordionTrigger>
-        <AccordionContentMemo>
-          <p>
-            <b>Needs</b>: Individual consumers are often looking for authentic, handcrafted Kashmiri items, either for personal use, gifting, or collecting.
-          </p>
-          <p className="font-bold">Craftlore&apos;s Support:</p>
-          <p><b>Authenticity Guidance</b>: Craftlore educates consumers on key authenticity markers—such as materials, craftsmanship techniques, and heritage indicators—so they can identify genuine Kashmiri crafts.</p>
-          <p><b>Cultural Background and Storytelling</b>: We provide detailed stories, historical context, and insights into the heritage behind each craft, allowing consumers to appreciate the depth of their purchase.</p>
-          <p><b>Independent Exploration</b>: With Craftlore&apos;s resources, individual buyers can explore options independently, confident that they are equipped to discern authentic, ethical sources on their own.</p>
-        </AccordionContentMemo>
-      </AccordionItem>
-      <AccordionItem value="item-2">
-        <AccordionTrigger className="text-xl font-montserrat">2. Retailers</AccordionTrigger>
-        <AccordionContentMemo>
-          <p>Needs: Retailers seek to stock Kashmiri crafts that align with their brand values, meet quality standards, and appeal to customers interested in authenticity and cultural value.</p>
-          <p>Craftlore&apos;s Support: Cultural Insight and Product Knowledge: Craftlore offers extensive background on Kashmiri crafts, from traditional techniques to unique features that distinguish each item, helping retailers understand the products they intend to stock.</p>
-          <p>Guidance on Ethical Sourcing: We educate retailers on sustainable and fair trade practices within Kashmiri crafts, allowing them to source directly from artisans who prioritize ethical production without needing endorsements.</p>
-          <p>Tools for Customer Confidence: By understanding the markers of authenticity, retailers can confidently source items that will resonate with customers, ensuring that each piece has been selected with integrity.</p>
-        </AccordionContentMemo>
-      </AccordionItem>
-      <AccordionItem value="item-3">
-        <AccordionTrigger className="text-xl font-montserrat">3. Wholesalers</AccordionTrigger>
-        <AccordionContentMemo>
-          <p>Needs: Wholesalers require large volumes of authentic Kashmiri crafts and need confidence in the credibility of their sources, particularly when sourcing in bulk.</p>
-          <p>Craftlore&apos;s Support: Guidance on Identifying Bulk Authenticity: Craftlore educates wholesalers on the quality indicators specific to large-scale purchases, helping them understand how to identify genuine craftsmanship even when sourcing in bulk.</p>
-          <p>Insights into Sustainability and Ethics: We provide information on sustainable sourcing and the environmental impact of traditional Kashmiri crafts, enabling wholesalers to align with artisans who meet high ethical standards.</p>
-          <p>Empowering Independent Verification: Equipped with Craftlore&apos;s insights, wholesalers are prepared to verify the authenticity of their products on their own, ensuring that they build relationships with trusted artisans.</p>
-        </AccordionContentMemo>
-      </AccordionItem>
-      <AccordionItem value="item-4">
-        <AccordionTrigger className="text-xl font-montserrat">4. Institutional Buyers</AccordionTrigger>
-        <AccordionContentMemo>
-          <p>Needs: Museums, galleries, educational institutions, and cultural bodies often seek pieces that hold historical, cultural, or educational significance for exhibitions, displays, or collections.</p>
-          <p>Craftlore&apos;s Support: Access to Cultural Depth and Heritage: Craftlore provides institutions with in-depth information on the cultural and historical significance of each craft, helping them understand the context and background of the items they display.</p>
-          <p>Guidance for Independent Sourcing: We guide institutions on sourcing unique, culturally relevant pieces directly from artisans, allowing them to curate authentic collections without relying on endorsements or recommendations.</p>
-          <p>Enhanced Educational Value: Institutions can leverage our detailed artisan stories and craft insights to enrich their exhibitions, educating their audience with well-informed narratives.</p>
-        </AccordionContentMemo>
-      </AccordionItem>
-      <AccordionItem value="item-5">
-        <AccordionTrigger className="text-xl font-montserrat">5. Collectors and Art Connoisseurs</AccordionTrigger>
-        <AccordionContentMemo>
-          <p>Needs: Collectors seek unique, high-quality, and culturally significant Kashmiri crafts to add to their collections.</p>
-          <p>Craftlore&apos;s Support: Detailed Provenance and Authenticity Information: Craftlore provides collectors with insights into the provenance, techniques, and history of specific crafts, enabling them to appreciate the rarity and artistry of each item.</p>
-          <p>Guidance on Recognizing Genuine Craftsmanship: We educate collectors on key features that distinguish authentic Kashmiri crafts, helping them acquire pieces with complete confidence in their authenticity.</p>
-          <p>Independent Connections with Artisans: Craftlore empowers collectors to independently connect with artisans whose work aligns with their collection, ensuring each acquisition is deeply meaningful and ethically sourced.</p>
-        </AccordionContentMemo>
-      </AccordionItem>
-      <AccordionItem value="item-6">
-        <AccordionTrigger className="text-xl font-montserrat">6. Corporate Gifting Buyers</AccordionTrigger>
-        <AccordionContentMemo>
-          <p>Needs: Corporations often seek culturally rich, sustainable, and ethically produced gifts that reflect their values and demonstrate a commitment to heritage and quality.</p>
-          <p>Craftlore&apos;s Support: Guidance on Culturally Aligned Gifting: Craftlore provides corporations with insights into the unique appeal of Kashmiri crafts, helping them understand how to align their gifting with cultural preservation.</p>
-          <p>Supporting CSR and Sustainability Goals: We educate corporations on sustainable and fair trade options, guiding them on how to explore artisan partnerships that support environmental and social responsibility.</p>
-          <p>Customizable Gifting Ideas: Craftlore offers guidance on how corporations can independently explore and connect with artisans for custom-made pieces, adding a unique, ethical element to their corporate gifting.</p>
-        </AccordionContentMemo>
-      </AccordionItem>
-      <AccordionItem value="item-7">
-        <AccordionTrigger className="text-xl font-montserrat">7. Event and Exhibition Planners</AccordionTrigger>
-        <AccordionContentMemo>
-          <p>Needs: Planners require authentic Kashmiri crafts as decor or display items for events and exhibitions, often seeking items with high cultural value to enhance their themes.</p>
-          <p>Craftlore&apos;s Support: Access to Cultural Context for Decor: We provide event planners with information on the heritage and significance of different crafts, allowing them to source decor that brings depth and authenticity to their events.</p>
-          <p>Guidance on Independent Sourcing: Craftlore enables planners to source directly from artisans without needing recommendations, helping them find items that align with their event themes and cultural narratives.</p>
-          <p>Support for Customized Exhibits: For exhibition planners, Craftlore provides insight into creating meaningful exhibits by selecting pieces that authentically represent Kashmiri craftsmanship.</p>
-        </AccordionContentMemo>
-      </AccordionItem>
-    </Accordion>
+    <div className="col-span-2 w-full lg:col-span-1">
+      <h2 className="mb-6 font-montserrat text-xl text-primary sm:text-2xl md:text-3xl">
+        Buyer Platform <span className="text-secondary">Benefits</span>
+      </h2>
+      <Accordion type="single" collapsible>
+        {accordionItems.map((item) => (
+          <MemoizedAccordionItem key={item.id} item={item} />
+        ))}
+      </Accordion>
+    </div>
   );
 };

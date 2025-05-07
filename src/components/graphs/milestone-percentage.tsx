@@ -12,7 +12,7 @@ import {
 } from "chart.js";
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
-import { ChartContainer } from "../common/chart";
+import { ChartContainer } from "~/components/common/chart";
 
 ChartJS.register(
   CategoryScale,

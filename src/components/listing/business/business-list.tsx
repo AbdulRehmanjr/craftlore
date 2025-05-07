@@ -14,6 +14,9 @@ interface RankSectionProps {
     businessEmail: string;
     businessEmployee: number;
     businessMarket: string;
+    businessStructure:string
+    businessWebsite:string
+    businessNetwork:string
     yearOfOperation: number;
   }>;
 }

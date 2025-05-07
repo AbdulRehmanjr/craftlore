@@ -95,7 +95,7 @@ const columns: ColumnDef<ArtisanProps>[] = [
         accessorKey: "craftExperience",
         header: "Experience",
         cell: ({ row }) => (
-            <div className="text-right font-medium">
+            <div className="text-center font-medium max-w-16">
                 {row.getValue("craftExperience")} years
             </div>
         ),
@@ -217,10 +217,7 @@ const Pagination = ({ table }: PaginationProps) => {
 };
 
 export const ArtisanTable = () => {
-    const { data, isLoading } = api.register.getArtisans.useQuery(undefined, {
-        refetchOnWindowFocus: false,
-        staleTime: 30000, // Consider data fresh for 30 seconds
-    });
+    const { data, isLoading } = api.register.getArtisans.useQuery();
 
     const [nameFilter, setNameFilter] = useState<string>("");
     const [blacklistedOnly, setBlacklistedOnly] = useState<boolean>(false);

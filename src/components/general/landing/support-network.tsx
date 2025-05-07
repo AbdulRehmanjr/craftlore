@@ -4,17 +4,22 @@ import { NETWORK } from "~/constants/data";
 
 export const SupportNetwork = () => {
   return (
-    <section className="bg-primary pb-20">
+    <section className="bg-primary py-8 sm:py-12 md:py-16 lg:py-20">
       <Container>
-        <div className="space-y-4 rounded-b-lg border-t-4 border-secondary bg-white px-10 py-12 lg:container lg:px-20 lg:py-24">
-          <p className="font-montserrat text-xl text-primary">Who Support our Initiative</p>
-          <h6 className="font-montserrat text-[40px] leading-[48px] text-secondary">
-            CraftLore Formidable Support Network
-          </h6>
-          <div className="space-y-6 font-opensans text-xl">
+        <article className="space-y-6 sm:space-y-8 rounded-b-lg border-t-4 border-secondary bg-white px-4 py-6 sm:px-6 sm:py-8 md:px-8 md:py-12 lg:px-12 lg:py-16">
+          <header className="space-y-2 sm:space-y-4">
+            <p className="font-montserrat text-base sm:text-lg md:text-xl text-primary">
+              Who Support our Initiative
+            </p>
+            <h2 className="font-montserrat text-2xl sm:text-3xl md:text-4xl lg:text-[40px] lg:leading-[48px] font-bold text-secondary">
+              Craftlore Formidable Support Network
+            </h2>
+          </header>
+
+          <div className="space-y-4 sm:space-y-6 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
             <p>
               In the rapidly evolving landscape of the global craft industry,
-              the success of CraftLore’s mission is driven by the unwavering
+              the success of Craftlore&apos;s mission is driven by the unwavering
               strength and collaboration of a dedicated support network. At the
               heart of our initiative lies an influential coalition of partners
               who share our commitment to preserving the authenticity of
@@ -26,13 +31,13 @@ export const SupportNetwork = () => {
             <p>
               Our formidable support network is further reinforced by essential
               contributions from business, administrative, technological, and
-              marketing partners, ensuring that CraftLore continues to grow and
+              marketing partners, ensuring that Craftlore continues to grow and
               thrive on the global stage.
             </p>
             <p>
               As a key pillar of business support,{" "}
               <strong>B2B Connect USA</strong> provides the essential
-              business-to-business connections that fuel CraftLore’s expansion.
+              business-to-business connections that fuel Craftlore&apos;s expansion.
               By forging strategic collaborations between Kashmiri artisans and
               international markets, they ensure that the craft sector reaches
               its full potential in the global economy. Their contributions
@@ -44,16 +49,16 @@ export const SupportNetwork = () => {
               operational backbone of our initiative. With a focus on
               administrative excellence, policy advocacy, and organizational
               leadership, the Foundation plays a pivotal role in the seamless
-              functioning of CraftLore. Their efforts ensure that our mission is
+              functioning of Craftlore. Their efforts ensure that our mission is
               not only preserved but advanced through strategic partnerships,
               thoughtful leadership, and a vision of empowering artisans through
               cultural preservation and fair trade policies. Their advocacy for
-              Kashmiri crafts sets the stage for CraftLore’s enduring impact in
+              Kashmiri crafts sets the stage for Craftlore&apos;s enduring impact in
               both local and international arenas.
             </p>
             <p>
               At the intersection of technology and craft preservation,{" "}
-              <strong>Prime Logic Solutions USA</strong> empowers CraftLore with
+              <strong>Prime Logic Solutions USA</strong> empowers Craftlore with
               state-of-the-art digital tools and technological innovations. From
               blockchain technology to geo-certification protocols, Prime Logic
               equips us with cutting-edge solutions that guarantee the
@@ -76,32 +81,31 @@ export const SupportNetwork = () => {
               appreciate the true value of handcrafted art.
             </p>
           </div>
-        </div>
-        <div className="relative -mt-10 flex justify-center lg:container">
-          <div className="grid grid-cols-4 gap-6">
-            {NETWORK.map((network, index) => {
-              return (
-                <div
-                  className="group col-span-4 flex h-40 flex-col justify-between rounded-lg border-2 border-gray-900 bg-white p-5 hover:border-white hover:bg-primary lg:col-span-1"
-                  key={index}
-                >
-                  <div>
-                    <h6 className="w-8 font-montserrat text-lg group-hover:text-white">
-                      {network.title}
-                    </h6>
-                    <p className="break-words text-sm group-hover:text-white">
-                      ({network.description})
-                    </p>
-                  </div>
-                  <Link
-                    className="text-sm group-hover:text-secondary"
-                    href={network.redirect}
-                  >
-                    {network.link}
-                  </Link>
+        </article>
+
+        <div className="relative -mt-6 sm:-mt-8 md:-mt-10 px-2 sm:px-4 md:px-6">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:gap-4 lg:grid-cols-4">
+            {NETWORK.map((network, index) => (
+              <article
+                key={index}
+                className="group flex min-h-[8rem] sm:min-h-[10rem] flex-col justify-between rounded-lg border-2 border-gray-900 bg-white p-3 sm:p-4 md:p-5 transition-all duration-300 hover:border-white hover:bg-primary"
+              >
+                <div className="space-y-1 sm:space-y-2">
+                  <h3 className="font-montserrat text-base sm:text-lg font-semibold group-hover:text-white">
+                    {network.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm leading-relaxed group-hover:text-white">
+                    ({network.description})
+                  </p>
                 </div>
-              );
-            })}
+                <Link
+                  className="text-xs sm:text-sm transition-colors group-hover:text-secondary"
+                  href={network.redirect}
+                >
+                  {network.link}
+                </Link>
+              </article>
+            ))}
           </div>
         </div>
       </Container>

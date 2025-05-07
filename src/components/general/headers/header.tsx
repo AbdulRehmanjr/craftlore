@@ -27,6 +27,7 @@ import {
 } from "~/components/ui/sheet";
 import { cn } from "~/lib/utils";
 import { MenuItems } from "~/constants/variable";
+import { useAuthStore } from "~/hooks/use-register-dialog";
 
 interface HeaderProps {
   disabled?: boolean;
@@ -51,7 +52,8 @@ function getLinkProps(href: string, disabled?: boolean, baseClass?: string) {
 
 export const Header: FC<HeaderProps> = ({ disabled = false }) => {
   const [isScrolled, setIsScrolled] = useState(false);
-
+  const { setOpen } = useAuthStore();
+  
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
@@ -103,7 +105,6 @@ export const Header: FC<HeaderProps> = ({ disabled = false }) => {
     </div>
   );
 
-  // Mobile nested submenu component
   const MobileNestedMenu = ({
     items,
     level = 1,
@@ -269,15 +270,16 @@ export const Header: FC<HeaderProps> = ({ disabled = false }) => {
         <div className="flex gap-4">
           {/* Register / Login */}
           <Button
+          type="button"
             size="sm"
             variant="secondary"
             className={cn(
               "text-xs text-white xl:text-base",
               disabled && "pointer-events-none cursor-not-allowed opacity-50",
             )}
-            asChild
+            onClick={()=>setOpen(true)}
           >
-            <Link {...getLinkProps("#", disabled)}>Register / Login</Link>
+            Register / Login
           </Button>
           <div className="flex gap-6">
             <Link

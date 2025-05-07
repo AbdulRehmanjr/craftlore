@@ -21,7 +21,7 @@ type Employ = {
     fullName: string;
     skills: string;
     contribution: string;
-    organization:string
+    organization: string
 };
 
 type User = {
@@ -534,7 +534,7 @@ type VerificationResultProps = {
             percentage: number,
         },
     },
-} 
+}
 
 type TestimonialProps = {
     quote: string;
@@ -542,4 +542,137 @@ type TestimonialProps = {
     role: string;
     location: string;
     category: "kashmir" | "us" | "global";
-  }
+}
+
+type MaterialStandardsProps = {
+    Fiber_Source?: string;
+    Micron_Count?: string;
+    Fiber_Length?: string;
+    Composition?: {
+        Premium_Grade?: string;
+        Commercial_Grade?: string;
+        [key: string]: string | undefined;
+    };
+    Yarn?: string;
+    [key: string]: unknown;
+}
+
+type StructuralParametersProps = {
+    Weaving?: string;
+    Thread_Count?: string;
+    Weave_Type?: string[] | string;
+    Dimensions?: {
+        Shawl?: string;
+        Stole?: string;
+        Scarf?: string;
+        [key: string]: string | undefined;
+    };
+    Weight?: string;
+    [key: string]: unknown;
+}
+
+type MaterialRequirementsProps = {
+    Fiber?: string[] | string;
+    Diameter?: string;
+    Yarn?: string;
+    Dye?: string;
+    [key: string]: unknown;
+}
+
+type WeaveParametersProps = {
+    Method?: string;
+    Loom?: string;
+    Structure?: string[] | string;
+    Graph?: string;
+    Design?: string;
+    [key: string]: unknown;
+}
+
+type MaterialInputsProps = {
+    Fabric?: string[] | string;
+    Threads?: string[] | string;
+    Needles?: string;
+    [key: string]: unknown;
+}
+
+type TechniquesProps = {
+    Stitches?: string[] | string;
+    Execution?: string;
+    [key: string]: unknown;
+}
+
+type MaterialSpecProps = {
+    Core?: string;
+    Adhesive?: string;
+    Drying?: string[] | string;
+    Smoothing?: string;
+    Priming?: string;
+    [key: string]: unknown;
+}
+
+type ArtistryProps = {
+    Styles?: string[] | string;
+    Brush?: string;
+    Color?: string[] | string;
+    Lacquer?: string;
+    [key: string]: unknown;
+}
+
+type TechnicalSpecificationsProps = {
+    Material_Standards?: MaterialStandardsProps;
+    Structural_Parameters?: StructuralParametersProps;
+    Material_Requirements?: MaterialRequirementsProps;
+    Weaving?: WeaveParametersProps;
+    Material_Inputs?: MaterialInputsProps;
+    Techniques?: TechniquesProps;
+    Material?: MaterialSpecProps;
+    Artistry?: ArtistryProps;
+    [key: string]: unknown;
+}
+
+type AuthenticationProps = {
+    Visual?: string[];
+    Physical?: string[];
+    Tests?: string[];
+    Verification?: string[];
+    [key: string]: unknown;
+}
+
+type JurisdictionalAreaProps = {
+    Raw_Pashm_Source?: string;
+    Crafting_Zone?: string[] | string;
+    [key: string]: unknown;
+}
+
+type GeographicalAreaProps = {
+    Weaving_Area?: string[] | string;
+    Material_Source?: string;
+    [key: string]: unknown;
+}
+
+type AuthenticityVerificationGuideProps = {
+    Visual_Cues?: string[];
+    Physical_Tests?: string[];
+    Official_Verification_Points?: string[];
+    Advanced_Testing_Methods?: string[];
+    Counterfeit_Markers?: string[];
+    [key: string]: unknown;
+}
+
+type GIListingItemProps = {
+    Name: string;
+    GI_Application_Number: number;
+    GI_Certificate_Number: number;
+    GI_Journal_Number: number;
+    Year_of_Registration: number;
+    Class: string[];
+    GI_Applicant: string;
+    Jurisdictional_Area?: JurisdictionalAreaProps;
+    Geographical_Area?: string[] | GeographicalAreaProps;
+    Technical_Specifications?: TechnicalSpecificationsProps;
+    Authentication?: AuthenticationProps;
+    Authenticity_Verification_Guide?: AuthenticityVerificationGuideProps;
+    [key: string]: unknown;
+}
+
+type GIListingProps = GIListingItemProps[];

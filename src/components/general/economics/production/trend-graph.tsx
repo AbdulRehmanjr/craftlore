@@ -12,6 +12,7 @@ import {
   Legend,
 } from "chart.js";
 import { ChartContainer } from "~/components/common/chart";
+import { useEffect, useState } from "react";
 
 ChartJS.register(
   CategoryScale,
@@ -24,6 +25,19 @@ ChartJS.register(
 );
 
 export const ProductionTrendGraph = () => {
+  const [fontSize, setFontSize] = useState<number>(12);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const isSmallScreen = window.innerWidth < 640;
+      setFontSize(isSmallScreen ? 10 : 12);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const data = {
     labels: [
       "2010-11",
@@ -52,6 +66,8 @@ export const ProductionTrendGraph = () => {
         borderColor: "hsl(212 99% 24%)",
         borderWidth: 2,
         fill: true,
+        pointRadius: 3,
+        pointHoverRadius: 5,
       },
     ],
   };
@@ -69,28 +85,66 @@ export const ProductionTrendGraph = () => {
         title: {
           display: true,
           text: "Total Production (in Crores ₹)",
+          font: {
+            size: fontSize,
+          },
+        },
+        ticks: {
+          font: {
+            size: fontSize,
+          },
+        },
+        grid: {
+          color: "rgba(0, 0, 0, 0.1)",
         },
       },
       x: {
         title: {
           display: true,
           text: "Year",
+          font: {
+            size: fontSize,
+          },
+        },
+        ticks: {
+          font: {
+            size: fontSize,
+          },
+          maxRotation: 45,
+          minRotation: 45,
+        },
+        grid: {
+          display: false,
         },
       },
     },
     plugins: {
       legend: {
         display: true,
+        position: "top" as const,
         labels: {
           boxWidth: 10,
+          font: {
+            size: fontSize,
+          },
+        },
+      },
+      tooltip: {
+        titleFont: {
+          size: fontSize,
+        },
+        bodyFont: {
+          size: fontSize,
         },
       },
     },
   };
 
   return (
-    <ChartContainer>
-      <Line data={data} options={options} />
-    </ChartContainer>
+    <div className="w-full overflow-x-auto">
+      <ChartContainer>
+        <Line data={data} options={options} />
+      </ChartContainer>
+    </div>
   );
 };

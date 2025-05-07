@@ -3,17 +3,24 @@ import { BlockchainForm } from "~/components/craft-repository/blockchain/form";
 
 export const BlockchainHome = () => {
   return (
-    <div className="my-20 grid grid-cols-2 gap-4">
-      <div className="col-span-2 flex flex-col gap-6 p-4 lg:col-span-1">
-        <div className="relative h-[25rem] w-[25rem]">
-          <Image src="/images/BC.png" alt="block chain image" fill />
+    <div className="grid gap-6 sm:gap-8 md:gap-10 lg:grid-cols-2">
+      <article className="space-y-6 sm:space-y-8 md:space-y-10">
+        <div className="relative aspect-square w-full max-w-[25rem] mx-auto">
+          <Image 
+            src="/images/BC.png" 
+            alt="Blockchain technology illustration" 
+            fill
+            className="object-contain"
+            priority
+          />
         </div>
-        <div className="space-y-6 [&_h3]:font-montserrat [&_h3]:text-3xl [&_h3]:text-secondary [&_p]:font-opensans [&_p]:text-xl">
-          <h2 className="font-montserrat text-4xl text-primary">
-            Welcome to Craftlore&apos;s Blockchain Traceability Registry &
-            Verifier
+        
+        <div className="space-y-4 sm:space-y-6">
+          <h2 className="font-montserrat text-2xl sm:text-3xl md:text-4xl font-bold text-primary">
+            Welcome to Craftlore&apos;s Blockchain Traceability Registry & Verifier
           </h2>
-          <p>
+          
+          <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700">
             Unveil the journey of authentic Kashmiri crafts with
             Craftlore&apos;s Blockchain Traceability Verifier. Designed to
             provide unmatched transparency, security, and trust, this tool
@@ -21,20 +28,33 @@ export const BlockchainHome = () => {
             artisans, buyers, and industry professionals can verify the origin
             and authenticity of Kashmiri products in real-time.
           </p>
-          <h3>Craftlore Blockchain Traceability Verifier</h3>
-          <p>The CraftLore Kashmir Handicraft Blockchain Protocol utilizes Blockchain Technology to provide a decentralized, transparent ledger for secure transactions. Built on a robust Ethereum-based platform, it integrates smart contracts for fair trade, NFTs for authenticity verification, and IPFS for decentralized storage, ensuring seamless, traceable, and tamper-proof transactions in the Kashmir handicrafts industry.</p>
-          <p>The CraftLore Kashmir Handicraft Blockchain Protocol eliminates middlemen and reduces artisan exploitation by enabling direct transactions between artisans and buyers. Through smart contracts, artisans retain greater control over pricing, ensuring fair compensation and transparency, while blockchain guarantees authenticity and traceability of each handcrafted item</p>         
+
+          <h3 className="font-montserrat text-xl sm:text-2xl md:text-3xl font-bold text-secondary">
+            Craftlore Blockchain Traceability Verifier
+          </h3>
+
+          <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700">
+            The CraftLore Kashmir Handicraft Blockchain Protocol utilizes Blockchain Technology to provide a decentralized, transparent ledger for secure transactions. Built on a robust Ethereum-based platform, it integrates smart contracts for fair trade, NFTs for authenticity verification, and IPFS for decentralized storage, ensuring seamless, traceable, and tamper-proof transactions in the Kashmir handicrafts industry.
+          </p>
+
+          <p className="text-base sm:text-lg md:text-xl leading-relaxed text-gray-700">
+            The CraftLore Kashmir Handicraft Blockchain Protocol eliminates middlemen and reduces artisan exploitation by enabling direct transactions between artisans and buyers. Through smart contracts, artisans retain greater control over pricing, ensuring fair compensation and transparency, while blockchain guarantees authenticity and traceability of each handcrafted item.
+          </p>
         </div>
-      </div>
-      <div className="col-span-2 flex flex-col gap-6 rounded-lg bg-primary p-6 shadow-lg lg:col-span-1">
-        <h2 className="p-6 text-center font-montserrat text-[40px] leading-[48px] text-secondary">
-          Kashmir Handicrafts Blockchain Traceability Portal
-        </h2>
-        <p className="text-center font-montserrat text-xl text-white">
-          Project Under Development: Demonstrating System Behavior
-        </p>
+      </article>
+
+      <article className="flex flex-col gap-4 sm:gap-6 rounded-xl bg-primary p-4 sm:p-6 shadow-lg">
+        <header className="space-y-3 text-center">
+          <h2 className="font-montserrat text-2xl sm:text-3xl md:text-4xl font-bold text-secondary leading-tight">
+            Kashmir Handicrafts Blockchain Traceability Portal
+          </h2>
+          <p className="font-montserrat text-base sm:text-lg md:text-xl text-white/90">
+            Project Under Development: Demonstrating System Behavior
+          </p>
+        </header>
+        
         <BlockchainForm />
-      </div>
+      </article>
     </div>
   );
 };
