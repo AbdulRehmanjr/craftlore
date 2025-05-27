@@ -170,7 +170,7 @@ const SocialLink = ({
 const FooterLink = ({ href, text }: { href: string; text: string }) => (
   <li>
     <Link
-      href={"#"}
+      href={href}
       className="text-sm text-gray-300 transition-colors hover:text-secondary"
     >
       {text}

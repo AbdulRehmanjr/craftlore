@@ -20,10 +20,7 @@ export const MenuItems : MenuItemProps[] = [
             { title: "GI LISTING", href: "/craft-registry/GI/listing" },
           ],
         },
-        {
-          title: "BLOCK CHAIN TRACEABILITY",
-          href: "/craft-registry/blockchain",
-        },
+       
         {
           title: "CRAFT CARBON FOOTPRINT",
           href: "/craft-registry/carbon-footprint",
@@ -35,6 +32,10 @@ export const MenuItems : MenuItemProps[] = [
         {
           title: "CRAFT TRADE REGISTRY",
           href: "/listing",
+        },
+         {
+          title: "BLOCK CHAIN TRACEABILITY",
+          href: "/craft-registry/blockchain",
         },
       ],
     },

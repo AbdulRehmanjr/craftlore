@@ -91,7 +91,7 @@ const columns: ColumnDef<BusinessProps>[] = [
         accessorKey: "businessEmployee",
         header: "Employees",
         cell: ({ row }) => (
-            <div className="text-right font-medium">
+            <div className="text-right font-medium max-w-12">
                 {row.getValue("businessEmployee")}
             </div>
         ),
@@ -209,11 +209,7 @@ const Pagination = ({ table }: PaginationProps) => {
 };
 
 export const BusinessTable = () => {
-    const { data, isLoading } = api.register.getBusinesses.useQuery(undefined, {
-        refetchOnWindowFocus: false,
-        staleTime: 30000,
-    });
-
+    const { data, isLoading } = api.register.getBusinesses.useQuery();
     const [nameFilter, setNameFilter] = useState<string>("");
     const [blacklistedOnly, setBlacklistedOnly] = useState<boolean>(false);
     const [limit, setLimit] = useState<number>(10);

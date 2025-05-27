@@ -7,10 +7,11 @@ import { type Metadata } from "next";
 import { Container } from "~/components/common/container";
 
 export const metadata: Metadata = {
-  title: "CRAFTLORE | Carbon footprint",
+  title: "CRAFTLORE | Carbon Footprint",
+  description: "Measure and reduce the carbon footprint of Kashmiri crafts. Join our mission for sustainable and eco-conscious craft production.",
 };
 
-const counter = [
+const counterMetrics = [
   { name: "Verified artisans", value: 25000 },
   { name: "Global Markets", value: 20 },
   { name: "Industry", value: 8 },
@@ -19,72 +20,85 @@ const counter = [
 
 export default function CarbonPrintPage() {
   return (
-    <div className="relative -mt-16">
-      <Container>
-        <div className="flex flex-wrap justify-center gap-10">
-          <div className="grid h-[183px] w-72 place-content-center border-4 border-white bg-secondary p-10 text-center text-white">
-            <h1 className="whitespace-pre-line font-montserrat text-xl font-bold">
-              CARBON FOOTPRINT CRAFT REGISTRY
+    <section className="relative -mt-16">
+      <Container className="py-8 sm:py-12 md:py-16 lg:py-20">
+        <section className="grid gap-4 sm:gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <article className="flex h-[160px] sm:h-[183px] items-center justify-center rounded-xl border-4 border-white bg-secondary p-4 sm:p-6 text-center text-white shadow-lg">
+            <h1 className="font-montserrat text-lg sm:text-xl md:text-2xl font-bold leading-tight">
+              Carbon Footprint Craft Registry
             </h1>
-          </div>
-          <div className="grid h-[183px] w-72 place-content-center gap-4 bg-white p-10 text-center text-gray-900">
-            <p className="whitespace-pre-line font-opensans text-sm font-bold text-gray-500">
+          </article>
+          
+          <article className="flex h-[160px] sm:h-[183px] flex-col items-center justify-center gap-2 sm:gap-3 rounded-xl bg-white p-4 sm:p-6 text-center shadow-lg">
+            <p className="font-opensans text-xs sm:text-sm font-bold text-gray-500">
               Measure, Reduce, Thrive
             </p>
-            <p className="whitespace-pre-line font-montserrat text-2xl font-bold">
+            <p className="font-montserrat text-xl sm:text-2xl font-bold text-gray-900">
               Sustainability
             </p>
-            <p className="whitespace-pre-line font-opensans text-sm font-bold text-gray-500">
-              Sustainable impact.
+            <p className="font-opensans text-xs sm:text-sm font-bold text-gray-500">
+              Sustainable Impact
             </p>
-          </div>
-          <div className="grid h-[183px] w-72 place-content-center gap-4 bg-white p-10 text-center text-gray-900">
-            <p className="whitespace-pre-line font-opensans text-sm font-bold text-gray-500">
+          </article>
+
+          <article className="flex h-[160px] sm:h-[183px] flex-col items-center justify-center gap-2 sm:gap-3 rounded-xl bg-white p-4 sm:p-6 text-center shadow-lg">
+            <p className="font-opensans text-xs sm:text-sm font-bold text-gray-500">
               Track, Verify, Improve
             </p>
-            <p className="whitespace-pre-line font-montserrat text-2xl font-bold">
+            <p className="font-montserrat text-xl sm:text-2xl font-bold text-gray-900">
               Accountability
             </p>
-            <p className="whitespace-pre-line font-opensans text-sm font-bold text-gray-500">
-              Responsible craft.
+            <p className="font-opensans text-xs sm:text-sm font-bold text-gray-500">
+              Responsible Craft
             </p>
-          </div>
-          <div className="grid h-[183px] w-72 place-content-center gap-4 bg-white p-10 text-center text-gray-900">
-            <p className="whitespace-pre-line font-opensans text-sm font-bold text-gray-500">
+          </article>
+
+          <article className="flex h-[160px] sm:h-[183px] flex-col items-center justify-center gap-2 sm:gap-3 rounded-xl bg-white p-4 sm:p-6 text-center shadow-lg">
+            <p className="font-opensans text-xs sm:text-sm font-bold text-gray-500">
               Sustain, Showcase, Lead
             </p>
-            <p className="whitespace-pre-line font-montserrat text-2xl font-bold">
+            <p className="font-montserrat text-xl sm:text-2xl font-bold text-gray-900">
               Eco-Craft
             </p>
-            <p className="whitespace-pre-line font-opensans text-sm font-bold text-gray-500">
-              Eco leadership.
+            <p className="font-opensans text-xs sm:text-sm font-bold text-gray-500">
+              Eco Leadership
             </p>
-          </div>
-        </div>
-        <CarbonEstimationHome />
+          </article>
+        </section>
+
+        <section className="mt-12 sm:mt-16 md:mt-20">
+          <CarbonEstimationHome />
+        </section>
       </Container>
-      <div className="bg-[#e5edf7]">
+
+      <div className="bg-[#e5edf7] py-8 sm:py-12 md:py-16 lg:py-20">
         <Container>
           <CarbonFeatures />
         </Container>
       </div>
-      <Container>
-        <CarbonApiGuide />
-      </Container>
-      <div className="bg-[#e5edf7]">
-        <Container className="space-y-[6rem] pt-[5rem]">
-          <h2 className="text-center font-montserrat text-xl text-secondary">
-            Defend Sustainability, Empower Artisans: Join the Movement for a
-            Greener Future in Kashmiri Crafts
-          </h2>
-          <h2 className="text-center font-montserrat text-3xl text-primary">
-            Join our mission to create a more sustainable and eco-conscious
-            future for Kashmiri artisans and the craft industry.
-          </h2>
-          <Counter counterValues={counter} />
+
+      <div className="py-8 sm:py-12 md:py-16 lg:py-20">
+        <Container>
+          <CarbonApiGuide />
+        </Container>
+      </div>
+
+      <div className="bg-[#e5edf7] pt-8 sm:pt-12 md:pt-16 lg:pt-20">
+        <Container className="space-y-8 sm:space-y-12 md:space-y-16 lg:space-y-20">
+          <header className="space-y-3 sm:space-y-4 text-center">
+            <h2 className="font-montserrat text-xl sm:text-2xl md:text-3xl font-bold text-secondary">
+              Defend Sustainability, Empower Artisans: Join the Movement for a
+              Greener Future in Kashmiri Crafts
+            </h2>
+            <h3 className="font-montserrat text-2xl sm:text-3xl md:text-4xl font-bold text-primary">
+              Join our mission to create a more sustainable and eco-conscious
+              future for Kashmiri artisans and the craft industry.
+            </h3>
+          </header>
+          <Counter counterValues={counterMetrics} />
           <BottomBanner />
         </Container>
       </div>
-    </div>
+    </section>
   );
 }

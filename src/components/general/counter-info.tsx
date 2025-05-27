@@ -15,12 +15,12 @@ const counter = [
 
 export const CounterInfo = ({ className }: CounterProps) => {
   return (
-    <div className={cn("grid gap-10", className)}>
-      <h6 className="text-center font-montserrat text-2xl text-secondary">
+    <div className={cn("grid gap-4 sm:gap-6 md:gap-8 lg:gap-10", className)}>
+      <h6 className="text-center font-montserrat text-lg sm:text-xl md:text-2xl text-secondary">
         Defend Authenticity, Empower Artisans: Join the Movement to Transform
-        Kashmir’s Craft Future
+        Kashmir&apos;s Craft Future
       </h6>
-      <h6 className="text-center font-montserrat text-4xl text-primary">
+      <h6 className="text-center font-montserrat text-xl sm:text-2xl md:text-3xl lg:text-4xl text-primary">
         Join our network for a better future of our Artisans & Craft Industry
       </h6>
       <Counter counterValues={counter} />

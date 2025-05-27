@@ -43,6 +43,7 @@ const formSchema = z.object({
       message: "The product code must be exactly 12345",
     }),
 });
+
 const entryCodes = [
   { title: "Raw Material", code: "RM-2024-001" },
   { title: "Artisan Registration", code: "AR-2024-001" },
@@ -53,6 +54,7 @@ const entryCodes = [
   { title: "Carbon Footprint Tracking", code: "CF-2024-001" },
   { title: "Consumer Authentication", code: "CA-2024-001" },
 ];
+
 export const BlockchainForm = () => {
   const [verificationResult, setVerificationResult] =
     useState<VerificationResultProps | null>(null);
@@ -296,14 +298,14 @@ export const BlockchainForm = () => {
       <CardContent className="space-y-6">
         <Form {...form}>
           <form
-            className="flex items-center justify-between gap-2"
+            className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"
             onSubmit={form.handleSubmit(handleVerification)}
           >
             <FormField
               control={form.control}
               name="productCode"
               render={({ field }) => (
-                <FormItem className="w-full">
+                <FormItem className="w-full sm:w-auto">
                   <FormControl>
                     <Input
                       className="w-full text-gray-950"
@@ -316,7 +318,7 @@ export const BlockchainForm = () => {
                 </FormItem>
               )}
             />
-            <Button>Verify</Button>
+            <Button className="w-full sm:w-auto">Verify</Button>
           </form>
         </Form>
 
@@ -341,7 +343,7 @@ export const BlockchainForm = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
                     <p className="text-sm text-secondary">Contract Address</p>
                     <p className="font-mono text-sm font-medium">
@@ -374,7 +376,7 @@ export const BlockchainForm = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
                     <p className="text-sm text-secondary">Material Type</p>
                     <p className="font-medium">
@@ -391,7 +393,7 @@ export const BlockchainForm = () => {
                 <div className="space-y-2">
                   <p className="text-sm text-secondary">Test Results</p>
                   <div className="rounded-lg bg-gray-50 p-3">
-                    <div className="grid grid-cols-2 gap-2 text-sm">
+                    <div className="grid grid-cols-1 gap-2 text-sm sm:grid-cols-2">
                       <div>
                         <span className="text-secondary">Purity: </span>
                         <span className="font-medium">
@@ -434,7 +436,7 @@ export const BlockchainForm = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                   <div className="space-y-1">
                     <p className="text-sm text-secondary">Progress</p>
                     <p className="font-medium">
@@ -453,7 +455,7 @@ export const BlockchainForm = () => {
                         key={index}
                         className="space-y-2 rounded-lg bg-gray-50 p-3"
                       >
-                        <div className="flex justify-between">
+                        <div className="flex flex-col gap-2 sm:flex-row sm:justify-between">
                           <span className="font-medium">{stage.stage}</span>
                           <Badge variant="outline">{stage.location}</Badge>
                         </div>
@@ -493,7 +495,7 @@ export const BlockchainForm = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
                     <p className="text-sm text-secondary">Certificate Number</p>
                     <p className="font-medium">
@@ -525,7 +527,7 @@ export const BlockchainForm = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
                     <p className="text-sm text-secondary">Location</p>
                     <p className="font-medium">
@@ -564,7 +566,7 @@ export const BlockchainForm = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
                     <p className="text-sm text-secondary">Artisan</p>
                     <p className="font-medium">
@@ -597,7 +599,7 @@ export const BlockchainForm = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div className="rounded-lg bg-blue-50 p-4">
                     <p className="text-sm text-blue-600">Material Cost</p>
                     <p className="text-2xl font-bold text-blue-700">
@@ -668,7 +670,7 @@ export const BlockchainForm = () => {
                       (tx, index) => (
                         <div
                           key={index}
-                          className="grid grid-cols-3 rounded bg-gray-50 p-2"
+                          className="grid grid-cols-1 gap-2 rounded bg-gray-50 p-2 sm:grid-cols-3"
                         >
                           <span className="text-primary">{tx.type}</span>
                           <span className="font-medium">
@@ -683,7 +685,7 @@ export const BlockchainForm = () => {
                   </div>
                   <div className="rounded-lg bg-gray-50 p-3">
                     <p className="mb-2 font-medium">Wage Metrics</p>
-                    <div className="grid grid-cols-2 gap-2 text-sm">
+                    <div className="grid grid-cols-1 gap-2 text-sm sm:grid-cols-2">
                       <div>
                         <span className="text-secondary">Hourly Rate: </span>
                         <span className="font-medium">
@@ -702,7 +704,7 @@ export const BlockchainForm = () => {
                   <h3 className="font-semibold text-primary">
                     Buyer-Seller Transaction
                   </h3>
-                  <div className="flex justify-between gap-4">
+                  <div className="flex flex-col gap-4 sm:flex-row sm:justify-between">
                     <div className="space-y-2">
                       <p className="text-sm text-secondary">
                         Transaction Status
@@ -732,7 +734,7 @@ export const BlockchainForm = () => {
                       (payment, index) => (
                         <div
                           key={index}
-                          className="grid grid-cols-3 gap-10 bg-gray-50 p-2"
+                          className="grid grid-cols-1 gap-2 bg-gray-50 p-2 sm:grid-cols-3 sm:gap-10"
                         >
                           <p className="text-primary">{payment.stage}</p>
                           <p className="font-medium">
@@ -774,7 +776,7 @@ export const BlockchainForm = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
                     <p className="text-sm text-secondary">Platform Status</p>
                     <Badge variant="default">Verified Seller</Badge>
@@ -806,7 +808,7 @@ export const BlockchainForm = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="grid gap-4 md:grid-cols-2 ">
+                <div className="grid gap-4 sm:grid-cols-2">
                   {entryCodes.map((entry, index) => (
                     <div
                       key={index}
@@ -824,8 +826,8 @@ export const BlockchainForm = () => {
       </CardContent>
       <CardFooter>
         {verificationResult && (
-          <Button type="button" variant="secondary">
-            <Download /> Your Blockchain Product Tracebility Report
+          <Button type="button" variant="secondary" className="w-full sm:w-auto">
+            <Download className="mr-2 h-4 w-4" /> Your Blockchain Product Tracebility Report
           </Button>
         )}
       </CardFooter>

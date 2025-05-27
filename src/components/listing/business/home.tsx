@@ -1,5 +1,4 @@
 import { api, HydrateClient } from "~/trpc/server";
-import { Suspense } from "react";
 import { BusinessList } from "~/components/listing/business/business-list";
 import { BusinessTable } from "~/components/listing/business/business-table";
 import { ConnectionSection } from "~/components/listing/connection-info";
@@ -12,9 +11,7 @@ export const BusinessInfo = async () => {
         <ConnectionSection />
         <div className="grid gap-10 lg:gap-32">
           <BusinessList />
-          <Suspense fallback={<div>Loading......</div>}>
-            <BusinessTable />
-          </Suspense>
+          <BusinessTable />
         </div>
       </div>
     </HydrateClient>

@@ -26,10 +26,10 @@ export const MissionSection = () => {
   };
 
   return (
-    <Container className="col-span-12 mt-12 gap-4">
+    <Container className="col-span-12 mt-8 sm:mt-12 md:mt-16 lg:mt-20 gap-4">
       {/* Mobile: Only show dropdown */}
-      <div className="md:hidden w-full max-w-md mx-auto mb-8">
-        <h3 className="text-xl font-medium text-primary mb-2">Select a Mission</h3>
+      <div className="md:hidden w-full max-w-md mx-auto mb-6 sm:mb-8">
+        <h3 className="text-lg sm:text-xl font-medium text-primary mb-2">Select a Mission</h3>
         <Select 
           value={selectedMissionId.toString()} 
           onValueChange={handleMissionSelect}
@@ -51,7 +51,7 @@ export const MissionSection = () => {
       </div>
 
       {/* Original desktop layout - Hidden on mobile */}
-      <Container className="relative -mt-36 hidden md:grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-4">
+      <Container className="relative -mt-24 sm:-mt-28 md:-mt-32 lg:-mt-36 hidden md:grid grid-cols-1 gap-4 sm:gap-5 md:gap-6 lg:gap-7 sm:grid-cols-2 lg:grid-cols-4">
         {MISSIONS.slice(0, 4).map((missionItem) => (
           <MissionCard
             className="col-span-1"
@@ -64,15 +64,15 @@ export const MissionSection = () => {
       </Container>
       
       {/* Mission display - Matching project section styles */}
-      <Container className="my-12 md:my-32 grid gap-6">
-        <h2 className="font-montserrat text-4xl text-primary lg:text-6xl">
+      <Container className="my-8 sm:my-12 md:my-20 lg:my-32 grid gap-4 sm:gap-5 md:gap-6">
+        <h2 className="font-montserrat text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-primary leading-tight">
           {mission.title}
         </h2>
-        <p className="text-2xl">{mission.description}</p>
+        <p className="text-lg sm:text-xl md:text-2xl leading-relaxed">{mission.description}</p>
       </Container>
       
       {/* Original desktop layout - Hidden on mobile */}
-      <Container className="relative -mb-36 hidden md:grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-4">
+      <Container className="relative -mb-24 sm:-mb-28 md:-mb-32 lg:-mb-36 hidden md:grid grid-cols-1 gap-4 sm:gap-5 md:gap-6 lg:gap-7 sm:grid-cols-2 lg:grid-cols-4">
         {MISSIONS.slice(4, 8).map((missionItem) => (
           <MissionCard
             className="col-span-1"

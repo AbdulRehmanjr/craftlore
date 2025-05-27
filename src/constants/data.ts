@@ -61,55 +61,55 @@ export const REGISTER = [
         icon: '/icons/profile.png',
         title: "Craft Profiling",
         description: "Historical, Artistic, & Scientific Exploration of Kashmir Craft",
-        link: '#'
+        link: '/craft-registry/profiling'
     },
     {
         icon: '/icons/location.png',
         title: "Geographical Indicators",
         description: "Geo-Certification Protocols and Standardization of Kashmir Craft",
-        link: "#"
+        link: "/craft-registry/GI"
     },
     {
         icon: '/icons/blockchain.png',
         title: "Block Chain Traceability",
         description: "Verified Kashmir Craft Journey against the Threat of Counterfeits",
-        link: '#'
+        link: '/craft-registry/blockchain'
     },
     {
         icon: '/icons/carbon.png',
         title: "Craft Carbon Footprint",
         description: "Measuring and Endorsing Kashmir Eco-Friendly Practices in Artisan Crafts",
-        link: '#'
+        link: '/craft-registry/carbon-footprint'
     },
     {
         icon: '/icons/money.png',
         title: "Craft Price Valuation",
         description: "Self Estimator – Your Kashmir Craft, Your Price, Your Value",
-        link: '#'
+        link: '/craft-registry/cost-estimation'
     },
     {
         icon: '/icons/vulnerability.png',
         title: "Craft Vulnerability",
         description: "Undermining authenticity & disrupting the Kashmir Craft Industry",
-        link: '#'
+        link: '/listing'
     },
     {
         icon: '/icons/economy.png',
         title: "Craft Economics",
         description: "The Lifeblood of Kashmir Craft Artisans and Heritage Industry",
-        link: '#'
+        link: '/economics'
     },
     {
         icon: '/icons/business.png',
         title: "Craft Business Evaluation",
         description: "Regulating Ethical Standards in Kashmir Craft Commerece as Whistleblower",
-        link: '#'
+        link: '/gender'
     },
     {
         icon: '/icons/wages.png',
         title: "Fair Wages Monitoring",
         description: "Empowerment through Education, building a sustainable future for artisans",
-        link: '#'
+        link: '/employment/wage'
     }
 ];
 

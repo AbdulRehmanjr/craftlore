@@ -7,6 +7,7 @@ import { Header } from "~/components/general/headers/header";
 import { Footer } from "~/components/general/footers/footer";
 import { Toaster } from "~/components/ui/toaster";
 import { ScrollToTop } from "~/components/animations/scroll-top";
+import { AuthDialog } from "~/components/craft-repository/registration/register-dialog";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -44,6 +45,7 @@ export default function RootLayout({
           <main className="flex-grow">{children}</main>
           <ScrollToTop />
           <Footer />
+          <AuthDialog/>
           <Toaster />
         </Providers>
       </body>

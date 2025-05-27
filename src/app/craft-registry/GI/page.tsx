@@ -10,9 +10,10 @@ import { GIApiGuide } from "~/components/craft-repository/gi/guide";
 
 export const metadata: Metadata = {
   title: "CRAFTLORE | GI",
+  description: "Geographical Indication Promotional Program for Kashmir Handicrafts",
 };
 
-const counter = [
+const counterMetrics = [
   { name: "Products Verified Using Blockchain Technology", value: 9500 },
   { name: "Global Markets Secured with GI Certifications", value: 49 },
   { name: "Counterfeit Cases Detected with AI Tools", value: 32 },
@@ -21,56 +22,73 @@ const counter = [
 
 export default function CraftProfilingPage() {
   return (
-    <section className="relative">
-      <Container className="my-20 grid grid-cols-2 gap-4">
-        <div className="col-span-2 flex flex-col gap-6 p-4 lg:col-span-1">
-          <div className="relative h-[25rem] w-[25rem]">
-            <Image src="/images/GI.png" alt="co2 image" fill />
-          </div>
-          <div className="space-y-6 [&_h2]:font-montserrat [&_h2]:text-3xl [&_h2]:text-gray-950 [&_p]:font-opensans [&_p]:text-xl">
-            <h1 className="font-montserrat text-3xl text-secondary">
-              Welcome to CraftLore Geographical Indication Promotional Program
-              for Kashmir Handicrafts
-            </h1>
-            <p>
-              Our mission is to protect and promote the heritage of Kashmir’s
-              unique crafts by ensuring their authenticity and securing their
-              rightful place in the global market.
-            </p>
-            <h2>What is Geographical Indication</h2>
-            <p>
-              Geographical Indication is a certification that marks a product as
-              originating from a specific location, known for its distinct
-              quality, craftsmanship, and heritage. For Kashmir handicrafts, GI
-              ensures that the products you purchase are genuine and tied to the
-              centuries-old traditions of the region.
-            </p>
-          </div>
-        </div>
-        <div className="col-span-2 flex flex-col gap-3 rounded-lg bg-primary p-6 shadow-lg lg:col-span-1">
-          <h2 className="p-4 text-center font-montserrat text-3xl text-secondary">
-            Verify Geographical Indication of Your Product
-          </h2>
-          <p className="text-center font-montserrat  text-white">
-            Demand Authenticity, Reject Fake Craft
-          </p>
-          <ReportingForm />
+    <>
+      <Container className="py-12 sm:py-16 md:py-20">
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
+          <article className="space-y-8">
+            <div className="relative mx-auto aspect-square w-full max-w-[25rem]">
+              <Image 
+                src="/images/GI.png" 
+                alt="Geographical Indication illustration" 
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+            
+            <div className="space-y-6">
+              <h1 className="font-montserrat text-2xl font-bold text-secondary sm:text-3xl md:text-4xl">
+                Welcome to CraftLore Geographical Indication Promotional Program
+                for Kashmir Handicrafts
+              </h1>
+              <p className="text-base leading-relaxed sm:text-lg md:text-xl">
+                Our mission is to protect and promote the heritage of Kashmir&apos;s
+                unique crafts by ensuring their authenticity and securing their
+                rightful place in the global market.
+              </p>
+              <h2 className="font-montserrat text-xl font-semibold text-gray-950 sm:text-2xl md:text-3xl">
+                What is Geographical Indication
+              </h2>
+              <p className="text-base leading-relaxed sm:text-lg md:text-xl">
+                Geographical Indication is a certification that marks a product as
+                originating from a specific location, known for its distinct
+                quality, craftsmanship, and heritage. For Kashmir handicrafts, GI
+                ensures that the products you purchase are genuine and tied to the
+                centuries-old traditions of the region.
+              </p>
+            </div>
+          </article>
+
+          <article className="rounded-xl bg-primary p-6 shadow-lg sm:p-8 md:p-10">
+            <header className="mb-6 space-y-3 text-center">
+              <h2 className="font-montserrat text-2xl font-bold text-secondary sm:text-3xl">
+                Verify Geographical Indication of Your Product
+              </h2>
+              <p className="font-montserrat text-base text-white sm:text-lg">
+                Demand Authenticity, Reject Fake Craft
+              </p>
+            </header>
+            <ReportingForm />
+          </article>
         </div>
       </Container>
+
       <Background color="#e5edf7">
-        <Container>
+        <Container className="py-12 sm:py-16 md:py-20">
           <GIFeatures />
         </Container>
       </Background>
-      <Container>
+
+      <Container className="py-12 sm:py-16 md:py-20">
         <GIApiGuide />
       </Container>
+
       <Background color="#e5edf7">
-        <Container className="space-y-[6rem] pt-[5rem]">
-          <Counter counterValues={counter} />
+        <Container className="space-y-12 pt-12 sm:space-y-16 sm:pt-16 md:space-y-20 md:pt-20">
+          <Counter counterValues={counterMetrics} />
           <BottomBanner />
         </Container>
       </Background>
-    </section>
+    </>
   );
 }

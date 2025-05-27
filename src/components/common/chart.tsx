@@ -11,7 +11,7 @@ export const ChartContainer: React.FC<ChartProps> = ({
   className = "",
 }) => {
   return (
-    <div className={cn("aspect-square w-[19rem] md:aspect-video md:w-[45rem] lg:w-[55rem] xl:w-[80rem] 2xl:w-[90rem]", className)}>
+    <div className={cn("w-full max-w-[19rem] sm:max-w-[30rem] md:max-w-[45rem] lg:max-w-[55rem] xl:max-w-[80rem] 2xl:max-w-[90rem] aspect-square sm:aspect-video", className)}>
       {children}
     </div>
   );
